@@ -28,9 +28,11 @@ jobs:
       - name: List files
         run: ls -R
       - name: Install dependencies
-        run: npm install
+        run: npm ci
+      - name: Fix permissions
+        run: chmod +x node_modules/.bin/vite
       - name: Build
-        run: npx vite build
+        run: npm run build
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
