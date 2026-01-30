@@ -1,0 +1,46 @@
+{
+    "es": {
+        "nav": {
+            "projects": "Proyectos",
+            "cv_es": "CV ES",
+            "cv_en": "CV EN"
+        },
+        "hero": {
+            "greeting": "Hola, soy",
+            "title": "Ingeniero de Robótica",
+            "subtitle": "Especializado en automatización, software embebido y sistemas inteligentes.",
+            "badge": "Disponible para proyectos"
+        },
+        "projects": {
+            "title": "Proyectos Seleccionados",
+            "view_repo": "Ver Repositorio",
+            "loading": "Cargando laboratorios...",
+            "no_projects": "No se encontraron proyectos."
+        },
+        "footer": {
+            "rights": "Todos los derechos reservados"
+        }
+    },
+    "en": {
+        "nav": {
+            "projects": "Projects",
+            "cv_es": "CV ES",
+            "cv_en": "CV EN"
+        },
+        "hero": {
+            "greeting": "Hi, I'm",
+            "title": "Robotics Engineer",
+            "subtitle": "Specializing in automation, embedded software, and intelligent systems.",
+            "badge": "Available for projects"
+        },
+        "projects": {
+            "title": "Selected Projects",
+            "view_repo": "View Repository",
+            "loading": "Loading labs...",
+            "no_projects": "No projects found."
+        },
+        "footer": {
+            "rights": "All rights reserved"
+        }
+    }
+}

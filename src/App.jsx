@@ -6,13 +6,25 @@ import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import ProjectGrid from './components/ProjectGrid';
 import CustomCursor from './components/CustomCursor';
+import { LanguageProvider, useLanguage } from './context/LanguageContext';
+import translations from './translations.json';
 
 gsap.registerPlugin(ScrollTrigger);
 
 function App() {
+  return (
+    <LanguageProvider>
+      <AppContent />
+    </LanguageProvider>
+  );
+}
+
+const AppContent = () => {
   const [projects, setProjects] = useState([]);
   const [loading, setLoading] = useState(true);
   const mainRef = useRef(null);
+  const { language } = useLanguage();
+  const t = translations[language];
 
   useEffect(() => {
     // Initialize Lenis for smooth scrolling
@@ -65,23 +77,27 @@ function App() {
         <section id="projects" className="projects-section">
           <div className="section-header">
             <span className="section-number">01.</span>
-            <h2 className="section-title">Selected Works</h2>
+            <h2 className="section-title">{t.projects.title}</h2>
           </div>
 
           {loading ? (
             <div className="loading-state">
               <div className="spinner"></div>
-              <p>Fetching from GitHub...</p>
+              <p>{t.projects.loading}</p>
             </div>
-          ) : (
+          ) : projects.length > 0 ? (
             <ProjectGrid projects={projects} />
+          ) : (
+            <div className="loading-state">
+              <p>{t.projects.no_projects}</p>
+            </div>
           )}
         </section>
       </main>
 
       <footer className="lab-footer">
         <div className="container footer-content">
-          <p className="copyright">© {new Date().getFullYear()} Fernando Román Hidalgo</p>
+          <p className="copyright">© {new Date().getFullYear()} Fernando Román Hidalgo | {t.footer.rights}</p>
           <div className="footer-links">
             <a href="https://github.com/FerXxk" target="_blank" rel="noreferrer">GitHub</a>
             <a href="https://linkedin.com/in/fernandoromhid" target="_blank" rel="noreferrer">LinkedIn</a>
@@ -150,13 +166,13 @@ function App() {
         @media (max-width: 768px) {
           .footer-content {
             flex-direction: column;
-            gap: 2rem;
+            gap: 1.5rem;
             text-align: center;
           }
         }
       `}</style>
     </div>
   );
-}
+};
 
 export default App;

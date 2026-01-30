@@ -1,109 +1,183 @@
 import React, { useEffect, useRef } from 'react';
 import gsap from 'gsap';
+import { useLanguage } from '../context/LanguageContext';
+import translations from '../translations.json';
 
 const ProjectCard = ({ project, index }) => {
   const cardRef = useRef(null);
-  const { name, description, html_url, language, stargazers_count } = project;
+  const { language } = useLanguage();
+  const t = translations[language].projects;
+
+  // Visual Lab Abstract Backgrounds
+  const backgrounds = [
+    'https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&q=80&w=1000', // Robotics
+    'https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=1000', // Circuits
+    'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=1000', // Cybertech
+    'https://images.unsplash.com/photo-1517077304055-6e89abbf09b0?auto=format&fit=crop&q=80&w=1000', // Blue light tech
+    'https://images.unsplash.com/photo-1531746790731-6c087fecd05a?auto=format&fit=crop&q=80&w=1000', // AI Face
+    'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=1000'  // Industrial Lab
+  ];
+
+  const bgImage = backgrounds[index % backgrounds.length];
 
   useEffect(() => {
-    const el = cardRef.current;
-
-    gsap.fromTo(el,
-      {
-        y: 100,
-        opacity: 0,
-        rotateX: 10
+    gsap.from(cardRef.current, {
+      scrollTrigger: {
+        trigger: cardRef.current,
+        start: "top bottom-=100",
+        toggleActions: "play none none reverse"
       },
-      {
-        y: 0,
-        opacity: 1,
-        rotateX: 0,
-        duration: 1,
-        ease: "power3.out",
-        scrollTrigger: {
-          trigger: el,
-          start: "top bottom-=100px",
-          toggleActions: "play none none none"
-        }
-      }
-    );
+      y: 50,
+      opacity: 0,
+      duration: 1,
+      ease: "power3.out"
+    });
   }, []);
 
   return (
-    <div className="project-card" ref={cardRef}>
-      <a href={html_url} target="_blank" rel="noreferrer" className="card-link">
+    <a
+      href={project.html_url}
+      target="_blank"
+      rel="noreferrer"
+      className="project-card"
+      ref={cardRef}
+    >
+      <div className="card-bg" style={{ backgroundImage: `url(${bgImage})` }}></div>
+      <div className="card-overlay"></div>
+
+      <div className="card-content">
         <div className="card-top">
-          <span className="repo-lang">{language || "Repo"}</span>
-          <span className="repo-stars">★ {stargazers_count}</span>
+          <span className="project-index">{(index + 1).toString().padStart(2, '0')}</span>
+          <h3 className="project-name">{project.name}</h3>
         </div>
 
-        <h3 className="repo-name">{name.replace(/-/g, ' ')}</h3>
-        <p className="repo-desc">{description || "Visual documentation coming soon."}</p>
+        <p className="project-desc">
+          {project.description || (language === 'es' ? "Sin descripción disponible." : "No description available.")}
+        </p>
 
-        <div className="card-arrow">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-            <path d="M7 17L17 7M17 7H7M17 7V17" strokeLinecap="round" strokeLinejoin="round" />
-          </svg>
+        <div className="card-bottom">
+          <div className="project-meta">
+            {project.language && <span className="meta-item">{project.language}</span>}
+            <span className="meta-item">★ {project.stargazers_count}</span>
+          </div>
+          <div className="card-link">
+            {t.view_repo}
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <path d="M7 17L17 7M17 7H7M17 7V17" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
+          </div>
         </div>
-      </a>
+      </div>
 
       <style jsx>{`
         .project-card {
-          border-bottom: 1px solid var(--glass-border);
-          padding: 3rem 0;
-          transition: border-color 0.3s ease;
           position: relative;
-        }
-        .project-card:hover {
-          border-color: var(--text-main);
-        }
-        .card-link {
           display: block;
+          height: 350px;
+          border-radius: 12px;
+          overflow: hidden;
           text-decoration: none;
-          color: inherit;
+          color: white;
+          background: #111;
+          border: 1px solid var(--glass-border);
+          transition: border-color 0.3s ease;
         }
+        .project-card:hover { border-color: var(--accent); }
+
+        .card-bg {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background-size: cover;
+          background-position: center;
+          transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+          opacity: 0.4;
+        }
+        .project-card:hover .card-bg { transform: scale(1.05); opacity: 0.6; }
+
+        .card-overlay {
+          position: absolute;
+          inset: 0;
+          background: linear-gradient(to bottom, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.9) 100%);
+        }
+
+        .card-content {
+          position: relative;
+          z-index: 10;
+          height: 100%;
+          padding: 2rem;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+        }
+
         .card-top {
           display: flex;
-          justify-content: space-between;
-          font-size: 0.75rem;
-          color: var(--text-muted);
-          text-transform: uppercase;
-          letter-spacing: 0.1em;
-          margin-bottom: 1.5rem;
+          flex-direction: column;
+          gap: 0.5rem;
         }
-        .repo-name {
-          font-size: clamp(1.5rem, 3vw, 2.5rem);
-          margin-bottom: 1rem;
-          text-transform: uppercase;
-        }
-        .repo-desc {
-          font-size: 1rem;
-          color: var(--text-muted);
-          max-width: 600px;
-          line-height: 1.4;
-        }
-        .card-arrow {
-          position: absolute;
-          right: 0;
-          top: 50%;
-          transform: translateY(-50%);
-          width: 40px;
-          height: 40px;
-          color: var(--text-muted);
-          opacity: 0;
-          transition: all 0.3s ease;
-        }
-        .project-card:hover .card-arrow {
-          opacity: 1;
-          transform: translateY(-50%) translate(-10px, 10px);
+        .project-index {
+          font-family: 'Outfit', sans-serif;
+          font-size: 0.8rem;
           color: var(--accent);
+          font-weight: 700;
+          letter-spacing: 0.1em;
         }
-        @media (max-width: 768px) {
-          .repo-name { font-size: 1.8rem; }
-          .card-arrow { display: none; }
+        .project-name {
+          font-size: 1.8rem;
+          font-weight: 800;
+          margin: 0;
+          text-transform: uppercase;
+          letter-spacing: -0.02em;
+        }
+
+        .project-desc {
+          font-size: 0.9rem;
+          line-height: 1.6;
+          color: rgba(255,255,255,0.7);
+          display: -webkit-box;
+          -webkit-line-clamp: 3;
+          -webkit-box-orient: vertical;
+          overflow: hidden;
+        }
+
+        .card-bottom {
+          display: flex;
+          justify-content: space-between;
+          align-items: flex-end;
+        }
+        .project-meta {
+          display: flex;
+          gap: 1.5rem;
+          font-size: 0.75rem;
+          font-weight: 600;
+          text-transform: uppercase;
+          color: var(--text-muted);
+        }
+        .card-link {
+          display: flex;
+          align-items: center;
+          gap: 0.5rem;
+          font-size: 0.8rem;
+          font-weight: 700;
+          text-transform: uppercase;
+          color: var(--primary);
+        }
+        .card-link svg {
+          width: 18px;
+          height: 18px;
+          transition: transform 0.3s ease;
+        }
+        .project-card:hover .card-link svg { transform: translate(3px, -3px); }
+
+        @media (max-width: 480px) {
+          .project-card { height: 300px; }
+          .project-name { font-size: 1.5rem; }
         }
       `}</style>
-    </div>
+    </a>
   );
 };
 
