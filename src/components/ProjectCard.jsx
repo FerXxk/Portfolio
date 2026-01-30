@@ -218,6 +218,7 @@ const ProjectCard = ({ project, index }) => {
           </div>
 
           <div className="card-hint">
+            <span className="star-count">★ {project.stargazers_count}</span>
             <span className="plus-icon">+</span>
           </div>
         </div>
@@ -292,7 +293,17 @@ const ProjectCard = ({ project, index }) => {
 
           .card-hint {
             display: flex;
-            justify-content: flex-end;
+            justify-content: space-between;
+            align-items: center;
+          }
+          .star-count {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            background: rgba(255,255,255,0.05);
+            padding: 0.3rem 0.8rem;
+            border-radius: 100px;
+            border: 1px solid var(--glass-border);
           }
           .plus-icon {
             width: 40px;

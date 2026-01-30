@@ -118,10 +118,6 @@ const AppContent = () => {
       <footer className="lab-footer">
         <div className="container footer-content">
           <p className="copyright">© {new Date().getFullYear()} Fernando Román Hidalgo | {t.footer.rights}</p>
-          <div className="footer-links">
-            <a href="https://github.com/FerXxk" target="_blank" rel="noreferrer">GitHub</a>
-            <a href="https://linkedin.com/in/fernandoromhid" target="_blank" rel="noreferrer">LinkedIn</a>
-          </div>
         </div>
       </footer>
 
