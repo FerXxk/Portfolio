@@ -54,10 +54,6 @@ const Contact = () => {
     return (
         <section id="contact" className="contact section">
             <div className="container">
-                <h2 className="section-title">
-                    <span className="gradient-text">{t.title}</span>
-                </h2>
-
                 <p className="contact-intro">
                     {t.intro}
                 </p>

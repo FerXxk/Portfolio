@@ -82,7 +82,7 @@ const CustomCursor = () => {
           left: 0;
           border-radius: 50%;
           pointer-events: none;
-          z-index: 9999;
+          z-index: 100001;
           transform: translate(-50%, -50%);
         }
         .cursor-follower {
@@ -94,7 +94,7 @@ const CustomCursor = () => {
           left: 0;
           border-radius: 50%;
           pointer-events: none;
-          z-index: 9998;
+          z-index: 100000;
           transform: translate(-50%, -50%);
           transition: transform 0.1s ease-out;
         }

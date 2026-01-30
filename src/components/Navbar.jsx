@@ -26,8 +26,8 @@ const Navbar = () => {
         </a>
 
         <div className="nav-links">
-          <a href="#projects" className="nav-item">{t.projects}</a>
           <a href="#about-section" className="nav-item">{t.about}</a>
+          <a href="#projects" className="nav-item">{t.projects}</a>
           <a href="#contact-section" className="nav-item">{t.contact}</a>
           <a href="cv/cv_fernando_roman.pdf" target="_blank" className="nav-button">
             {t.cv_es}

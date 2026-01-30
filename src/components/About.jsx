@@ -9,10 +9,6 @@ const About = () => {
     return (
         <section id="about" className="about section">
             <div className="container">
-                <h2 className="section-title">
-                    <span className="gradient-text">{t.title}</span>
-                </h2>
-
                 <div className="about-content glass">
                     <p className="about-text" dangerouslySetInnerHTML={{ __html: t.p1.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>') }}></p>
                     <p className="about-text">{t.p2}</p>

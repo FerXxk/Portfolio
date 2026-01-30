@@ -78,9 +78,17 @@ const AppContent = () => {
       <main className="container">
         <Hero />
 
-        <section id="projects" className="projects-section">
+        <section id="about-section">
           <div className="section-header">
             <span className="section-number">01.</span>
+            <h2 className="section-title">{t.about.title}</h2>
+          </div>
+          <About />
+        </section>
+
+        <section id="projects" className="projects-section">
+          <div className="section-header">
+            <span className="section-number">02.</span>
             <h2 className="section-title">{t.projects.title}</h2>
           </div>
 
@@ -98,18 +106,12 @@ const AppContent = () => {
           )}
         </section>
 
-        <section id="about-section">
-          <div className="section-header">
-            <span className="section-number">02.</span>
-            <About />
-          </div>
-        </section>
-
         <section id="contact-section">
           <div className="section-header">
             <span className="section-number">03.</span>
-            <Contact />
+            <h2 className="section-title">{t.contact.title}</h2>
           </div>
+          <Contact />
         </section>
       </main>
 
