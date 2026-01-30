@@ -8,17 +8,33 @@ const ProjectCard = ({ project, index }) => {
   const { language } = useLanguage();
   const t = translations[language].projects;
 
-  // Visual Lab Abstract Backgrounds
+  // Dynamic image loading using import.meta.glob
+  const projectImages = import.meta.glob('../../assets/projects/*.{png,jpg,jpeg,svg}', { eager: true, import: 'default' });
+
+  // Helper to find image for project
+  const getProjectImage = (projectName) => {
+    // Normalize project name for matching (optional, but good for safety)
+    const normalizedName = projectName.toLowerCase();
+
+    // Find matching path in glob results
+    const imagePath = Object.keys(projectImages).find(path => {
+      const fileName = path.split('/').pop().split('.')[0].toLowerCase();
+      return fileName === normalizedName;
+    });
+
+    return imagePath ? projectImages[imagePath] : null;
+  };
+
+  const localImage = getProjectImage(project.name);
+
   const backgrounds = [
-    'https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&q=80&w=1000', // Robotics
-    'https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=1000', // Circuits
-    'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=1000', // Cybertech
-    'https://images.unsplash.com/photo-1517077304055-6e89abbf09b0?auto=format&fit=crop&q=80&w=1000', // Blue light tech
-    'https://images.unsplash.com/photo-1531746790731-6c087fecd05a?auto=format&fit=crop&q=80&w=1000', // AI Face
-    'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=1000'  // Industrial Lab
+    'https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&q=80&w=1000',
+    'https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=1000',
+    'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=1000'
   ];
 
-  const bgImage = backgrounds[index % backgrounds.length];
+  // Use local image if found, otherwise fallback
+  const bgImage = localImage || backgrounds[index % backgrounds.length];
 
   useEffect(() => {
     gsap.from(cardRef.current, {
@@ -42,7 +58,10 @@ const ProjectCard = ({ project, index }) => {
       className="project-card"
       ref={cardRef}
     >
-      <div className="card-bg" style={{ backgroundImage: `url(${bgImage})` }}></div>
+      <div
+        className="card-bg"
+        style={{ backgroundImage: `url(${bgImage})` }}
+      ></div>
       <div className="card-overlay"></div>
 
       <div className="card-content">
