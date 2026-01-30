@@ -30,12 +30,12 @@
         },
         "about": {
             "title": "Sobre Mí",
-            "p1": "Ingeniero con experiencia profesional en el desarrollo de soluciones tecnológicas, actualmente en activo y finalizando estudios de posgrado. Mi objetivo es consolidar un plan de carrera ambicioso, con especial interés en la **automatización** y el **software embebido**, manteniéndome abierto a participar en proyectos de diversa índole que supongan un reto técnico y profesional.",
-            "p2": "Me motiva formar parte de entornos dinámicos, innovadores y colaborativos, donde pueda continuar ampliando mis competencias y aportar valor real al equipo y a la organización mediante una mejora continua.",
+            "p1": "Apasionado por la intersección entre el hardware y el software inteligente. Como **Ingeniero de Robótica**, me especializo en dar vida a máquinas a través de **sistemas embebidos** y **automatización avanzada**. Mi enfoque combina la precisión técnica con una curiosidad insaciable por las tecnologías emergentes.",
+            "p2": "Actualmente desarrollo soluciones en el sector aeroespacial, aplicando IA y gemelos digitales para optimizar procesos complejos. Mi objetivo es continuar superando retos técnicos y aportar valor real mediante la innovación constante.",
             "stats": {
-                "age": "Años",
                 "experience": "Años de Experiencia",
-                "grade": "Nota Media"
+                "projects": "Proyectos",
+                "techs": "Tecnologías"
             }
         },
         "contact": {
@@ -83,12 +83,12 @@
         },
         "about": {
             "title": "About Me",
-            "p1": "Engineer with professional experience in developing technological solutions, currently active and finishing postgraduate studies. My goal is to consolidate an ambitious career plan, with special interest in **automation** and **embedded software**, staying open to participating in various projects that pose a technical and professional challenge.",
-            "p2": "I am motivated by being part of dynamic, innovative, and collaborative environments, where I can continue expanding my skills and providing real value to the team and organization through continuous improvement.",
+            "p1": "Passionate about the intersection of hardware and intelligent software. As a **Robotics Engineer**, I specialize in bringing machines to life through **embedded systems** and **advanced automation**. My approach combines technical precision with an insatiable curiosity for emerging technologies.",
+            "p2": "Currently developing solutions in the aerospace sector, applying AI and digital twins to optimize complex processes. My goal is to keep pushing technical boundaries and providing real value through constant innovation.",
             "stats": {
-                "age": "Years Old",
                 "experience": "Years of Experience",
-                "grade": "GPA"
+                "projects": "Projects",
+                "techs": "Technologies"
             }
         },
         "contact": {

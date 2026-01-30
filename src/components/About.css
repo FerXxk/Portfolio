@@ -16,10 +16,11 @@
 }
 
 .about-text {
-    font-size: 1.125rem;
+    font-size: 1.25rem;
     line-height: 1.8;
     color: var(--color-text-secondary);
     margin-bottom: var(--spacing-lg);
+    font-weight: 300;
 }
 
 .about-text strong {

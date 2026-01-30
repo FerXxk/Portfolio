@@ -109,7 +109,7 @@ const AppContent = () => {
             <span className="section-number">01.</span>
             <h2 className="section-title">{t.about.title}</h2>
           </div>
-          <About />
+          <About projectCount={projects.length} />
         </section>
 
         <section id="projects" className="projects-section">
