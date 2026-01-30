@@ -1,4 +1,4 @@
-$PDFFontPath = "C:\Users\ferna\AppData\Local\Programs\MiKTeX\miktex\bin\x64\pdflatex.exe"
+$PDFFontPath = "C:\Users\ferna\AppData\Local\Programs\MiKTeX\miktex\bin\x64\xelatex.exe"
 $SourceDir = "c:\Users\ferna\Desktop\CV interactivo\cv"
 $PublicDir = "c:\Users\ferna\Desktop\CV interactivo\public\cv"
 $HistoryDir = Join-Path $SourceDir "historical_cvs"
@@ -23,9 +23,9 @@ foreach ($file in $Files) {
         Move-Item -Path $sourcePdf -Destination $archivePath -Force
     }
 
-    # Run pdflatex twice
+    # Run xelatex twice
     Push-Location $SourceDir
-    & $PDFFontPath -interaction=nonstopmode $file
+    & $PDFFontPath -interaction=nonstopmode -no-pdf $file
     & $PDFFontPath -interaction=nonstopmode $file
     Pop-Location
     
