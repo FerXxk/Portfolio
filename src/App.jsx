@@ -174,10 +174,11 @@ const AppContent = () => {
         }
         .footer-content {
           display: flex;
-          justify-content: space-between;
+          justify-content: center;
           align-items: center;
           color: var(--text-muted);
           font-size: 0.9rem;
+          text-align: center;
         }
         .footer-links {
           display: flex;
