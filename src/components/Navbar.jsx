@@ -5,7 +5,7 @@ import translations from '../translations.json';
 
 const Navbar = () => {
   const navRef = useRef(null);
-  const { language } = useLanguage();
+  const { language, setLanguage } = useLanguage();
   const t = translations[language].nav;
 
   useEffect(() => {
@@ -29,6 +29,23 @@ const Navbar = () => {
           <a href="#about-section" className="nav-item">{t.about}</a>
           <a href="#projects" className="nav-item">{t.projects}</a>
           <a href="#contact-section" className="nav-item">{t.contact}</a>
+
+          <div className="language-selector">
+            <button
+              className={`lang-btn ${language === 'es' ? 'active' : ''}`}
+              onClick={() => setLanguage('es')}
+            >
+              ES
+            </button>
+            <span className="lang-divider">/</span>
+            <button
+              className={`lang-btn ${language === 'en' ? 'active' : ''}`}
+              onClick={() => setLanguage('en')}
+            >
+              EN
+            </button>
+          </div>
+
           <a href="cv/cv_fernando_roman.pdf" target="_blank" className="nav-button">
             {t.cv_es}
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -99,6 +116,37 @@ const Navbar = () => {
         .nav-button svg {
           width: 14px;
           height: 14px;
+        }
+        .language-selector {
+          display: flex;
+          align-items: center;
+          gap: 0.2rem;
+          margin-right: 1rem;
+          background: rgba(255, 255, 255, 0.05);
+          padding: 0.3rem 0.6rem;
+          border-radius: 20px;
+          border: 1px solid var(--glass-border);
+        }
+        .lang-btn {
+          background: none;
+          border: none;
+          color: var(--text-muted);
+          font-size: 0.7rem;
+          font-weight: 700;
+          cursor: pointer;
+          transition: all 0.3s ease;
+          padding: 0.2rem 0.4rem;
+          border-radius: 4px;
+        }
+        .lang-btn.active {
+          color: var(--accent);
+        }
+        .lang-btn:hover:not(.active) {
+          color: var(--primary);
+        }
+        .lang-divider {
+          color: var(--glass-border);
+          font-size: 0.7rem;
         }
         @media (max-width: 768px) {
           .nav-item { display: none; }

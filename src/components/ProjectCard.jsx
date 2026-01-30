@@ -68,7 +68,9 @@ const ProjectCard = ({ project, index }) => {
           <h2>{project.name}</h2>
 
           <div className="modal-meta">
-            {project.language && <span className="tag">{project.language}</span>}
+            {project.topics && project.topics.length > 0 && project.topics.map((topic, i) => (
+              <span key={i} className="tag">{topic}</span>
+            ))}
             <span className="tag">★ {project.stargazers_count}</span>
           </div>
 
@@ -151,6 +153,7 @@ const ProjectCard = ({ project, index }) => {
         .modal-meta {
           display: flex;
           gap: 1rem;
+          flex-wrap: wrap;
           margin-bottom: 2rem;
         }
         .tag {
