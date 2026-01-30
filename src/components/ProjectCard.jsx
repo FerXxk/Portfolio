@@ -9,7 +9,7 @@ const ProjectCard = ({ project, index }) => {
   const t = translations[language].projects;
 
   // Dynamic image loading using import.meta.glob
-  const projectImages = import.meta.glob('../../assets/projects/*.{png,jpg,jpeg,svg}', { eager: true, import: 'default' });
+  const projectImages = import.meta.glob('../assets/projects/*.{png,jpg,jpeg,svg}', { eager: true, import: 'default' });
 
   // Helper to find image for project
   const getProjectImage = (projectName) => {
