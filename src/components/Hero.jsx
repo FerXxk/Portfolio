@@ -59,12 +59,12 @@ const Hero = () => {
       <div className="hero-content">
         <div className="title-wrapper overflow-hidden">
           <h1 className="hero-title" ref={titleRef}>
-            {splitText("Fernando Román")}
+            {splitText("Fernando")}
           </h1>
         </div>
         <div className="title-wrapper overflow-hidden">
           <h1 className="hero-title highlight">
-            {splitText("Hidalgo")}
+            {splitText("Román Hidalgo")}
           </h1>
         </div>
 

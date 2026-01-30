@@ -32,7 +32,7 @@
             "title": "Sobre Mí",
             "p1": "Apasionado por la intersección entre el hardware y el software inteligente. Como **Ingeniero de Robótica**, me especializo en dar vida a máquinas a través de **sistemas embebidos** y **automatización avanzada**. Mi enfoque combina la precisión técnica con una curiosidad insaciable por las tecnologías emergentes.",
             "p2": "Actualmente desarrollo soluciones en el sector aeroespacial, aplicando IA y gemelos digitales para optimizar procesos complejos. Mi objetivo es continuar superando retos técnicos y aportar valor real mediante la innovación constante.",
-            "tech_title": "Tecnologías y herramientas",
+            "tech_title": "Tecnologías y herramientas principales",
             "tech_categories": [
                 {
                     "name": "Sistemas Embebidos",
@@ -110,7 +110,7 @@
             "title": "About Me",
             "p1": "Passionate about the intersection of hardware and intelligent software. As a **Robotics Engineer**, I specialize in bringing machines to life through **embedded systems** and **advanced automation**. My approach combines technical precision with an insatiable curiosity for emerging technologies.",
             "p2": "Currently developing solutions in the aerospace sector, applying AI and digital twins to optimize complex processes. My goal is to keep pushing technical boundaries and providing real value through constant innovation.",
-            "tech_title": "Technologies & Tools",
+            "tech_title": "Main Technologies & Tools",
             "tech_categories": [
                 {
                     "name": "Embedded Systems",
