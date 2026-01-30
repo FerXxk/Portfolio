@@ -15,6 +15,12 @@
     padding: var(--spacing-xl);
 }
 
+@media (max-width: 768px) {
+    .about-content {
+        padding: var(--spacing-lg) 0;
+    }
+}
+
 .about-text {
     font-size: 1.25rem;
     line-height: 1.8;
