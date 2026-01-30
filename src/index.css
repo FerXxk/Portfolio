@@ -10,6 +10,20 @@
   --accent: #3b82f6;
   --glass-border: rgba(255, 255, 255, 0.05);
   --glass-bg: rgba(255, 255, 255, 0.02);
+
+  /* Missing variables used in components */
+  --color-text-primary: #ffffff;
+  --color-text-secondary: #a1a1aa;
+  --color-text-muted: #71717a;
+  --spacing-xs: 0.5rem;
+  --spacing-md: 1.5rem;
+  --spacing-lg: 2rem;
+  --spacing-xl: 4rem;
+  --spacing-2xl: 8rem;
+  --transition-base: 0.3s ease;
+  --radius-md: 12px;
+  --color-accent-gradient: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+  --shadow-glow: 0 0 20px rgba(59, 130, 246, 0.2);
 }
 
 * {

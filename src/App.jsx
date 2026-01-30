@@ -75,7 +75,7 @@ const AppContent = () => {
       <CustomCursor />
       <Navbar />
 
-      <main>
+      <main className="container">
         <Hero />
 
         <section id="about-section">
