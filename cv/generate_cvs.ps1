@@ -40,7 +40,7 @@ foreach ($file in $Files) {
 }
 
 Write-Host "Cleanup of intermediate files..." -ForegroundColor Yellow
-$Exts = @("*.aux", "*.log", "*.out", "*.gz")
+$Exts = @("*.aux", "*.log", "*.out", "*.gz", "*.xdv")
 foreach ($ext in $Exts) {
     Get-ChildItem -Path $SourceDir -Filter $ext | Remove-Item -Force -ErrorAction SilentlyContinue
 }

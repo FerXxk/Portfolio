@@ -1,152 +1,111 @@
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Modern CV - Fernando Román Hidalgo (English)
-% LaTeX Template (Refactored for Easy Editing)
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%!TEX TS-program = xelatex
+%!TEX encoding = UTF-8 Unicode
+% Awesome CV LaTeX Template associated for the English version
+%
+% This template has been downloaded from:
+% https://github.com/posquit0/Awesome-CV
+%
+% Author:
+% Claud D. Park <posquit0.bj@gmail.com>
+% http://www.posquit0.com
+%
+% Template license:
+% CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0/)
+%
 
-\documentclass[11pt,a4paper,sans]{moderncv}
+%-------------------------------------------------------------------------------
+% CONFIGURATIONS
+%-------------------------------------------------------------------------------
+% A4 paper size by default, use 'letterpaper' for US letter
+\documentclass[11pt, a4paper]{awesome-cv}
 
-% ModernCV themes
-\moderncvstyle{banking}
-\moderncvcolor{blue}
+% Configure page margins with geometry
+\geometry{left=1.4cm, top=.8cm, right=1.4cm, bottom=1.8cm, footskip=.5cm}
 
-% Character encoding
-\usepackage[utf8]{inputenc}
-\usepackage{lmodern} % Ensures scalable fonts for microtype
+% Specify the location of the included fonts
+\fontdir[fonts/]
 
-% Adjust page margins
-\usepackage[scale=0.85]{geometry}
+% Color for highlights
+% Awesome Colors: awesome-emerald, awesome-skyblue, awesome-red, awesome-pink, awesome-orange
+%                 awesome-nephritis, awesome-concrete, awesome-darknight
+\colorlet{awesome}{awesome-red}
+% Uncomment if you would like to specify your own color
+% \definecolor{awesome}{HTML}{CA63A8}
 
-% --- VARIABLES (EDIT HERE) ---
-\newcommand{\cvname}{Fernando}
-\newcommand{\cvsurname}{Román Hidalgo}
-\newcommand{\cvtitle}{Robotics and Automation Engineer}
-\newcommand{\cvage}{22 years old}
-\newcommand{\cvaddresscity}{41909, Salteras}
-\newcommand{\cvaddressprovince}{Seville}
-\newcommand{\cvaddresscountry}{Spain}
-\newcommand{\cvphone}{+34 611 467 316}
-\newcommand{\cvemail}{ferromhid@gmail.com}
-\newcommand{\cvlinkedin}{fernandoromhid}
-\newcommand{\cvgithub}{FerXxk}
-% -----------------------------
+% Colors for text
+% Uncomment if you would like to specify your own color
+% \definecolor{darktext}{HTML}{414141}
+% \definecolor{text}{HTML}{333333}
+% \definecolor{graytext}{HTML}{5D5D5D}
+% \definecolor{lighttext}{HTML}{999999}
 
-% Personal data
-\name{\cvname{}}{\cvsurname{}}
-\title{\cvtitle{}}
-\address{\cvaddresscity{}}{\cvaddressprovince{}}{\cvaddresscountry{}}
-\phone[mobile]{\cvphone{}}
-\email{\cvemail}
-\social[linkedin]{\cvlinkedin}
-\social[github]{\cvgithub}
-\extrainfo{\cvage}
-\photo[64pt][0.4pt]{images/foto_cv} % The photo file is in the images directory
+% Set false if you don't want to highlight section with awesome color
+\setbool{acvSectionColorHighlight}{true}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% If you would like to change the social information separator from a pipe (|) to something else
+\renewcommand{\acvHeaderSocialSep}{\quad\textbar\quad}
+
+
+%-------------------------------------------------------------------------------
+%	PERSONAL INFORMATION
+%	Comment any of the lines below if they are not required
+%-------------------------------------------------------------------------------
+% Available options: circle|rectangle,edge/noedge,left/right
+\photo[rectangle,edge,right]{images/foto_cv.jpg}
+\name{Fernando}{Román Hidalgo}
+\position{Robotics and Automation Engineer}
+\address{41909, Salteras, Seville, Spain}
+
+\mobile{+34 611 467 316}
+\email{ferromhid@gmail.com}
+%\homepage{www.posquit0.com}
+\github{FerXxk}
+\linkedin{fernandoromhid}
+% \gitlab{gitlab-id}
+% \stackoverflow{SO-id}{SO-name}
+% \twitter{@twit}
+% \skype{skype-id}
+% \reddit{reddit-id}
+% \medium{madium-id}
+% \googlescholar{googlescholar-id}{name_to_display}
+% \firstname and \lastname will be used
+% \googlescholar{googlescholar-id}{}
+% \extrainfo{extra informations}
+
+% \quote{``Be the change that you want to see in the world."}
+
+
+%-------------------------------------------------------------------------------
 \begin{document}
 
-\makecvtitle
+% Print the header with above personal informations
+% Give optional argument to change alignment(C: center, L: left, R: right)
+\makecvheader[C]
 
-%----------------------------------------------------------------------------------------
-% ABOUT ME
-%----------------------------------------------------------------------------------------
+% Print the footer with 3 arguments(<left>, <center>, <right>)
+% Leave any of these blank if they are not needed
+\makecvfooter
+  {\today}
+  {Fernando Román Hidalgo~~~·~~~CV}
+  {\thepage}
 
-\section{About Me}
-\cvitem{}{Engineer with professional experience in developing technological solutions, currently active and completing postgraduate studies. My objective is to consolidate an ambitious career plan, with a special interest in automation and embedded software, while remaining open to participating in various projects that pose technical and professional challenges. I am motivated to be part of dynamic, innovative, and collaborative environments where I can continue expanding my competencies and provide real value to the team and organization through continuous improvement.}
 
-%----------------------------------------------------------------------------------------
-% EXPERIENCE
-%----------------------------------------------------------------------------------------
+%-------------------------------------------------------------------------------
+%	CV/RESUME CONTENT
+%	Each section is imported separately
+%-------------------------------------------------------------------------------
+\input{sections/summary_en.tex}
+\input{sections/experience_en.tex}
+\input{sections/education_en.tex}
+\input{sections/skills_en.tex}
 
-\section{Experience}
+\newpage
+\input{sections/soft_skills_en.tex}
+\input{sections/languages_en.tex}
 
-\cventry{April 2025 -- Present}{Software Engineer}{Airtificial Aerospace \& Defense}{}{}{
-\begin{itemize}
-\item Project management for the development of a process automation application for a major aerospace company.
-\item Extensive experience in the aerospace sector with solid technical knowledge.
-\item Direct customer interaction for requirements definition and specification.
-\item Fullstack development, applying coding best practices, efficiency, and organization.
-\item Development of a digital twin for a composite material production plant, oriented towards simulation, analysis, and optimization of complex industrial processes.
-\item Design and implementation of the plant's production digital twin.
-\item Software integration and deployment using Docker containers.
-\item Acquisition and interpretation of data from industrial sensors.
-\item Automation and orchestration of tasks and workflows with Apache Airflow.
-\item Development of AI models for early failure detection in production.
-\item Implementation of a production scheduling algorithm based on CP-SAT.
-\end{itemize}}
+\input{sections/honors_en.tex}
+\input{sections/projects_en.tex}
+%\input{sections/projects.tex} % Optional if you want projects in PDF too
 
-%----------------------------------------------------------------------------------------
-% EDUCATION
-%----------------------------------------------------------------------------------------
-
-\section{Education}
-
-\cventry{2025 -- 2026}{Master's Degree in Electronic Engineering, Robotics and Automation}{University of Seville}{Seville}{}{}
-
-\cventry{2021 -- 2025}{Bachelor's Degree in Electronic Engineering, Robotics and Mechatronics}{University of Seville}{Seville}{GPA: 7.5/10}{}
-
-\cventry{2019 -- 2021}{Technological Baccalaureate}{IES Heliche}{}{Honors distinction}{}
-
-\cventry{2025}{Advanced Python Course}{Idexa}{}{}{}
-
-%----------------------------------------------------------------------------------------
-% TECHNICAL SKILLS
-%----------------------------------------------------------------------------------------
-
-\section{Technical Skills}
-
-\cvitem{Programming}{C, C++, Python, MATLAB, Simulink, ROS, JavaScript, VBA, HTML, CSS, SQL}
-
-\cvitem{Electronics}{Digital/Analog electronics, microcontrollers (MSP430, ESP32, Arduino), FPGA, automation and control}
-
-\cvitem{Simulation}{System modeling and simulation, PID control design, embedded systems integration}
-
-\cvitem{DevOps}{Docker, Linux, version control with Git (merges, pull requests)}
-
-\cvitem{Networking}{TCP/IP, MQTT, CAN bus}
-
-\cvitem{3D Design}{Fusion 360, FreeCAD}
-
-\cvitem{Productivity}{Technical documentation, Google Workspace, project management}
-
-%----------------------------------------------------------------------------------------
-% SOFT SKILLS
-%----------------------------------------------------------------------------------------
-
-\section{Soft Skills}
-
-\cvlistitem{Technical leadership and multidisciplinary teamwork}
-\cvlistitem{Effective communication with technical and non-technical profiles}
-\cvlistitem{Problem solving and analytical thinking}
-\cvlistitem{Organization, adaptability, and fast learning}
-\cvlistitem{Creativity and innovation applied to technical solutions}
-
-%----------------------------------------------------------------------------------------
-% LANGUAGES
-%----------------------------------------------------------------------------------------
-
-\section{Languages}
-
-\cvitemwithcomment{Spanish}{Native}{}
-\cvitemwithcomment{English}{C1 Cambridge}{}
-\cvitemwithcomment{French}{Basic competence}{}
-
-%----------------------------------------------------------------------------------------
-% ACHIEVEMENTS
-%----------------------------------------------------------------------------------------
-
-\section{Achievements}
-
-\cvitem{2024}{Winner of the National Competitive Robotics League (LNRC) - Minisumo Category}
-
-%----------------------------------------------------------------------------------------
-% PROJECTS
-%----------------------------------------------------------------------------------------
-
-\section{Projects}
-
-\cvitem{GitHub}{\url{https://github.com/FerXxk}}
-\cvitem{}{Check my GitHub projects for examples of my work in robotics, automation, embedded systems, and software development.}
-
-%----------------------------------------------------------------------------------------
-
+%-------------------------------------------------------------------------------
 \end{document}
