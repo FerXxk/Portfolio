@@ -34,15 +34,20 @@
 }
 
 .contact-icon {
-    width: 56px;
-    height: 56px;
+    width: 40px;
+    height: 40px;
     display: flex;
     align-items: center;
     justify-content: center;
     border-radius: var(--radius-md);
-    background: var(--color-accent-gradient);
-    color: var(--color-text-primary);
+    background: #000;
+    color: #fff;
     flex-shrink: 0;
+}
+
+.contact-icon svg {
+    width: 20px;
+    height: 20px;
 }
 
 .contact-info {
