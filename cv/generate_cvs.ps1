@@ -25,8 +25,14 @@ foreach ($file in $Files) {
 
     # Run xelatex twice
     Push-Location $SourceDir
+    # Add lib directory to TEXINPUTS to assume cls/sty files are found
+    $env:TEXINPUTS = ".;$SourceDir\lib\;" 
+    
     & $PDFFontPath -interaction=nonstopmode -no-pdf $file
     & $PDFFontPath -interaction=nonstopmode $file
+    
+    # Clean up env var just in case
+    $env:TEXINPUTS = ""
     Pop-Location
     
     $destPdf = Join-Path $PublicDir $pdfName

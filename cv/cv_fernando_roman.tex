@@ -17,7 +17,9 @@
 % CONFIGURATIONS
 %-------------------------------------------------------------------------------
 % A4 paper size by default, use 'letterpaper' for US letter
-\documentclass[11pt, a4paper]{awesome-cv}
+\documentclass[11pt, a4paper]{lib/awesome-cv}
+\usepackage[es-ES]{datetime2} % Force Spanish date format
+\renewcommand{\today}{\ifcase \month \or Enero\or Febrero\or Marzo\or Abril\or Mayo\or Junio\or Julio\or Agosto\or Septiembre\or Octubre\or Noviembre\or Diciembre\fi \space \number \year}
 
 % Configure page margins with geometry
 \geometry{left=1.4cm, top=.8cm, right=1.4cm, bottom=1.8cm, footskip=.5cm}
@@ -96,15 +98,18 @@
 %-------------------------------------------------------------------------------
 \input{sections/summary.tex}
 \input{sections/experience.tex}
+\input{sections/projects.tex}
+\input{sections/honors.tex}
+
 \input{sections/education.tex}
-\input{sections/skills.tex}
 
 \newpage
+
+\input{sections/certifications.tex}
+\input{sections/skills.tex}
+
 \input{sections/soft_skills.tex}
 \input{sections/languages.tex}
-
-\input{sections/honors.tex}
-\input{sections/projects.tex}
 %\input{sections/projects.tex} % Optional if you want projects in PDF too
 
 %-------------------------------------------------------------------------------
