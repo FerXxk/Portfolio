@@ -57,8 +57,30 @@ const AppContent = () => {
           // Filter excluded repos
           const filteredData = data.filter(repo => !config.excludedRepos.includes(repo.name));
 
-          // Sort by stars descending
-          const sortedData = filteredData.sort((a, b) => b.stargazers_count - a.stargazers_count);
+          // Sort by config settings
+          const sortedData = filteredData.sort((a, b) => {
+            const field = config.repoSorting.field;
+            const direction = config.repoSorting.direction === 'asc' ? 1 : -1;
+
+            let valA, valB;
+            if (field === 'stars') {
+              valA = a.stargazers_count;
+              valB = b.stargazers_count;
+            } else if (field === 'updated') {
+              valA = new Date(a.pushed_at);
+              valB = new Date(b.pushed_at);
+            } else if (field === 'created') {
+              valA = new Date(a.created_at);
+              valB = new Date(b.created_at);
+            } else if (field === 'name') {
+              valA = a.name.toLowerCase();
+              valB = b.name.toLowerCase();
+            }
+
+            if (valA < valB) return -1 * direction;
+            if (valA > valB) return 1 * direction;
+            return 0;
+          });
           setProjects(sortedData);
         }
         setLoading(false);

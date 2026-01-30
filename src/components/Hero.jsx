@@ -1,10 +1,14 @@
 import React, { useEffect, useRef } from 'react';
 import gsap from 'gsap';
+import { useLanguage } from '../context/LanguageContext';
+import translations from '../translations.json';
 
 const Hero = () => {
   const containerRef = useRef(null);
   const titleRef = useRef(null);
   const subtitleRef = useRef(null);
+  const { language } = useLanguage();
+  const t = translations[language];
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -65,20 +69,20 @@ const Hero = () => {
         </div>
 
         <p className="hero-subtitle" ref={subtitleRef}>
-          Ingeniero de Robótica <span>/</span> Especialista en Automatización
+          {t.hero.title} <span>/</span> {t.hero.subtitle}
         </p>
 
         <div className="hero-footer">
           <div className="badges-grid">
-            <span className="hero-badge">Embedded Solutions</span>
-            <span className="hero-badge">Industrial AI</span>
-            <span className="hero-badge">Control Engineering</span>
+            {t.hero.badges.map((badge, index) => (
+              <span key={index} className="hero-badge">{badge}</span>
+            ))}
           </div>
           <div className="scroll-indicator">
             <div className="mouse">
               <div className="wheel"></div>
             </div>
-            <span>Scroll for projects</span>
+            <span>{t.hero.scroll}</span>
           </div>
         </div>
       </div>

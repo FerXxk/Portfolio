@@ -1,7 +1,7 @@
 {
     "es": {
         "nav": {
-            "projects": "Proyectos",
+            "projects": "Mis Proyectos",
             "about": "Sobre Mí",
             "contact": "Contacto",
             "cv_es": "CV ES",
@@ -11,10 +11,16 @@
             "greeting": "Hola, soy",
             "title": "Ingeniero de Robótica",
             "subtitle": "Especializado en automatización, software embebido y sistemas inteligentes.",
-            "badge": "Disponible para proyectos"
+            "badge": "Disponible para proyectos",
+            "scroll": "Scroll para ver mis proyectos",
+            "badges": [
+                "Soluciones Embebidas",
+                "IA Industrial",
+                "Ingeniería de Control"
+            ]
         },
         "projects": {
-            "title": "Proyectos Seleccionados",
+            "title": "Mis Proyectos",
             "view_repo": "Ver Repositorio",
             "loading": "Cargando laboratorios...",
             "no_projects": "No se encontraron proyectos."
@@ -48,7 +54,7 @@
     },
     "en": {
         "nav": {
-            "projects": "Projects",
+            "projects": "My Projects",
             "about": "About",
             "contact": "Contact",
             "cv_es": "CV ES",
@@ -58,10 +64,16 @@
             "greeting": "Hi, I'm",
             "title": "Robotics Engineer",
             "subtitle": "Specializing in automation, embedded software, and intelligent systems.",
-            "badge": "Available for projects"
+            "badge": "Available for projects",
+            "scroll": "Scroll for my projects",
+            "badges": [
+                "Embedded Solutions",
+                "Industrial AI",
+                "Control Engineering"
+            ]
         },
         "projects": {
-            "title": "Selected Projects",
+            "title": "My Projects",
             "view_repo": "View Repository",
             "loading": "Loading labs...",
             "no_projects": "No projects found."

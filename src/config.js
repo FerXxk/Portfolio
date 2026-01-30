@@ -6,9 +6,11 @@ const config = {
         'Portfolio'
     ],
 
-    // You can add more configuration here in the future
-    // e.g., maxProjects: 6,
-    // featuredRepos: ['actual-iot-project', 'robotics-controller']
+    // Sorting configuration for the repositories
+    repoSorting: {
+        field: 'stars', // Options: 'stars', 'updated', 'created', 'name'
+        direction: 'desc' // Options: 'asc', 'desc'
+    }
 };
 
 export default config;
