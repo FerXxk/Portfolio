@@ -1,89 +1,162 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
+import Lenis from 'lenis';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import ProjectGrid from './components/ProjectGrid';
+import CustomCursor from './components/CustomCursor';
+
+gsap.registerPlugin(ScrollTrigger);
 
 function App() {
-    const [projects, setProjects] = useState([]);
-    const [loading, setLoading] = useState(true);
+  const [projects, setProjects] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const mainRef = useRef(null);
 
-    useEffect(() => {
-        fetch('https://api.github.com/users/FerXxk/repos?sort=updated&per_page=12')
-            .then(res => res.json())
-            .then(data => {
-                if (Array.isArray(data)) {
-                    setProjects(data);
-                }
-                setLoading(false);
-            })
-            .catch(err => {
-                console.error("Error fetching repos:", err);
-                setLoading(false);
-            });
-    }, []);
+  useEffect(() => {
+    // Initialize Lenis for smooth scrolling
+    const lenis = new Lenis({
+      duration: 1.2,
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      smoothWheel: true,
+    });
 
-    return (
-        <div className="app-container">
-            <div className="bg-glow"></div>
-            <Navbar />
-            <main className="container">
-                <Hero />
-                <section id="projects">
-                    <h2 className="section-title">Proyectos Destacados</h2>
-                    {loading ? (
-                        <div className="loading">Cargando proyectos de GitHub...</div>
-                    ) : (
-                        <ProjectGrid projects={projects} />
-                    )}
-                </section>
-            </main>
-            <footer className="footer glass">
-                <p>&copy; {new Date().getFullYear()} Fernando Román Hidalgo. Hecho con React & ❤️</p>
-            </footer>
+    function raf(time) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+    requestAnimationFrame(raf);
 
-            <style jsx>{`
-        .app-container {
-          position: relative;
-          z-index: 1;
+    // Sync ScrollTrigger with Lenis
+    lenis.on('scroll', ScrollTrigger.update);
+    gsap.ticker.add((time) => {
+      lenis.raf(time * 1000);
+    });
+
+    // Fetch GitHub Repos
+    fetch('https://api.github.com/users/FerXxk/repos?sort=updated&per_page=12')
+      .then(res => res.json())
+      .then(data => {
+        if (Array.isArray(data)) {
+          setProjects(data);
         }
-        .bg-glow {
-          position: fixed;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-          background: radial-gradient(circle at 50% 50%, rgba(59, 130, 246, 0.1) 0%, transparent 50%);
-          z-index: -1;
-          pointer-events: none;
+        setLoading(false);
+      })
+      .catch(err => {
+        console.error("Error fetching repos:", err);
+        setLoading(false);
+      });
+
+    return () => {
+      lenis.destroy();
+      gsap.ticker.remove(raf);
+    };
+  }, []);
+
+  return (
+    <div className="visual-lab" ref={mainRef}>
+      <CustomCursor />
+      <Navbar />
+
+      <main className="container">
+        <Hero />
+
+        <section id="projects" className="projects-section">
+          <div className="section-header">
+            <span className="section-number">01.</span>
+            <h2 className="section-title">Selected Works</h2>
+          </div>
+
+          {loading ? (
+            <div className="loading-state">
+              <div className="spinner"></div>
+              <p>Fetching from GitHub...</p>
+            </div>
+          ) : (
+            <ProjectGrid projects={projects} />
+          )}
+        </section>
+      </main>
+
+      <footer className="lab-footer">
+        <div className="container footer-content">
+          <p className="copyright">© {new Date().getFullYear()} Fernando Román Hidalgo</p>
+          <div className="footer-links">
+            <a href="https://github.com/FerXxk" target="_blank" rel="noreferrer">GitHub</a>
+            <a href="https://linkedin.com/in/fernandoromhid" target="_blank" rel="noreferrer">LinkedIn</a>
+          </div>
+        </div>
+      </footer>
+
+      <style jsx>{`
+        .visual-lab {
+          background-color: var(--bg-dark);
+          min-height: 100vh;
+          position: relative;
+        }
+        .section-header {
+          display: flex;
+          align-items: baseline;
+          gap: 1rem;
+          margin-bottom: 4rem;
+        }
+        .section-number {
+          font-family: 'Outfit', sans-serif;
+          font-size: 1.2rem;
+          color: var(--accent);
+          font-weight: 600;
         }
         .section-title {
-          font-size: 2.5rem;
-          margin-bottom: 3rem;
-          text-align: center;
-          background: linear-gradient(to right, #fff, #94a3b8);
-          -webkit-background-clip: text;
-          -webkit-text-fill-color: transparent;
+          font-size: clamp(2rem, 5vw, 4rem);
+          text-transform: uppercase;
         }
-        .loading {
-          text-align: center;
-          padding: 4rem;
-          font-size: 1.2rem;
+        .loading-state {
+          height: 40vh;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          gap: 1.5rem;
           color: var(--text-muted);
         }
-        .footer {
-          padding: 2rem;
-          text-align: center;
-          margin-top: auto;
-          border-radius: 0;
-          border-left: none;
-          border-right: none;
-          border-bottom: none;
+        .spinner {
+          width: 40px;
+          height: 40px;
+          border: 2px solid var(--glass-border);
+          border-top-color: var(--accent);
+          border-radius: 50%;
+          animation: spin 1s linear infinite;
+        }
+        @keyframes spin {
+          to { transform: rotate(360deg); }
+        }
+        .lab-footer {
+          padding: 4rem 0;
+          border-top: 1px solid var(--glass-border);
+          margin-top: 4rem;
+        }
+        .footer-content {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
           color: var(--text-muted);
           font-size: 0.9rem;
         }
+        .footer-links {
+          display: flex;
+          gap: 2rem;
+        }
+        @media (max-width: 768px) {
+          .footer-content {
+            flex-direction: column;
+            gap: 2rem;
+            text-align: center;
+          }
+        }
       `}</style>
-        </div>
-    );
+    </div>
+  );
 }
 
 export default App;

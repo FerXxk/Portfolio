@@ -1,102 +1,173 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
+import gsap from 'gsap';
 
 const Hero = () => {
-    return (
-        <section id="home" className="hero animate-fade-in">
-            <div className="hero-content">
-                <h1 className="hero-title">
-                    Fernando Román <span className="highlight">Hidalgo</span>
-                </h1>
-                <p className="hero-subtitle">
-                    Ingeniero de Robótica | Especialista en Automatización y Software Embebido
-                </p>
-                <div className="hero-badges">
-                    <span className="badge glass">C++</span>
-                    <span className="badge glass">Python</span>
-                    <span className="badge glass">ROS</span>
-                    <span className="badge glass">Docker</span>
-                    <span className="badge glass">IA</span>
-                </div>
-                <div className="hero-cta">
-                    <a href="#projects" className="btn-primary">Ver Proyectos</a>
-                    <a href="https://github.com/FerXxk" target="_blank" rel="noopener noreferrer" className="btn-secondary glass">GitHub Profile</a>
-                </div>
-            </div>
+  const containerRef = useRef(null);
+  const titleRef = useRef(null);
+  const subtitleRef = useRef(null);
 
-            <style jsx>{`
-        .hero {
-          min-height: 80vh;
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      // Entrance animation for title
+      gsap.from(".char", {
+        y: 100,
+        opacity: 0,
+        rotateX: -90,
+        stagger: 0.02,
+        duration: 1.2,
+        ease: "power4.out",
+        delay: 0.5
+      });
+
+      // Reveal subtitle
+      gsap.from(subtitleRef.current, {
+        y: 30,
+        opacity: 0,
+        duration: 1,
+        ease: "power3.out",
+        delay: 1.2
+      });
+
+      // Badges animation
+      gsap.from(".hero-badge", {
+        scale: 0.8,
+        opacity: 0,
+        stagger: 0.1,
+        duration: 0.8,
+        ease: "back.out(1.7)",
+        delay: 1.5
+      });
+    }, containerRef);
+
+    return () => ctx.revert();
+  }, []);
+
+  const splitText = (text) => {
+    return text.split("").map((char, i) => (
+      <span key={i} className="char" style={{ display: 'inline-block' }}>
+        {char === " " ? "\u00A0" : char}
+      </span>
+    ));
+  };
+
+  return (
+    <section id="home" className="hero-section" ref={containerRef}>
+      <div className="hero-content">
+        <div className="title-wrapper overflow-hidden">
+          <h1 className="hero-title" ref={titleRef}>
+            {splitText("Fernando Román")}
+          </h1>
+        </div>
+        <div className="title-wrapper overflow-hidden">
+          <h1 className="hero-title highlight">
+            {splitText("Hidalgo")}
+          </h1>
+        </div>
+
+        <p className="hero-subtitle" ref={subtitleRef}>
+          Ingeniero de Robótica <span>/</span> Especialista en Automatización
+        </p>
+
+        <div className="hero-footer">
+          <div className="badges-grid">
+            <span className="hero-badge">Embedded Solutions</span>
+            <span className="hero-badge">Industrial AI</span>
+            <span className="hero-badge">Control Engineering</span>
+          </div>
+          <div className="scroll-indicator">
+            <div className="mouse">
+              <div className="wheel"></div>
+            </div>
+            <span>Scroll for projects</span>
+          </div>
+        </div>
+      </div>
+
+      <style jsx>{`
+        .hero-section {
+          min-height: 90vh;
           display: flex;
           align-items: center;
-          justify-content: center;
-          text-align: center;
-        }
-        .hero-content {
-          max-width: 800px;
-        }
-        .hero-title {
-          font-size: 4.5rem;
-          margin-bottom: 1.5rem;
-          line-height: 1.1;
-        }
-        .highlight {
-          color: var(--primary);
           position: relative;
         }
+        .hero-title {
+          font-size: clamp(3rem, 10vw, 8rem);
+          line-height: 0.9;
+          text-transform: uppercase;
+        }
+        .highlight {
+          color: transparent;
+          -webkit-text-stroke: 1px var(--text-muted);
+          opacity: 0.5;
+        }
         .hero-subtitle {
-          font-size: 1.5rem;
+          margin-top: 2rem;
+          font-size: clamp(1rem, 2vw, 1.5rem);
           color: var(--text-muted);
-          margin-bottom: 2.5rem;
+          max-width: 600px;
           font-weight: 300;
         }
-        .hero-badges {
-          display: flex;
-          justify-content: center;
-          gap: 0.8rem;
-          margin-bottom: 3rem;
-          flex-wrap: wrap;
-        }
-        .badge {
-          padding: 0.4rem 1rem;
-          font-size: 0.85rem;
-          font-weight: 600;
+        .hero-subtitle span {
           color: var(--accent);
-          border-radius: 99px;
+          padding: 0 0.5rem;
         }
-        .hero-cta {
+        .hero-footer {
+          margin-top: 6rem;
           display: flex;
-          gap: 1.5rem;
+          justify-content: space-between;
+          align-items: flex-end;
+          width: 100%;
+        }
+        .badges-grid {
+          display: flex;
+          flex-direction: column;
+          gap: 0.5rem;
+        }
+        .hero-badge {
+          font-size: 0.75rem;
+          text-transform: uppercase;
+          letter-spacing: 0.1em;
+          color: var(--text-muted);
+          border-bottom: 1px solid var(--glass-border);
+          padding-bottom: 0.2rem;
+          width: fit-content;
+        }
+        .scroll-indicator {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 1rem;
+          color: var(--text-muted);
+          font-size: 0.7rem;
+          text-transform: uppercase;
+          letter-spacing: 0.1em;
+        }
+        .mouse {
+          width: 20px;
+          height: 35px;
+          border: 1px solid var(--text-muted);
+          border-radius: 20px;
+          display: flex;
           justify-content: center;
+          padding-top: 5px;
         }
-        .btn-primary {
-          background: var(--primary);
-          color: white;
-          padding: 1rem 2.5rem;
-          border-radius: 12px;
-          font-weight: 600;
-          box-shadow: 0 10px 20px rgba(59, 130, 246, 0.2);
+        .wheel {
+          width: 2px;
+          height: 6px;
+          background: var(--accent);
+          border-radius: 2px;
+          animation: mouse-scroll 1.5s infinite;
         }
-        .btn-primary:hover {
-          transform: translateY(-3px);
-          background: var(--primary-hover);
+        @keyframes mouse-scroll {
+          0% { transform: translateY(0); opacity: 1; }
+          100% { transform: translateY(15px); opacity: 0; }
         }
-        .btn-secondary {
-          padding: 1rem 2.5rem;
-          border-radius: 12px;
-          font-weight: 600;
-        }
-        .btn-secondary:hover {
-          background: rgba(255, 255, 255, 0.1);
-          transform: translateY(-3px);
-        }
-
         @media (max-width: 768px) {
-          .hero-title { font-size: 3rem; }
-          .hero-subtitle { font-size: 1.2rem; }
+          .hero-footer { flex-direction: column; align-items: flex-start; gap: 4rem; }
         }
       `}</style>
-        </section>
-    );
+    </section>
+  );
 };
 
 export default Hero;

@@ -1,72 +1,99 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
+import gsap from 'gsap';
 
 const Navbar = () => {
-    return (
-        <nav className="navbar glass">
-            <div className="nav-container">
-                <div className="logo">FR<span>.</span></div>
-                <div className="nav-links">
-                    <a href="#home">Inicio</a>
-                    <a href="#projects">Proyectos</a>
-                    <a href="/cv_fernando_roman.tex" className="cv-btn glass">Descargar CV</a>
-                </div>
-            </div>
+  const navRef = useRef(null);
 
-            <style jsx>{`
-        .navbar {
-          position: sticky;
-          top: 1rem;
-          margin: 0 1rem;
-          padding: 0.8rem 2rem;
+  useEffect(() => {
+    gsap.from(navRef.current, {
+      y: -100,
+      opacity: 0,
+      duration: 1,
+      ease: "power3.out",
+      delay: 0.2
+    });
+  }, []);
+
+  return (
+    <nav className="lab-nav" ref={navRef}>
+      <div className="container nav-container">
+        <a href="#home" className="nav-logo">
+          FERNANDO<span>.</span>RO
+        </a>
+
+        <div className="nav-links">
+          <a href="#projects" className="nav-item">Projects</a>
+          <a href="/cv/cv_fernando_roman.pdf" target="_blank" className="nav-button">
+            CV
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <path d="M12 5v14M5 12l7 7 7-7" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <style jsx>{`
+        .lab-nav {
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
           z-index: 100;
-          display: flex;
-          justify-content: center;
-          transition: all 0.3s ease;
+          padding: 2rem 0;
+          mix-blend-mode: difference;
         }
         .nav-container {
-          width: 100%;
-          max-width: 1000px;
           display: flex;
           justify-content: space-between;
           align-items: center;
         }
-        .logo {
-          font-size: 1.5rem;
+        .nav-logo {
+          font-family: 'Outfit', sans-serif;
           font-weight: 800;
+          font-size: 1.2rem;
+          letter-spacing: -0.02em;
         }
-        .logo span {
-          color: var(--primary);
+        .nav-logo span {
+          color: var(--accent);
         }
         .nav-links {
           display: flex;
-          gap: 2rem;
           align-items: center;
+          gap: 3rem;
         }
-        .nav-links a {
-          font-weight: 500;
+        .nav-item {
+          font-size: 0.8rem;
+          text-transform: uppercase;
+          letter-spacing: 0.1em;
           color: var(--text-muted);
         }
-        .nav-links a:hover {
-          color: var(--text-main);
+        .nav-button {
+          display: flex;
+          align-items: center;
+          gap: 0.5rem;
+          font-size: 0.8rem;
+          text-transform: uppercase;
+          letter-spacing: 0.1em;
+          border: 1px solid var(--glass-border);
+          padding: 0.5rem 1rem;
+          border-radius: 20px;
+          transition: all 0.3s ease;
         }
-        .cv-btn {
-          padding: 0.5rem 1.2rem;
-          font-size: 0.9rem;
+        .nav-button:hover {
           background: var(--primary);
-          color: white !important;
-          border-color: transparent;
+          color: var(--bg-dark);
+          border-color: var(--primary);
         }
-        .cv-btn:hover {
-          transform: translateY(-2px);
-          box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+        .nav-button svg {
+          width: 14px;
+          height: 14px;
         }
-
         @media (max-width: 768px) {
-          .nav-links { display: none; }
+          .nav-item { display: none; }
         }
       `}</style>
-        </nav>
-    );
+    </nav>
+  );
 };
 
 export default Navbar;
