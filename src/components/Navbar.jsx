@@ -23,8 +23,14 @@ const Navbar = () => {
 
         <div className="nav-links">
           <a href="#projects" className="nav-item">Projects</a>
-          <a href="/cv/cv_fernando_roman.pdf" target="_blank" className="nav-button">
-            CV
+          <a href="cv/cv_fernando_roman.pdf" target="_blank" className="nav-button">
+            CV ES
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <path d="M12 5v14M5 12l7 7 7-7" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
+          </a>
+          <a href="cv/cv_fernando_roman_en.pdf" target="_blank" className="nav-button accent-btn">
+            CV EN
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
               <path d="M12 5v14M5 12l7 7 7-7" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
