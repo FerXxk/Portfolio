@@ -32,11 +32,36 @@
             "title": "Sobre Mí",
             "p1": "Apasionado por la intersección entre el hardware y el software inteligente. Como **Ingeniero de Robótica**, me especializo en dar vida a máquinas a través de **sistemas embebidos** y **automatización avanzada**. Mi enfoque combina la precisión técnica con una curiosidad insaciable por las tecnologías emergentes.",
             "p2": "Actualmente desarrollo soluciones en el sector aeroespacial, aplicando IA y gemelos digitales para optimizar procesos complejos. Mi objetivo es continuar superando retos técnicos y aportar valor real mediante la innovación constante.",
-            "stats": {
-                "experience": "Años de Experiencia",
-                "projects": "Proyectos",
-                "techs": "Tecnologías"
-            }
+            "tech_title": "Tecnologías y herramientas",
+            "tech_categories": [
+                {
+                    "name": "Sistemas Embebidos",
+                    "items": [
+                        "C/C++",
+                        "VHDL/FPGA",
+                        "RTOS",
+                        "Microcontroladores"
+                    ]
+                },
+                {
+                    "name": "Software & AI",
+                    "items": [
+                        "Python",
+                        "Computer Vision",
+                        "Deep Learning",
+                        "Docker"
+                    ]
+                },
+                {
+                    "name": "Robótica & Control",
+                    "items": [
+                        "ROS/ROS2",
+                        "Control Systems",
+                        "Digital Twins",
+                        "MATLAB"
+                    ]
+                }
+            ]
         },
         "contact": {
             "title": "Contacto",
@@ -85,11 +110,36 @@
             "title": "About Me",
             "p1": "Passionate about the intersection of hardware and intelligent software. As a **Robotics Engineer**, I specialize in bringing machines to life through **embedded systems** and **advanced automation**. My approach combines technical precision with an insatiable curiosity for emerging technologies.",
             "p2": "Currently developing solutions in the aerospace sector, applying AI and digital twins to optimize complex processes. My goal is to keep pushing technical boundaries and providing real value through constant innovation.",
-            "stats": {
-                "experience": "Years of Experience",
-                "projects": "Projects",
-                "techs": "Technologies"
-            }
+            "tech_title": "Technologies & Tools",
+            "tech_categories": [
+                {
+                    "name": "Embedded Systems",
+                    "items": [
+                        "C/C++",
+                        "VHDL/FPGA",
+                        "RTOS",
+                        "Microcontrollers"
+                    ]
+                },
+                {
+                    "name": "Software & AI",
+                    "items": [
+                        "Python",
+                        "Computer Vision",
+                        "Deep Learning",
+                        "Docker"
+                    ]
+                },
+                {
+                    "name": "Robotics & Control",
+                    "items": [
+                        "ROS/ROS2",
+                        "Control Systems",
+                        "Digital Twins",
+                        "MATLAB"
+                    ]
+                }
+            ]
         },
         "contact": {
             "title": "Contact",

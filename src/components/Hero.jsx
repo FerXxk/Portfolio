@@ -95,7 +95,7 @@ const Hero = () => {
           position: relative;
         }
         .hero-title {
-          font-size: clamp(3rem, 10vw, 8rem);
+          font-size: clamp(2.5rem, 8vw, 6rem);
           line-height: 0.9;
           text-transform: uppercase;
         }
@@ -106,10 +106,11 @@ const Hero = () => {
         }
         .hero-subtitle {
           margin-top: 2rem;
-          font-size: clamp(1rem, 2vw, 1.5rem);
+          font-size: clamp(0.9rem, 1.8vw, 1.25rem);
           color: var(--text-muted);
-          max-width: 600px;
+          max-width: 1000px;
           font-weight: 300;
+          white-space: nowrap;
         }
         .hero-subtitle span {
           color: var(--accent);
@@ -168,6 +169,7 @@ const Hero = () => {
         }
         @media (max-width: 768px) {
           .hero-footer { flex-direction: column; align-items: flex-start; gap: 4rem; }
+          .hero-subtitle { white-space: normal; }
         }
       `}</style>
     </section>
