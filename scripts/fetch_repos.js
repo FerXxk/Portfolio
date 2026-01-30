@@ -1,4 +1,4 @@
-import { writeFileSync } from 'fs';
+import { writeFileSync, readFileSync } from 'fs';
 import https from 'https';
 
 const username = 'FerXxk';
@@ -17,22 +17,50 @@ https.get(url, options, (res) => {
     res.on('data', (chunk) => data += chunk);
     res.on('end', () => {
         const repos = JSON.parse(data);
-        const descriptions = {};
+
+        // Path to translations
+        const translationsPath = './src/translations.json';
+        let translations;
+
+        try {
+            translations = JSON.parse(readFileSync(translationsPath, 'utf8'));
+        } catch (e) {
+            console.error('Could not read translations.json');
+            return;
+        }
 
         repos.forEach(repo => {
-            // Only include repos with descriptions
             if (repo.description) {
-                descriptions[repo.name] = {
-                    en: repo.description,
-                    es: "" // Placeholder for manual or AI translation
-                };
+                // Ensure the objects exist
+                if (!translations.en.projects.repo_descriptions) translations.en.projects.repo_descriptions = {};
+                if (!translations.es.projects.repo_descriptions) translations.es.projects.repo_descriptions = {};
+
+                // Update English (always set from GitHub)
+                translations.en.projects.repo_descriptions[repo.name] = repo.description;
+
+                // Update Spanish (only if it doesn't exist yet to avoid losing manual translations)
+                if (!translations.es.projects.repo_descriptions[repo.name]) {
+                    translations.es.projects.repo_descriptions[repo.name] = repo.description;
+                }
             }
         });
 
-        const content = `export const projectDescriptions = ${JSON.stringify(descriptions, null, 4)};`;
+        // Write updated translations.json
+        writeFileSync(translationsPath, JSON.stringify(translations, null, 4));
+        console.log('Successfully updated src/translations.json');
 
+        // Also update projectDescriptions.js for consistency
+        const descriptionsJs = {};
+        Object.keys(translations.en.projects.repo_descriptions).forEach(name => {
+            descriptionsJs[name] = {
+                en: translations.en.projects.repo_descriptions[name],
+                es: translations.es.projects.repo_descriptions[name]
+            };
+        });
+
+        const content = `export const projectDescriptions = ${JSON.stringify(descriptionsJs, null, 4)};`;
         writeFileSync('./src/data/projectDescriptions.js', content);
-        console.log('Successfully saved descriptions to src/data/projectDescriptions.js');
+        console.log('Successfully updated src/data/projectDescriptions.js');
     });
 }).on('error', (err) => {
     console.error("Error fetching from GitHub: " + err.message);

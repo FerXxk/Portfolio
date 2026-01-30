@@ -48,7 +48,14 @@ const Hero = () => {
 
   const splitText = (text) => {
     return text.split("").map((char, i) => (
-      <span key={i} className="char" style={{ display: 'inline-block' }}>
+      <span
+        key={i}
+        className="char"
+        style={{
+          display: 'inline-block',
+          marginRight: char === " " ? "0.3em" : "0"
+        }}
+      >
         {char === " " ? "\u00A0" : char}
       </span>
     ));
