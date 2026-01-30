@@ -8,6 +8,8 @@ import ProjectGrid from './components/ProjectGrid';
 import CustomCursor from './components/CustomCursor';
 import { LanguageProvider, useLanguage } from './context/LanguageContext';
 import translations from './translations.json';
+import About from './components/About';
+import Contact from './components/Contact';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -94,6 +96,20 @@ const AppContent = () => {
               <p>{t.projects.no_projects}</p>
             </div>
           )}
+        </section>
+
+        <section id="about-section">
+          <div className="section-header">
+            <span className="section-number">02.</span>
+            <About />
+          </div>
+        </section>
+
+        <section id="contact-section">
+          <div className="section-header">
+            <span className="section-number">03.</span>
+            <Contact />
+          </div>
         </section>
       </main>
 

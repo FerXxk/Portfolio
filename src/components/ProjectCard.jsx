@@ -133,10 +133,11 @@ const ProjectCard = ({ project, index }) => {
         .close-btn:hover { background: var(--accent); transform: rotate(90deg); }
 
         .modal-image {
-          height: 300px;
           width: 100%;
+          aspect-ratio: 16 / 9;
           background-size: cover;
           background-position: center;
+          border-bottom: 1px solid var(--glass-border);
         }
         .modal-info {
           padding: 2.5rem;

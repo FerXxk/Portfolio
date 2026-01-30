@@ -1,39 +1,34 @@
 import './About.css'
+import { useLanguage } from '../context/LanguageContext';
+import translations from '../translations.json';
 
 const About = () => {
+    const { language } = useLanguage();
+    const t = translations[language].about;
+
     return (
         <section id="about" className="about section">
             <div className="container">
                 <h2 className="section-title">
-                    <span className="gradient-text">Sobre Mí</span>
+                    <span className="gradient-text">{t.title}</span>
                 </h2>
 
                 <div className="about-content glass">
-                    <p className="about-text">
-                        Ingeniero con experiencia profesional en el desarrollo de soluciones tecnológicas,
-                        actualmente en activo y finalizando estudios de posgrado. Mi objetivo es consolidar
-                        un plan de carrera ambicioso, con especial interés en la <strong>automatización</strong> y
-                        el <strong>software embebido</strong>, manteniéndome abierto a participar en proyectos de
-                        diversa índole que supongan un reto técnico y profesional.
-                    </p>
-                    <p className="about-text">
-                        Me motiva formar parte de entornos dinámicos, innovadores y colaborativos, donde
-                        pueda continuar ampliando mis competencias y aportar valor real al equipo y a la
-                        organización mediante una mejora continua.
-                    </p>
+                    <p className="about-text" dangerouslySetInnerHTML={{ __html: t.p1.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>') }}></p>
+                    <p className="about-text">{t.p2}</p>
 
                     <div className="about-stats">
                         <div className="stat-item">
                             <div className="stat-number gradient-text">22</div>
-                            <div className="stat-label">Años</div>
+                            <div className="stat-label">{t.stats.age}</div>
                         </div>
                         <div className="stat-item">
                             <div className="stat-number gradient-text">1+</div>
-                            <div className="stat-label">Años de Experiencia</div>
+                            <div className="stat-label">{t.stats.experience}</div>
                         </div>
                         <div className="stat-item">
                             <div className="stat-number gradient-text">7.5</div>
-                            <div className="stat-label">Nota Media</div>
+                            <div className="stat-label">{t.stats.grade}</div>
                         </div>
                     </div>
                 </div>
