@@ -75,7 +75,7 @@ const ProjectCard = ({ project, index }) => {
           </div>
 
           <p className="modal-desc">
-            {project.description || (language === 'es' ? "Sin descripción disponible." : "No description available.")}
+            {t.repo_descriptions?.[project.name] || project.description || (language === 'es' ? "Sin descripción disponible." : "No description available.")}
           </p>
 
           <a href={project.html_url} target="_blank" rel="noreferrer" className="view-repo-btn">

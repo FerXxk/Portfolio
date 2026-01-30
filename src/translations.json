@@ -39,7 +39,11 @@
             "phone_label": "Teléfono",
             "location_label": "Ubicación",
             "linkedin_label": "LinkedIn",
-            "rights": "Todos los derechos reservados."
+            "rights": "Todos los derechos reservados.",
+            "repo_descriptions": {
+                "Portfolio": "Mi portfolio interactivo personal construido con React, GSAP y la API de GitHub.",
+                "CV-interactivo": "Versión web y LaTeX de mi curriculum vitae."
+            }
         }
     },
     "en": {
@@ -82,7 +86,11 @@
             "phone_label": "Phone",
             "location_label": "Location",
             "linkedin_label": "LinkedIn",
-            "rights": "All rights reserved."
+            "rights": "All rights reserved.",
+            "repo_descriptions": {
+                "Portfolio": "My personal interactive portfolio built with React, GSAP and GitHub API.",
+                "CV-interactivo": "Web and LaTeX version of my curriculum vitae."
+            }
         }
     }
 }
