@@ -51,7 +51,9 @@ const AppContent = () => {
       .then(res => res.json())
       .then(data => {
         if (Array.isArray(data)) {
-          setProjects(data);
+          // Sort by stars descending
+          const sortedData = data.sort((a, b) => b.stargazers_count - a.stargazers_count);
+          setProjects(sortedData);
         }
         setLoading(false);
       })

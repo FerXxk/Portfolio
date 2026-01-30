@@ -92,7 +92,7 @@ const ProjectCard = ({ project, index }) => {
         .project-card {
           position: relative;
           display: block;
-          height: 350px;
+          height: 450px;
           border-radius: 12px;
           overflow: hidden;
           text-decoration: none;
@@ -157,7 +157,7 @@ const ProjectCard = ({ project, index }) => {
           line-height: 1.6;
           color: rgba(255,255,255,0.7);
           display: -webkit-box;
-          -webkit-line-clamp: 3;
+          -webkit-line-clamp: 6;
           -webkit-box-orient: vertical;
           overflow: hidden;
         }
