@@ -52,45 +52,42 @@ const Contact = () => {
     ]
 
     return (
-        <section id="contact" className="contact section">
-            <div className="container">
-                <p className="contact-intro">
-                    {t.intro}
-                </p>
+        <>
+            <p className="contact-intro">
+                {t.intro}
+            </p>
 
-                <div className="contact-grid">
-                    {contactInfo.map((item, index) => (
-                        item.href ? (
-                            <a
-                                key={index}
-                                href={item.href}
-                                target={item.href.startsWith('http') ? '_blank' : undefined}
-                                rel={item.href.startsWith('http') ? 'noopener noreferrer' : undefined}
-                                className="contact-card glass"
-                            >
-                                <div className="contact-icon">{item.icon}</div>
-                                <div className="contact-info">
-                                    <div className="contact-label">{item.label}</div>
-                                    <div className="contact-value">{item.value}</div>
-                                </div>
-                            </a>
-                        ) : (
-                            <div key={index} className="contact-card glass">
-                                <div className="contact-icon">{item.icon}</div>
-                                <div className="contact-info">
-                                    <div className="contact-label">{item.label}</div>
-                                    <div className="contact-value">{item.value}</div>
-                                </div>
+            <div className="contact-grid">
+                {contactInfo.map((item, index) => (
+                    item.href ? (
+                        <a
+                            key={index}
+                            href={item.href}
+                            target={item.href.startsWith('http') ? '_blank' : undefined}
+                            rel={item.href.startsWith('http') ? 'noopener noreferrer' : undefined}
+                            className="contact-card glass"
+                        >
+                            <div className="contact-icon">{item.icon}</div>
+                            <div className="contact-info">
+                                <div className="contact-label">{item.label}</div>
+                                <div className="contact-value">{item.value}</div>
                             </div>
-                        )
-                    ))}
-                </div>
-
-                <div className="contact-footer">
-                    <p>© {new Date().getFullYear()} Fernando Román Hidalgo. {t.rights}</p>
-                </div>
+                        </a>
+                    ) : (
+                        <div key={index} className="contact-card glass">
+                            <div className="contact-icon">{item.icon}</div>
+                            <div className="contact-info">
+                                <div className="contact-label">{item.label}</div>
+                                <div className="contact-value">{item.value}</div>
+                            </div>
+                        </div>
+                    )
+                ))}
             </div>
-        </section>
+
+            <div className="contact-footer">
+            </div>
+        </>
     )
 }
 
