@@ -59,7 +59,7 @@ const ProjectCard = ({ project, index }) => {
 
   const Modal = () => createPortal(
     <div className="modal-overlay" onClick={() => setIsOpen(false)}>
-      <div className="modal-content" onClick={e => e.stopPropagation()}>
+      <div className="modal-content" onClick={e => e.stopPropagation()} data-lenis-prevent>
         <button className="close-btn" onClick={() => setIsOpen(false)}>×</button>
 
         <div className="modal-image" style={{ backgroundImage: `url(${bgImage})` }}></div>

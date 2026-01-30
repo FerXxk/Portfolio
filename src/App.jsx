@@ -10,6 +10,7 @@ import { LanguageProvider, useLanguage } from './context/LanguageContext';
 import translations from './translations.json';
 import About from './components/About';
 import Contact from './components/Contact';
+import config from './config';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -53,8 +54,11 @@ const AppContent = () => {
       .then(res => res.json())
       .then(data => {
         if (Array.isArray(data)) {
+          // Filter excluded repos
+          const filteredData = data.filter(repo => !config.excludedRepos.includes(repo.name));
+
           // Sort by stars descending
-          const sortedData = data.sort((a, b) => b.stargazers_count - a.stargazers_count);
+          const sortedData = filteredData.sort((a, b) => b.stargazers_count - a.stargazers_count);
           setProjects(sortedData);
         }
         setLoading(false);
