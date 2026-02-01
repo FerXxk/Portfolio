@@ -4,7 +4,7 @@ import gsap from 'gsap';
 import { useLanguage } from '../context/LanguageContext';
 import translations from '../translations.json';
 
-const ProjectCard = ({ project, index, onViewReadme }) => {
+const ProjectCard = ({ project, index }) => {
   const cardRef = useRef(null);
   const [isOpen, setIsOpen] = useState(false);
   const { language } = useLanguage();
@@ -79,18 +79,17 @@ const ProjectCard = ({ project, index, onViewReadme }) => {
           </p>
 
           <div className="modal-actions">
-            <button
-              onClick={() => {
-                setIsOpen(false);
-                onViewReadme(project.name);
-              }}
+            <a
+              href={`https://github.com/FerXxk/${project.name}/blob/${project.default_branch || 'main'}/README.md`}
+              target="_blank"
+              rel="noreferrer"
               className="view-more-btn"
             >
               {t.view_more}
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                 <path d="M12 4v16m8-8H4" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
-            </button>
+            </a>
             <a href={project.html_url} target="_blank" rel="noreferrer" className="view-repo-btn">
               {t.view_repo}
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">

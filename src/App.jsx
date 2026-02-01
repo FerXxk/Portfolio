@@ -10,7 +10,6 @@ import { LanguageProvider, useLanguage } from './context/LanguageContext';
 import translations from './translations.json';
 import About from './components/About';
 import Contact from './components/Contact';
-import ReadmeViewer from './components/ReadmeViewer';
 import config from './config';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -26,7 +25,6 @@ function App() {
 const AppContent = () => {
   const [projects, setProjects] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [selectedReadmeRepo, setSelectedReadmeRepo] = useState(null);
   const mainRef = useRef(null);
   const { language } = useLanguage();
   const t = translations[language];
@@ -128,7 +126,6 @@ const AppContent = () => {
           ) : projects.length > 0 ? (
             <ProjectGrid
               projects={projects}
-              onViewReadme={setSelectedReadmeRepo}
             />
           ) : (
             <div className="loading-state">
@@ -145,11 +142,6 @@ const AppContent = () => {
           <Contact />
         </section>
       </main>
-
-      <ReadmeViewer
-        repoName={selectedReadmeRepo}
-        onClose={() => setSelectedReadmeRepo(null)}
-      />
 
       <footer className="lab-footer">
         <div className="container footer-content">

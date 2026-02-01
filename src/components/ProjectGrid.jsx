@@ -1,7 +1,7 @@
 import React from 'react';
 import ProjectCard from './ProjectCard';
 
-const ProjectGrid = ({ projects, onViewReadme }) => {
+const ProjectGrid = ({ projects }) => {
   return (
     <div className="project-grid">
       {projects.map((project, index) => (
@@ -9,7 +9,6 @@ const ProjectGrid = ({ projects, onViewReadme }) => {
           key={project.id}
           project={project}
           index={index}
-          onViewReadme={onViewReadme}
         />
       ))}
 
