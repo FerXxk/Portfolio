@@ -1,5 +1,7 @@
 # Fernando Román - Interactive Portfolio & CV
 
+Visit the live version at [Fernando Román - Interactive Portfolio & CV](https://ferxxk.github.io/Portfolio/).
+
 A high-performance, interactive portfolio built with **React**, **GSAP**, and **Vite**. This project showcases my work as a Robotics Engineer and provides an automated system for generating bilingual CVs.
 
 ## 🚀 Key Features

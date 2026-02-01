@@ -25,6 +25,20 @@
             "loading": "Cargando laboratorios...",
             "no_projects": "No se encontraron proyectos.",
             "view_more": "Leer más",
+            "repo_names": {
+                "Portfolio": "Portfolio Interactivo",
+                "CV-interactivo": "CV Interactivo",
+                "EKF-Implementation": "Filtro de Kalman Extendido",
+                "Virtual-Gym-TIVA-C": "Gimnasio Virtual TIVA-C",
+                "Raspberry-Intercom-Project": "Video portero Raspberry",
+                "Project-HomeIO": "Control de Temperatura Home IO",
+                "NodeRed-Project": "Iluminación Node-RED",
+                "Minisumo-Project": "Robot Minisumo",
+                "Computer-Vision-Course": "Visión por Computador",
+                "Imminent-Crash": "Imminent Crash!",
+                "Turtlebot-ROS-Project": "Navegación Autónoma TurtleBot",
+                "Particle-Filter": "Localización mediante Filtro de Partículas"
+            },
             "repo_descriptions": {
                 "Portfolio": "Mi portfolio interactivo personal construido con React, GSAP y la API de GitHub.",
                 "CV-interactivo": "Versión web y LaTeX de mi curriculum vitae.",
@@ -37,7 +51,8 @@
                 "Computer-Vision-Course": "Un repositorio especializado para el trabajo de curso de Sistemas de Percepción. Presenta implementaciones prácticas de algoritmos de visión por computador, incluyendo procesamiento de imágenes, extracción de características y detección de objetos. Diseñado para mostrar proyectos académicos utilizando herramientas como MATLAB para el sensado y análisis de datos visuales del mundo real.",
                 "Imminent-Crash": "Un juego de supervivencia de estilo arcade desarrollado para el microcontrolador MSP430 utilizando el Educational BoosterPack MKII. Cuenta con lógica de colisión en tiempo real, controles impulsados por interrupciones de hardware y renderizado en LCD. Este proyecto muestra la programación de sistemas embebidos, la gestión de recursos y la interfaz hardware-software.",
                 "FPGA-Race-Game": "Un juego de carreras en tiempo real implementado en VHDL para FPGA. El sistema cuenta con un controlador VGA personalizado, comunicación UART para soporte multijugador y una línea de visualización dedicada.",
-                "Turtlebot-ROS-Project": "Proyecto Turtlebot en ROS."
+                "Turtlebot-ROS-Project": "Proyecto basado en ROS para la navegación y el control autónomo de TurtleBot. Incluye SLAM para mapeado, integración de sensores para evitación de obstáculos y algoritmos de planificación de rutas. Desarrollado para simulación en Gazebo y aplicaciones robóticas reales.",
+                "Particle-Filter": "Implementación avanzada en ROS 2 para la localización de balizas 3D mediante un UAV móvil. Cuenta con tres estrategias de estimación: PF básico, PF adaptable inteligente y un sistema híbrido PF+EKF que cambia de filtro tras la convergencia. Incluye integración con Gazebo, renderizado en tiempo real en RViz y registro automático de datos."
             },
             "readme_loading": "Cargando documentación...",
             "readme_error": "No se pudo cargar la documentación. Por favor, inténtalo de nuevo más tarde."
@@ -116,6 +131,20 @@
             "loading": "Loading labs...",
             "no_projects": "No projects found.",
             "view_more": "View More",
+            "repo_names": {
+                "Portfolio": "Interactive Portfolio",
+                "CV-interactivo": "Interactive CV",
+                "EKF-Implementation": "Extended Kalman Filter Implementation",
+                "Virtual-Gym-TIVA-C": "Virtual Gym TIVA-C",
+                "Raspberry-Intercom-Project": "Raspberry Security System",
+                "Project-HomeIO": "Temperature Control Home IO",
+                "NodeRed-Project": "Lighting Control Node-RED",
+                "Minisumo-Project": "Minisumo Robot",
+                "Computer-Vision-Course": "Computer Vision",
+                "Imminent-Crash": "Imminent Crash!",
+                "Turtlebot-ROS-Project": "TurtleBot Autonomous Navigation",
+                "Particle-Filter": "Particle Filter Localization"
+            },
             "repo_descriptions": {
                 "Portfolio": "My personal interactive portfolio built with React, GSAP and GitHub API.",
                 "CV-interactivo": "Web and LaTeX version of my curriculum vitae.",
@@ -128,7 +157,8 @@
                 "Computer-Vision-Course": "A specialized repository for Perception Systems coursework. It features practical implementations of computer vision algorithms, including image processing, feature extraction, and object detection. Designed to showcase academic projects using tools like MATLAB for real-world sensing and visual data analysis.",
                 "Imminent-Crash": "An arcade-style survival game developed for the MSP430 microcontroller using the Educational BoosterPack MKII. It features real-time collision logic, hardware-interrupt driven controls, and LCD rendering. This project showcases embedded systems programming, resource management, and hardware-software interfacing.",
                 "FPGA-Race-Game": "A real-time racing game implemented in VHDL for FPGA. The system features a custom VGA driver, UART communication for multiplayer support, and a dedicated visualization pipeline.",
-                "Turtlebot-ROS-Project": "Turtlebot ROS Project"
+                "Turtlebot-ROS-Project": "ROS-based project for TurtleBot autonomous navigation and control. Features include SLAM for mapping, sensor integration for obstacle avoidance, and path planning algorithms. Developed for simulation in Gazebo and real-world robotics applications.",
+                "Particle-Filter": "Advanced ROS 2 implementation for 3D beacon localization using a mobile UAV. It features three estimation strategies: Basic PF, Smart Adaptive PF with dynamic particle budgeting, and a Hybrid PF+EKF system that switches filters upon convergence. Includes Gazebo integration, real-time RViz rendering, and automated logging."
             },
             "readme_loading": "Loading documentation...",
             "readme_error": "Could not load documentation. Please try again later."

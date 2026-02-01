@@ -1,7 +1,11 @@
 export const projectDescriptions = {
     "Portfolio": {
-        "en": "No description",
+        "en": "My personal interactive portfolio built with React, GSAP and GitHub API.",
         "es": "Mi portfolio interactivo personal construido con React, GSAP y la API de GitHub."
+    },
+    "CV-interactivo": {
+        "en": "Web and LaTeX version of my curriculum vitae.",
+        "es": "Versión web y LaTeX de mi curriculum vitae."
     },
     "EKF-Implementation": {
         "en": "Advanced state estimation for drones using ROS 2 Humble and MATLAB. It features a modular architecture with an Extended Kalman Filter (EKF) to fuse Odometry and IMU data. Includes implementations for 3D, 7D, and 8D state vectors, handling non-linear motion models and sensor noise for autonomous navigation.",
@@ -36,11 +40,15 @@ export const projectDescriptions = {
         "es": "Un juego de supervivencia de estilo arcade desarrollado para el microcontrolador MSP430 utilizando el Educational BoosterPack MKII. Cuenta con lógica de colisión en tiempo real, controles impulsados por interrupciones de hardware y renderizado en LCD. Este proyecto muestra la programación de sistemas embebidos, la gestión de recursos y la interfaz hardware-software."
     },
     "FPGA-Race-Game": {
-        "en": "Un juego de carreras en tiempo real implementado en VHDL para FPGA. El sistema cuenta con un controlador VGA personalizado, comunicación UART para soporte multijugador y una línea de visualización dedicada.",
+        "en": "A real-time racing game implemented in VHDL for FPGA. The system features a custom VGA driver, UART communication for multiplayer support, and a dedicated visualization pipeline.",
         "es": "Un juego de carreras en tiempo real implementado en VHDL para FPGA. El sistema cuenta con un controlador VGA personalizado, comunicación UART para soporte multijugador y una línea de visualización dedicada."
     },
     "Turtlebot-ROS-Project": {
-        "en": "Turtlebot ROS Project",
-        "es": "Proyecto Turtlebot en ROS."
+        "en": "ROS-based project for TurtleBot autonomous navigation and control. Features include SLAM for mapping, sensor integration for obstacle avoidance, and path planning algorithms. Developed for simulation in Gazebo and real-world robotics applications.",
+        "es": "Proyecto basado en ROS para la navegación y el control autónomo de TurtleBot. Incluye SLAM para mapeado, integración de sensores para evitación de obstáculos y algoritmos de planificación de rutas. Desarrollado para simulación en Gazebo y aplicaciones robóticas reales."
+    },
+    "Particle-Filter": {
+        "en": "Advanced ROS 2 implementation for 3D beacon localization using a mobile UAV. It features three estimation strategies: Basic PF, Smart Adaptive PF with dynamic particle budgeting, and a Hybrid PF+EKF system that switches filters upon convergence. Includes Gazebo integration, real-time RViz rendering, and automated logging.",
+        "es": "Implementación avanzada en ROS 2 para la localización de balizas 3D mediante un UAV móvil. Cuenta con tres estrategias de estimación: PF básico, PF adaptable inteligente con presupuesto dinámico de partículas y un sistema híbrido PF+EKF que cambia de filtro tras la convergencia. Incluye integración con Gazebo, renderizado en tiempo real en RViz y registro automático de datos."
     }
 };
