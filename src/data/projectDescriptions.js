@@ -11,7 +11,7 @@ export const projectDescriptions = {
         "en": "An intelligent rehabilitation and training assistant using Tiva C Launchpad and an ESP32-powered Smart Ball. Features a gamified GUI on an FT800 touchscreen, real-time motion tracking via BLE, and physics-based force estimation. Designed to monitor physiotherapy progress through interactive exercises and data analysis.",
         "es": "Un asistente inteligente de rehabilitación y entrenamiento utilizando Tiva C Launchpad y una pelota inteligente con ESP32. Incluye una interfaz gráfica gamificada en una pantalla táctil FT800, seguimiento de movimiento en tiempo real vía BLE y estimación de fuerza basada en física. Diseñado para monitorear el progreso de la fisioterapia a través de ejercicios interactivos y análisis de datos."
     },
-    "Raspberry-PI-Project": {
+    "Raspberry-Intercom-Project": {
         "en": "Autonomous security system using a Raspberry Pi 4 and a Camera Module. When movement is detected, it triggers a video recording, which is stored locally on a USB drive. This drive is simultaneously configured as a Network Attached Storage (NAS), allowing authorized devices on the local network to access and review footage in real-time.",
         "es": "Sistema de seguridad autónomo mediante una Raspberry Pi 4 y un módulo de cámara. Cuando se detecta movimiento, se activa una grabación de vídeo que se almacena localmente en una unidad USB. Esta unidad está configurada simultáneamente como un almacenamiento conectado a la red (NAS), lo que permite que los dispositivos autorizados en la red local accedan y revisen las grabaciones en tiempo real."
     },

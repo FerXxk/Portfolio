@@ -287,7 +287,7 @@ const ProjectCard = ({ project, index }) => {
             letter-spacing: 0.1em;
           }
           .project-name {
-            font-size: 1.8rem;
+            font-size: 1.5rem;
             font-weight: 800;
             margin: 0;
             text-transform: uppercase;
@@ -328,7 +328,7 @@ const ProjectCard = ({ project, index }) => {
 
           @media (max-width: 480px) {
             .project-card { height: 300px; }
-            .project-name { font-size: 1.5rem; }
+            .project-name { font-size: 1.2rem; }
           }
         `}</style>
       </div>
