@@ -65,7 +65,7 @@ const ProjectCard = ({ project, index }) => {
         <div className="modal-image" style={{ backgroundImage: `url(${bgImage})` }}></div>
 
         <div className="modal-info">
-          <h2>{project.name}</h2>
+          <h2>{t.repo_names?.[project.name] || project.name}</h2>
 
           <div className="modal-meta">
             {project.topics && project.topics.length > 0 && project.topics.map((topic, i) => (
@@ -250,7 +250,7 @@ const ProjectCard = ({ project, index }) => {
         <div className="card-content">
           <div className="card-top">
             <span className="project-index">{(index + 1).toString().padStart(2, '0')}</span>
-            <h3 className="project-name">{project.name}</h3>
+            <h3 className="project-name">{t.repo_names?.[project.name] || project.name}</h3>
           </div>
 
           <div className="card-hint">

@@ -1,9 +1,13 @@
 import { useState, useEffect } from 'react'
 import './Projects.css'
+import { useLanguage } from '../context/LanguageContext';
+import translations from '../translations.json';
 
 const Projects = () => {
     const [repos, setRepos] = useState([])
     const [loading, setLoading] = useState(true)
+    const { language } = useLanguage()
+    const t = translations[language].projects
 
     useEffect(() => {
         fetch('https://api.github.com/users/FerXxk/repos?sort=updated&per_page=6')
@@ -43,7 +47,7 @@ const Projects = () => {
                                 className="project-card glass"
                             >
                                 <div className="project-header">
-                                    <h3 className="project-title">{repo.name}</h3>
+                                    <h3 className="project-title">{t.repo_names?.[repo.name] || repo.name}</h3>
                                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                                         <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
                                         <polyline points="15 3 21 3 21 9"></polyline>
@@ -52,7 +56,7 @@ const Projects = () => {
                                 </div>
 
                                 <p className="project-description">
-                                    {repo.description || 'Sin descripción disponible'}
+                                    {t.repo_descriptions?.[repo.name] || repo.description || (language === 'es' ? 'Sin descripción disponible' : 'No description available')}
                                 </p>
 
                                 <div className="project-footer">
