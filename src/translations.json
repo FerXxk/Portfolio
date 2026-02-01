@@ -38,7 +38,9 @@
                 "Imminent-Crash": "Un juego de supervivencia de estilo arcade desarrollado para el microcontrolador MSP430 utilizando el Educational BoosterPack MKII. Cuenta con lógica de colisión en tiempo real, controles impulsados por interrupciones de hardware y renderizado en LCD. Este proyecto muestra la programación de sistemas embebidos, la gestión de recursos y la interfaz hardware-software.",
                 "FPGA-Race-Game": "Un juego de carreras en tiempo real implementado en VHDL para FPGA. El sistema cuenta con un controlador VGA personalizado, comunicación UART para soporte multijugador y una línea de visualización dedicada.",
                 "Turtlebot-ROS-Project": "Proyecto Turtlebot en ROS."
-            }
+            },
+            "readme_loading": "Cargando documentación...",
+            "readme_error": "No se pudo cargar la documentación. Por favor, inténtalo de nuevo más tarde."
         },
         "footer": {
             "rights": "Todos los derechos reservados"
@@ -127,7 +129,9 @@
                 "Imminent-Crash": "An arcade-style survival game developed for the MSP430 microcontroller using the Educational BoosterPack MKII. It features real-time collision logic, hardware-interrupt driven controls, and LCD rendering. This project showcases embedded systems programming, resource management, and hardware-software interfacing.",
                 "FPGA-Race-Game": "A real-time racing game implemented in VHDL for FPGA. The system features a custom VGA driver, UART communication for multiplayer support, and a dedicated visualization pipeline.",
                 "Turtlebot-ROS-Project": "Turtlebot ROS Project"
-            }
+            },
+            "readme_loading": "Loading documentation...",
+            "readme_error": "Could not load documentation. Please try again later."
         },
         "footer": {
             "rights": "All rights reserved"

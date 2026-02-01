@@ -1,11 +1,16 @@
 import React from 'react';
 import ProjectCard from './ProjectCard';
 
-const ProjectGrid = ({ projects }) => {
+const ProjectGrid = ({ projects, onViewReadme }) => {
   return (
     <div className="project-grid">
       {projects.map((project, index) => (
-        <ProjectCard key={project.id} project={project} index={index} />
+        <ProjectCard
+          key={project.id}
+          project={project}
+          index={index}
+          onViewReadme={onViewReadme}
+        />
       ))}
 
       <style jsx>{`
