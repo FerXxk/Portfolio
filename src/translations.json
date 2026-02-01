@@ -14,9 +14,9 @@
             "badge": "Disponible para proyectos",
             "scroll": "Scroll para ver mis proyectos",
             "badges": [
+                "Integración Tecnológica",
                 "Soluciones Embebidas",
-                "IA Industrial",
-                "Ingeniería de Control"
+                "Sistemas de Automatización"
             ]
         },
         "projects": {
@@ -44,35 +44,35 @@
         },
         "about": {
             "title": "Sobre Mí",
-            "p1": "Apasionado por la intersección entre el hardware y el software inteligente. Como **Ingeniero de Robótica**, me especializo en dar vida a máquinas a través de **sistemas embebidos** y **automatización avanzada**. Mi enfoque combina la precisión técnica con una curiosidad insaciable por las tecnologías emergentes.",
-            "p2": "Actualmente desarrollo soluciones en el sector aeroespacial, aplicando IA y gemelos digitales para optimizar procesos complejos. Mi objetivo es continuar superando retos técnicos y aportar valor real mediante la innovación constante.",
+            "p1": "Ingeniero de robótica en Sevilla, actualmente completando mi formación de posgrado. Mi trayectoria se caracteriza por una progresión rápida y un enfoque resolutivo ante problemas técnicos de alta complejidad. He demostrado esta versatilidad tanto en el ámbito competitivo, ganando certámenes nacionales de robótica, como en el profesional, creando soluciones de software de grado industrial para el sector aeroespacial.",
+            "p2": "Disfruto en la intersección del hardware y el software inteligente, donde los retos complejos requieren ingeniería creativa. Como Ingeniero de Robótica, mi motivación principal es investigar el 'cómo' y el 'por qué' detrás de las máquinas para desarrollar soluciones mediante sistemas embebidos y automatización avanzada. Veo cada cuello de botella técnico como una oportunidad para investigar, deconstruir e implementar arquitecturas más elegantes y eficientes.",
             "tech_title": "Tecnologías y herramientas principales",
             "tech_categories": [
                 {
                     "name": "Sistemas Embebidos",
                     "items": [
                         "C/C++",
+                        "Microcontroladores",
                         "VHDL/FPGA",
-                        "RTOS",
-                        "Microcontroladores"
+                        "Protocolos de Comunicación"
                     ]
                 },
                 {
-                    "name": "Software & AI",
+                    "name": "Software",
                     "items": [
                         "Python",
-                        "Computer Vision",
-                        "Deep Learning",
-                        "Docker"
+                        "Docker",
+                        "Orquestadores",
+                        "IA/Optimización"
                     ]
                 },
                 {
                     "name": "Robótica & Control",
                     "items": [
                         "ROS/ROS2",
-                        "Control Systems",
-                        "Digital Twins",
-                        "MATLAB"
+                        "Sistemas de Control",
+                        "Gemelos Digitales",
+                        "Visión por Computador"
                     ]
                 }
             ]
@@ -102,9 +102,9 @@
             "badge": "Available for projects",
             "scroll": "Scroll for my projects",
             "badges": [
+                "Technology Integration",
                 "Embedded Solutions",
-                "Industrial AI",
-                "Control Engineering"
+                "Automation systems"
             ]
         },
         "projects": {
@@ -132,26 +132,26 @@
         },
         "about": {
             "title": "About Me",
-            "p1": "Passionate about the intersection of hardware and intelligent software. As a **Robotics Engineer**, I specialize in bringing machines to life through **embedded systems** and **advanced automation**. My approach combines technical precision with an insatiable curiosity for emerging technologies.",
-            "p2": "Currently developing solutions in the aerospace sector, applying AI and digital twins to optimize complex processes. My goal is to keep pushing technical boundaries and providing real value through constant innovation.",
+            "p1": "I am a Seville-based Robotics Engineer currently completing my postgraduate studies at the University of Seville. My professional background is defined by a high learning curve and a proven track record of solving complex technical problems—ranging from winning national robotics competitions to developing industrial-grade software for the aerospace sector.",
+            "p2": "I thrive at the intersection of hardware and intelligent software, where complex challenges require creative engineering. As a Robotics Engineer, my core motivation is investigating the 'how' and 'why' behind machines to develop solutions through embedded systems and advanced automation. I view every technical bottleneck as an opportunity to research, deconstruct, and implement more elegant, efficient architectures.",
             "tech_title": "Main Technologies & Tools",
             "tech_categories": [
                 {
                     "name": "Embedded Systems",
                     "items": [
                         "C/C++",
+                        "Microcontrollers",
                         "VHDL/FPGA",
-                        "RTOS",
-                        "Microcontrollers"
+                        "Communication Protocols"
                     ]
                 },
                 {
-                    "name": "Software & AI",
+                    "name": "Software",
                     "items": [
                         "Python",
-                        "Computer Vision",
-                        "Deep Learning",
-                        "Docker"
+                        "Docker",
+                        "Orchestrators",
+                        "AI/Optimization"
                     ]
                 },
                 {
@@ -160,7 +160,7 @@
                         "ROS/ROS2",
                         "Control Systems",
                         "Digital Twins",
-                        "MATLAB"
+                        "Computer Vision"
                     ]
                 }
             ]
