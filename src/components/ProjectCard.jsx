@@ -78,12 +78,20 @@ const ProjectCard = ({ project, index }) => {
             {t.repo_descriptions?.[project.name] || project.description || (language === 'es' ? "Sin descripción disponible." : "No description available.")}
           </p>
 
-          <a href={project.html_url} target="_blank" rel="noreferrer" className="view-repo-btn">
-            {t.view_repo}
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-              <path d="M7 17L17 7M17 7H7M17 7V17" strokeLinecap="round" strokeLinejoin="round" />
-            </svg>
-          </a>
+          <div className="modal-actions">
+            <a href={`${project.html_url}#readme`} target="_blank" rel="noreferrer" className="view-more-btn">
+              {t.view_more}
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <path d="M12 4v16m8-8H4" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+            </a>
+            <a href={project.html_url} target="_blank" rel="noreferrer" className="view-repo-btn">
+              {t.view_repo}
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <path d="M7 17L17 7M17 7H7M17 7V17" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+            </a>
+          </div>
         </div>
       </div>
       <style jsx>{`
@@ -171,22 +179,42 @@ const ProjectCard = ({ project, index }) => {
           color: var(--text-muted);
           margin-bottom: 2.5rem;
         }
-        .view-repo-btn {
+        .modal-actions {
+          display: flex;
+          gap: 1rem;
+          margin-top: 1rem;
+        }
+        .view-repo-btn, .view-more-btn {
           display: inline-flex;
           align-items: center;
           gap: 0.8rem;
-          background: var(--accent);
-          color: #000;
-          padding: 1rem 2rem;
+          padding: 0.8rem 1.5rem;
           border-radius: 8px;
           text-decoration: none;
           font-weight: 700;
           text-transform: uppercase;
           letter-spacing: 0.05em;
-          transition: transform 0.2s;
+          transition: all 0.2s;
+          font-size: 0.9rem;
         }
-        .view-repo-btn:hover { transform: translateY(-2px); }
-        .view-repo-btn svg { width: 20px; height: 20px; }
+        .view-repo-btn {
+          background: var(--accent);
+          color: #000;
+        }
+        .view-more-btn {
+          background: rgba(255, 255, 255, 0.05);
+          color: white;
+          border: 1px solid var(--glass-border);
+        }
+        .view-repo-btn:hover, .view-more-btn:hover { 
+          transform: translateY(-2px);
+          filter: brightness(1.2);
+        }
+        .view-more-btn:hover {
+          background: rgba(255, 255, 255, 0.1);
+          border-color: var(--accent);
+        }
+        .view-repo-btn svg, .view-more-btn svg { width: 18px; height: 18px; }
 
         @media (max-width: 768px) {
           .modal-info h2 { font-size: 1.8rem; }

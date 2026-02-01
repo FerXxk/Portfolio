@@ -24,6 +24,7 @@
             "view_repo": "Ver Repositorio",
             "loading": "Cargando laboratorios...",
             "no_projects": "No se encontraron proyectos.",
+            "view_more": "Leer más",
             "repo_descriptions": {
                 "Portfolio": "Mi portfolio interactivo personal construido con React, GSAP y la API de GitHub.",
                 "CV-interactivo": "Versión web y LaTeX de mi curriculum vitae.",
@@ -112,6 +113,7 @@
             "view_repo": "View Repository",
             "loading": "Loading labs...",
             "no_projects": "No projects found.",
+            "view_more": "View More",
             "repo_descriptions": {
                 "Portfolio": "My personal interactive portfolio built with React, GSAP and GitHub API.",
                 "CV-interactivo": "Web and LaTeX version of my curriculum vitae.",
