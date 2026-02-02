@@ -74,13 +74,13 @@ const Navbar = () => {
           </div>
 
           <div className="cv-buttons">
-            <a href="cv/cv_fernando_roman.pdf" target="_blank" className="nav-button">
+            <a href="cv/cv_fernando_roman.pdf?v=1.0.1" target="_blank" className="nav-button">
               {t.cv_es}
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                 <path d="M12 5v14M5 12l7 7 7-7" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
             </a>
-            <a href="cv/cv_fernando_roman_en.pdf" target="_blank" className="nav-button accent-btn">
+            <a href="cv/cv_fernando_roman_en.pdf?v=1.0.1" target="_blank" className="nav-button accent-btn">
               {t.cv_en}
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                 <path d="M12 5v14M5 12l7 7 7-7" strokeLinecap="round" strokeLinejoin="round" />
@@ -118,10 +118,10 @@ const Navbar = () => {
           </div>
 
           <div className="mobile-cv-buttons">
-            <a href="cv/cv_fernando_roman.pdf" target="_blank" className="nav-button">
+            <a href="cv/cv_fernando_roman.pdf?v=1.0.1" target="_blank" className="nav-button">
               {t.cv_es}
             </a>
-            <a href="cv/cv_fernando_roman_en.pdf" target="_blank" className="nav-button accent-btn">
+            <a href="cv/cv_fernando_roman_en.pdf?v=1.0.1" target="_blank" className="nav-button accent-btn">
               {t.cv_en}
             </a>
           </div>
