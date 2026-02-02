@@ -162,6 +162,7 @@ const Navbar = () => {
           text-transform: uppercase;
           letter-spacing: 0.1em;
           color: var(--text-muted);
+          font-weight: 600;
         }
         .cv-buttons {
           display: flex;
@@ -174,6 +175,7 @@ const Navbar = () => {
           font-size: 0.8rem;
           text-transform: uppercase;
           letter-spacing: 0.1em;
+          font-weight: 600;
           border: 1px solid var(--glass-border);
           padding: 0.5rem 1.2rem;
           border-radius: 20px;

@@ -108,15 +108,15 @@ const Hero = () => {
         }
         .highlight {
           color: transparent;
-          -webkit-text-stroke: 1px var(--text-muted);
-          opacity: 0.5;
+          -webkit-text-stroke: 1.5px var(--text-muted);
+          opacity: 0.8;
         }
         .hero-subtitle {
           margin-top: 2rem;
           font-size: clamp(0.9rem, 1.8vw, 1.25rem);
           color: var(--text-muted);
           max-width: 1000px;
-          font-weight: 300;
+          font-weight: 400;
           white-space: nowrap;
         }
         .hero-subtitle span {
@@ -140,6 +140,7 @@ const Hero = () => {
           text-transform: uppercase;
           letter-spacing: 0.1em;
           color: var(--text-muted);
+          font-weight: 600;
           border-bottom: 1px solid var(--glass-border);
           padding-bottom: 0.2rem;
           width: fit-content;
@@ -151,6 +152,7 @@ const Hero = () => {
           gap: 1rem;
           color: var(--text-muted);
           font-size: 0.7rem;
+          font-weight: 600;
           text-transform: uppercase;
           letter-spacing: 0.1em;
         }

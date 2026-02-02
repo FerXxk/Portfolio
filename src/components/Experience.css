@@ -58,6 +58,7 @@
     font-size: 1.125rem;
     color: var(--color-text-secondary);
     margin-bottom: var(--spacing-md);
+    font-weight: 500;
 }
 
 .timeline-list {
