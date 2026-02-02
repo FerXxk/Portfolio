@@ -150,8 +150,10 @@ const ProjectCard = ({ project, index }) => {
         .modal-image {
           width: 100%;
           aspect-ratio: 16 / 9;
-          background-size: cover;
+          background-size: contain;
+          background-repeat: no-repeat;
           background-position: center;
+          background-color: rgba(0, 0, 0, 0.3);
           border-bottom: 1px solid var(--glass-border);
         }
         .modal-info {
