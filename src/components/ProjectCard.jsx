@@ -287,14 +287,14 @@ const ProjectCard = ({ project, index }) => {
             background-size: cover;
             background-position: center;
             transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-            opacity: 0.4;
+            opacity: 0.7;
           }
-          .project-card:hover .card-bg { transform: scale(1.05); opacity: 0.6; }
+          .project-card:hover .card-bg { transform: scale(1.05); opacity: 0.9; }
 
           .card-overlay {
             position: absolute;
             inset: 0;
-            background: linear-gradient(to bottom, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.8) 100%);
+            background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.8) 100%);
           }
 
           .card-content {
