@@ -5,16 +5,20 @@
   margin: (left: 1.4cm, right: 1.4cm, top: 1.5cm, bottom: 1.8cm),
 )
 
+#set text(font: "Roboto", size: 10pt)
+#show heading: set text(font: "Roboto")
 
-// Header
-#align(center)[
-  #text(size: 24pt, fill: darktext)[*Fernando* #text(fill: awesome-red)[Román Hidalgo]] \
-  #text(size: 12pt, fill: graytext)[Ingeniero de Robótica y Automatización] \
-  #v(0.5em)
-  #text(
-    size: 9pt,
-  )[41909, Salteras, Sevilla, España | 611467316 | ferromhid\@gmail.com | github.com/FerXxk | linkedin.com/in/fernandoromhid]
-]
+#makecvheader(
+  firstname: "Fernando",
+  lastname: "Román Hidalgo",
+  position: "Ingeniero de Robótica y Automatización",
+  address: "41909, Salteras, Sevilla, España",
+  mobile: "611467316",
+  email: "ferromhid@gmail.com",
+  github: "github.com/FerXxk",
+  linkedin: "linkedin.com/in/fernandoromhid",
+  photo: image("../images/foto_cv.jpg")
+)
 
 #include "sections/summary.typ"
 #include "sections/experience.typ"
@@ -27,3 +31,9 @@
 #include "sections/skills.typ"
 #include "sections/soft_skills.typ"
 #include "sections/languages.typ"
+
+#makecvfooter(
+  left-content: datetime.today().display("[month repr:long] [year]"),
+  center-content: "Fernando Román Hidalgo · CV",
+  right-content: context counter(page).display()
+)
