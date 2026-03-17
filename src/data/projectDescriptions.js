@@ -49,6 +49,10 @@ export const projectDescriptions = {
     },
     "Particle-Filter": {
         "en": "Advanced ROS 2 implementation for 3D beacon localization using a mobile UAV. It features three estimation strategies: Basic PF, Smart Adaptive PF with dynamic particle budgeting, and a Hybrid PF+EKF system that switches filters upon convergence. Includes Gazebo integration, real-time RViz rendering, and automated logging.",
-        "es": "Implementación avanzada en ROS 2 para la localización de balizas 3D mediante un UAV móvil. Cuenta con tres estrategias de estimación: PF básico, PF adaptable inteligente con presupuesto dinámico de partículas y un sistema híbrido PF+EKF que cambia de filtro tras la convergencia. Incluye integración con Gazebo, renderizado en tiempo real en RViz y registro automático de datos."
+        "es": "Implementación avanzada en ROS 2 para la localización de balizas 3D mediante un UAV móvil. Cuenta con tres estrategias de estimación: PF básico, PF adaptable inteligente y un sistema híbrido PF+EKF que cambia de filtro tras la convergencia. Incluye integración con Gazebo, renderizado en tiempo real en RViz y registro automático de datos."
+    },
+    "percepcion_ar": {
+        "en": "Jupyter notebooks and Python Tools for the Practical sessions",
+        "es": "Jupyter notebooks and Python Tools for the Practical sessions"
     }
 };

@@ -37,7 +37,8 @@
                 "Computer-Vision-Course": "Visión por Computador",
                 "Imminent-Crash": "Imminent Crash!",
                 "Turtlebot-ROS-Project": "Navegación Autónoma TurtleBot",
-                "Particle-Filter": "Localización mediante Filtro de Partículas"
+                "Particle-Filter": "Localización mediante Filtro de Partículas",
+                "crazyflie_slam": "Crazyflie Mapping Demo"
             },
             "repo_descriptions": {
                 "Portfolio": "Mi portfolio interactivo personal construido con React, GSAP y la API de GitHub.",
@@ -52,7 +53,9 @@
                 "Imminent-Crash": "Un juego de supervivencia de estilo arcade desarrollado para el microcontrolador MSP430 utilizando el Educational BoosterPack MKII. Cuenta con lógica de colisión en tiempo real, controles impulsados por interrupciones de hardware y renderizado en LCD. Este proyecto muestra la programación de sistemas embebidos, la gestión de recursos y la interfaz hardware-software.",
                 "FPGA-Race-Game": "Un juego de carreras en tiempo real implementado en VHDL para FPGA. El sistema cuenta con un controlador VGA personalizado, comunicación UART para soporte multijugador y una línea de visualización dedicada.",
                 "Turtlebot-ROS-Project": "Proyecto basado en ROS para la navegación y el control autónomo de TurtleBot. Incluye SLAM para mapeado, integración de sensores para evitación de obstáculos y algoritmos de planificación de rutas. Desarrollado para simulación en Gazebo y aplicaciones robóticas reales.",
-                "Particle-Filter": "Implementación avanzada en ROS 2 para la localización de balizas 3D mediante un UAV móvil. Cuenta con tres estrategias de estimación: PF básico, PF adaptable inteligente y un sistema híbrido PF+EKF que cambia de filtro tras la convergencia. Incluye integración con Gazebo, renderizado en tiempo real en RViz y registro automático de datos."
+                "Particle-Filter": "Implementación avanzada en ROS 2 para la localización de balizas 3D mediante un UAV móvil. Cuenta con tres estrategias de estimación: PF básico, PF adaptable inteligente y un sistema híbrido PF+EKF que cambia de filtro tras la convergencia. Incluye integración con Gazebo, renderizado en tiempo real en RViz y registro automático de datos.",
+                "percepcion_ar": "Jupyter notebooks and Python Tools for the Practical sessions",
+                "crazyflie_slam": "Mapeo y navegación autónoma en ROS 2 para drones Crazyflie usando el Multiranger deck. Incluye Particle Filter SLAM, mapeo de ocupación y seguimiento de paredes para entornos reales y simulados."
             },
             "readme_loading": "Cargando documentación...",
             "readme_error": "No se pudo cargar la documentación. Por favor, inténtalo de nuevo más tarde."
@@ -143,7 +146,8 @@
                 "Computer-Vision-Course": "Computer Vision",
                 "Imminent-Crash": "Imminent Crash!",
                 "Turtlebot-ROS-Project": "TurtleBot Autonomous Navigation",
-                "Particle-Filter": "Particle Filter Localization"
+                "Particle-Filter": "Particle Filter Localization",
+                "crazyflie_slam": "Crazyflie Mapping Demo"
             },
             "repo_descriptions": {
                 "Portfolio": "My personal interactive portfolio built with React, GSAP and GitHub API.",
@@ -158,7 +162,9 @@
                 "Imminent-Crash": "An arcade-style survival game developed for the MSP430 microcontroller using the Educational BoosterPack MKII. It features real-time collision logic, hardware-interrupt driven controls, and LCD rendering. This project showcases embedded systems programming, resource management, and hardware-software interfacing.",
                 "FPGA-Race-Game": "A real-time racing game implemented in VHDL for FPGA. The system features a custom VGA driver, UART communication for multiplayer support, and a dedicated visualization pipeline.",
                 "Turtlebot-ROS-Project": "ROS-based project for TurtleBot autonomous navigation and control. Features include SLAM for mapping, sensor integration for obstacle avoidance, and path planning algorithms. Developed for simulation in Gazebo and real-world robotics applications.",
-                "Particle-Filter": "Advanced ROS 2 implementation for 3D beacon localization using a mobile UAV. It features three estimation strategies: Basic PF, Smart Adaptive PF with dynamic particle budgeting, and a Hybrid PF+EKF system that switches filters upon convergence. Includes Gazebo integration, real-time RViz rendering, and automated logging."
+                "Particle-Filter": "Advanced ROS 2 implementation for 3D beacon localization using a mobile UAV. It features three estimation strategies: Basic PF, Smart Adaptive PF with dynamic particle budgeting, and a Hybrid PF+EKF system that switches filters upon convergence. Includes Gazebo integration, real-time RViz rendering, and automated logging.",
+                "percepcion_ar": "Jupyter notebooks and Python Tools for the Practical sessions",
+                "crazyflie_slam": "Autonomous mapping and navigation in ROS 2 for Crazyflie drones using the Multiranger deck. Includes Particle Filter SLAM, occupancy grid mapping, and wall-following for real and simulated environments."
             },
             "readme_loading": "Loading documentation...",
             "readme_error": "Could not load documentation. Please try again later."
