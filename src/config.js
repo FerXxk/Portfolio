@@ -5,7 +5,8 @@ const config = {
         'FerXxk', // Example: hide the profile repo if it exists
         'Portfolio',
         'PCB_Design',
-        'Percepcion_AR'
+        'Percepcion_AR',
+        'percepcion_ar'
     ],
 
     // Sorting configuration for the repositories
