@@ -31,7 +31,7 @@ foreach ($item in $Files) {
     # Run typst compile
     Write-Host "Compiling $typName with Typst..." -ForegroundColor Yellow
     Push-Location $TypstDir
-    typst compile $typName $sourcePdf --font-path ../fonts
+    typst compile $typName $sourcePdf --font-path ../fonts --root ..
     Pop-Location
     
     $destPdf = Join-Path $PublicDir $pdfName
