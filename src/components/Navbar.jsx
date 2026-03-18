@@ -145,7 +145,8 @@ const Navbar = () => {
           width: 100%;
           z-index: 1000;
           padding: 2rem 0;
-          transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+          transition: background 0.5s ease, padding 0.5s ease, border 0.5s ease, backdrop-filter 0.5s ease;
+          color: var(--text-main);
         }
         .lab-nav.scrolled {
           padding: 1rem 0;
@@ -181,6 +182,7 @@ const Navbar = () => {
           font-weight: 800;
           font-size: 1.2rem;
           letter-spacing: -0.02em;
+          color: var(--text-main);
         }
         .nav-logo span {
           color: var(--accent);
@@ -194,8 +196,14 @@ const Navbar = () => {
           font-size: 0.8rem;
           text-transform: uppercase;
           letter-spacing: 0.1em;
-          color: var(--text-muted);
+          color: var(--text-main);
+          opacity: 0.8;
           font-weight: 600;
+          transition: opacity 0.3s ease;
+        }
+        .nav-item:hover {
+          opacity: 1;
+          color: var(--accent);
         }
         .cv-buttons {
           display: flex;
