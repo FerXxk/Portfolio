@@ -8,6 +8,9 @@
     phone: "611467316",
     github: "FerXxk",
     linkedin: "fernandoromhid",
+    custom: (
+      (icon: "home", text: "Portfolio", link: "https://ferxxk.github.io/Portfolio/"),
+    ),
     address: "41909, Salteras, Sevilla, Spain",
     positions: (
       "Robotics and Automation Engineer",
