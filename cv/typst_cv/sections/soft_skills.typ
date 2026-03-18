@@ -3,9 +3,6 @@
 
 #cvSection("Habilidades Blandas")
 
-#cvSkills([
-  #cvSkill(
-    category: "",
-    skills: [Liderazgo técnico, trabajo en equipo multidisciplinar, comunicación efectiva, resolución de problemas, adaptabilidad y *alta curva de aprendizaje*.]
-  )
-])
+#resume-skill-item("Capacidades", (
+  "Comunicación", "liderazgo", "adaptabilidad", "proactividad", "pensamiento crítico", "puntualidad", "autonomía", "gestión y trabajo en equipo"
+))

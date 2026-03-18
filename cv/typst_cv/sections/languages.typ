@@ -3,19 +3,6 @@
 
 #cvSection("Idiomas")
 
-#cvSkills([
-  #cvSkill(
-    category: "Español",
-    skills: "Nativo"
-  )
-
-  #cvSkill(
-    category: "Inglés",
-    skills: "Competencia profesional"
-  )
-
-  #cvSkill(
-    category: "Francés",
-    skills: "Competencia básica"
-  )
-])
+#resume-skill-item("Español", ("Nativo",))
+#resume-skill-item("Inglés", ("Competencia profesional",))
+#resume-skill-item("Francés", ("Competencia básica",))

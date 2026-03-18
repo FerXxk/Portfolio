@@ -3,11 +3,9 @@
 
 #cvSection("Logros y Reconocimientos")
 
-#cvHonors([
-  #cvHonor(
-    award: "Ganador",
-    event: "Liga Nacional de Robótica de Competición (LNRC) - Categoría Minisumo",
-    location: "España",
-    date: "2024"
-  )
-])
+#resume-entry(
+  title: "Ganador",
+  location: "Liga Nacional de Robótica de Competición (LNRC) | España",
+  date: "2024",
+  description: "Categoría Minisumo"
+)

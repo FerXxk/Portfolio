@@ -3,6 +3,4 @@
 
 #cvSection("Projects")
 
-#cvParagraph([
-  To see all my projects in detail, check out my #link("https://ferxxk.github.io/Portfolio/")[*Interactive Portfolio*].
-])
+To see all my projects in detail, check out my #link("https://ferxxk.github.io/Portfolio/")[*Interactive Portfolio*].

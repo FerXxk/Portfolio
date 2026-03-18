@@ -3,22 +3,30 @@
 
 #cvSection("Certificaciones")
 
-#cvEntries([
-  #cvEntry(
-    title: "Curso de Python Avanzado",
-    society: [Idexa],
-    logo: image("../../images/idexa.jpg", height: 1.5em),
-    location: "Online",
-    date: "Enero 2026",
-    description: none,
-  )
+#resume-entry(
+  title: "Curso Avanzado de Python",
+  location: logo-location("../images/idexa.jpg", "Idexa"),
+  description: "Online",
+  date: "Ene 2026"
+)
 
-  #cvEntry(
-    title: "Certificate in Advanced English (C1 Advanced)",
-    society: [Cambridge Assessment English],
-    logo: image("../../images/cambridge_logo.png", height: 1.5em),
-    location: "",
-    date: "Septiembre 2024",
-    description: none,
-  )
-])
+#resume-entry(
+  title: "Certificate in Advanced English (C1 Advanced)",
+  location: logo-location("../images/cambridge_logo.png", "Cambridge Assessment English"),
+  description: "",
+  date: "Sep 2024"
+)
+
+#resume-entry(
+  title: "Curso Intensivo de Python",
+  location: logo-location("../images/US-marca-principal.png", "Universidad de Sevilla"),
+  description: "",
+  date: "Dic 2024"
+)
+
+#resume-entry(
+  title: "Fundamentos de la Inteligencia Artificial",
+  location: "LinkedIn Learning / Microsoft",
+  description: "Certificación Online",
+  date: "Nov 2024"
+)

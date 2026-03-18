@@ -1,13 +1,11 @@
-// CV Section: Achievements
+// CV Section: Honors and Awards
 #import "../template.typ": *
 
-#cvSection("Achievements")
+#cvSection("Honors and Awards")
 
-#cvHonors([
-  #cvHonor(
-    award: "Winner",
-    event: "National Competitive Robotics League (LNRC) - Minisumo Category",
-    location: "Spain",
-    date: "2024"
-  )
-])
+#resume-entry(
+  title: "Winner",
+  location: "National Competition Robotics League (LNRC) | Spain",
+  date: "2024",
+  description: "Minisumo Category"
+)

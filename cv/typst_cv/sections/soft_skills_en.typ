@@ -3,9 +3,6 @@
 
 #cvSection("Soft Skills")
 
-#cvSkills([
-  #cvSkill(
-    category: "",
-    skills: [Technical leadership, multidisciplinary teamwork, effective communication, problem solving, adaptability, and a *high learning curve*.]
-  )
-])
+#resume-skill-item("Capabilities", (
+  "Communication", "leadership", "adaptation", "proactivity", "critical thinking", "punctuality", "autonomy", "management and teamwork"
+))
