@@ -54,8 +54,8 @@ const AppContent = () => {
       .then(res => res.json())
       .then(data => {
         if (Array.isArray(data)) {
-          // Filter curated repos
-          const filteredData = data.filter(repo => config.curatedRepos.includes(repo.name));
+          // Filter excluded repos
+          const filteredData = data.filter(repo => !config.excludedRepos.includes(repo.name));
 
           // Sort by config settings
           const sortedData = filteredData.sort((a, b) => {
@@ -63,11 +63,7 @@ const AppContent = () => {
             const direction = config.repoSorting.direction === 'asc' ? 1 : -1;
 
             let valA, valB;
-            if (field === 'curated') {
-              valA = config.curatedRepos.indexOf(a.name);
-              valB = config.curatedRepos.indexOf(b.name);
-              return (valA - valB); // Smallest index first (matching config order)
-            } else if (field === 'stars') {
+            if (field === 'stars') {
               valA = a.stargazers_count;
               valB = b.stargazers_count;
             } else if (field === 'updated') {
