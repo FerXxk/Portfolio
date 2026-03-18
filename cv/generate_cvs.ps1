@@ -1,5 +1,5 @@
-$PDFFontPath = "C:\Users\ferna\AppData\Local\Programs\MiKTeX\miktex\bin\x64\xelatex.exe"
 $SourceDir = "c:\Users\ferna\Desktop\CV interactivo\cv"
+$TypstDir = Join-Path $SourceDir "typst_cv"
 $PublicDir = "c:\Users\ferna\Desktop\CV interactivo\public\cv"
 $HistoryDir = Join-Path $SourceDir "historical_cvs"
 
@@ -7,11 +7,16 @@ $HistoryDir = Join-Path $SourceDir "historical_cvs"
 if (!(Test-Path $PublicDir)) { New-Item -ItemType Directory -Force -Path $PublicDir }
 if (!(Test-Path $HistoryDir)) { New-Item -ItemType Directory -Force -Path $HistoryDir }
 
-$Files = @("cv_fernando_roman.tex", "cv_fernando_roman_en.tex")
+$Files = @(
+    @{ Source = "cv_fernando_roman.typ"; Output = "cv_fernando_roman.pdf" },
+    @{ Source = "cv_fernando_roman_en.typ"; Output = "cv_fernando_roman_en.pdf" }
+)
 
-foreach ($file in $Files) {
-    Write-Host "--- Processing $file ---" -ForegroundColor Cyan
-    $pdfName = $file.Replace(".tex", ".pdf")
+foreach ($item in $Files) {
+    $typName = $item.Source
+    $pdfName = $item.Output
+    Write-Host "--- Processing $typName ---" -ForegroundColor Cyan
+    
     $sourcePdf = Join-Path $SourceDir $pdfName
     
     # Archive existing PDF if it exists
@@ -23,16 +28,10 @@ foreach ($file in $Files) {
         Move-Item -Path $sourcePdf -Destination $archivePath -Force
     }
 
-    # Run xelatex twice
-    Push-Location $SourceDir
-    # Add lib directory to TEXINPUTS to assume cls/sty files are found
-    $env:TEXINPUTS = ".;$SourceDir\lib\;" 
-    
-    & $PDFFontPath -interaction=nonstopmode -no-pdf $file
-    & $PDFFontPath -interaction=nonstopmode $file
-    
-    # Clean up env var just in case
-    $env:TEXINPUTS = ""
+    # Run typst compile
+    Write-Host "Compiling $typName with Typst..." -ForegroundColor Yellow
+    Push-Location $TypstDir
+    typst compile $typName $sourcePdf --font-path ../fonts
     Pop-Location
     
     $destPdf = Join-Path $PublicDir $pdfName
@@ -45,10 +44,5 @@ foreach ($file in $Files) {
     }
 }
 
-Write-Host "Cleanup of intermediate files..." -ForegroundColor Yellow
-$Exts = @("*.aux", "*.log", "*.out", "*.gz", "*.xdv")
-foreach ($ext in $Exts) {
-    Get-ChildItem -Path $SourceDir -Filter $ext | Remove-Item -Force -ErrorAction SilentlyContinue
-}
-
 Write-Host "Bilingual CV generation complete!" -ForegroundColor Green
+

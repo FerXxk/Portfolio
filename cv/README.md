@@ -1,32 +1,24 @@
 # CV Interactivo - PDF Generation
 
-This folder contains the LaTeX source code for Fernando Román's CV in both Spanish and English.
+This folder contains the Typst source code for Fernando Román's CV in both Spanish and English.
 
 ## Structure
 
 ```
 cv/
-├── cv_fernando_roman.tex       # Spanish CV driver file
-├── cv_fernando_roman_en.tex    # English CV driver file
+├── typst_cv/                   # Typst source files
+│   ├── cv_fernando_roman.typ    # Spanish CV driver file
+│   ├── cv_fernando_roman_en.typ # English CV driver file
+│   ├── template.typ             # Modern CV template customization
+│   └── sections/                # Modular content sections (.typ)
 ├── generate_cvs.ps1            # PowerShell build script
-├── lib/
-│   ├── awesome-cv.cls          # LaTeX class file
-│   └── fontawesome.sty         # FontAwesome icons support
-├── sections/                   # Modular content sections
-│   ├── education.tex / _en.tex
-│   ├── experience.tex / _en.tex
-│   ├── skills.tex / _en.tex
-│   ├── soft_skills.tex / _en.tex
-│   ├── languages.tex / _en.tex
-│   ├── honors.tex / _en.tex
-│   └── projects.tex / _en.tex
 ├── images/                     # Logos and profile pictures
 └── fonts/                      # Font files (Roboto, etc.)
 ```
 
 ## Requirements
 
-- **MiKTeX** (or TeX Live) with `xelatex` installed.
+- **Typst** compiler installed and available in PATH.
 - **PowerShell** to run the build script.
 
 ## How to Build
@@ -38,12 +30,12 @@ Run the `generate_cvs.ps1` script from the project root or the `cv` folder:
 ```
 
 This script will:
-1.  Compile `cv_fernando_roman.tex` and `cv_fernando_roman_en.tex` using `xelatex`.
-2.  Clean up intermediate files (`.aux`, `.log`, `.out`, etc.).
-3.  Move the generated PDFs to `public/cv/`.
-4.  Archive previous PDF versions in `cv/historical_cvs/`.
+1.  Compile the `.typ` files using `typst compile`.
+2.  Move the generated PDFs to `public/cv/`.
+3.  Archive previous PDF versions in `cv/historical_cvs/`.
 
 ## Customization
 
-- **Logos**: Institution logos are stored in `cv/images/`. To update them, replace the files and ensure filename consistency in `sections/education.tex` and `sections/experience.tex`.
-- **Colors**: Main color is defined in the driver files (`\colorlet{awesome}{awesome-red}`).
+- **Logos**: Institution logos are stored in `cv/images/`.
+- **Sections**: Content is modularized in `cv/typst_cv/sections/`.
+
