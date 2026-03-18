@@ -10,10 +10,20 @@ const Projects = () => {
     const t = translations[language].projects
 
     useEffect(() => {
-        fetch('https://api.github.com/users/FerXxk/repos?sort=updated&per_page=6')
+        fetch('https://api.github.com/users/FerXxk/repos?sort=updated&per_page=100')
             .then(res => res.json())
             .then(data => {
-                setRepos(data)
+                // Filtramos para mostrar solo los proyectos que tenemos definidos en las traducciones
+                // Esto permite tener un portfolio curado y no solo los últimos actualizados
+                const projectKeys = Object.keys(translations.es.projects.repo_names);
+                const curatedRepos = data.filter(repo => projectKeys.includes(repo.name));
+                
+                // Ordenar para mantener el orden de aparición definido en translations.json si es posible
+                curatedRepos.sort((a, b) => {
+                    return projectKeys.indexOf(a.name) - projectKeys.indexOf(b.name);
+                });
+
+                setRepos(curatedRepos)
                 setLoading(false)
             })
             .catch(err => {

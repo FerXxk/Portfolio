@@ -38,7 +38,8 @@
                 "Imminent-Crash": "Imminent Crash!",
                 "Turtlebot-ROS-Project": "Navegación Autónoma TurtleBot",
                 "Particle-Filter": "Localización mediante Filtro de Partículas",
-                "crazyflie_slam": "Crazyflie SLAM"
+                "crazyflie_slam": "Crazyflie SLAM",
+                "FPGA-Race-Game": "Juego de Carreras en FPGA"
             },
             "repo_descriptions": {
                 "Portfolio": "Mi portfolio interactivo personal construido con React, GSAP y la API de GitHub.",
@@ -146,7 +147,8 @@
                 "Imminent-Crash": "Imminent Crash!",
                 "Turtlebot-ROS-Project": "TurtleBot Autonomous Navigation",
                 "Particle-Filter": "Particle Filter Localization",
-                "crazyflie_slam": "Crazyflie SLAM"
+                "crazyflie_slam": "Crazyflie SLAM",
+                "FPGA-Race-Game": "FPGA Race Game"
             },
             "repo_descriptions": {
                 "Portfolio": "My personal interactive portfolio built with React, GSAP and GitHub API.",
