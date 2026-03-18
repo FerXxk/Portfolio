@@ -23,7 +23,10 @@
 #include "sections/experience.typ"
 #include "sections/projects.typ"
 #include "sections/honors.typ"
+
+
 #include "sections/education.typ"
+
 
 #pagebreak()
 

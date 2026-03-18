@@ -7,7 +7,7 @@
   title: "Ingeniero de Software",
   location: logo-location("../images/AIRTIFICIAL.jpg", "Airtificial Aerospace & Defense | Sevilla, España"),
   date: "Abril 2025 - Actualidad",
-  description: "Desarrollo Fullstack y Gestión de Proyectos"
+  description: "Desarrollo Fullstack, Automatización y Gestión de Proyectos",
 )
 
 #resume-item[

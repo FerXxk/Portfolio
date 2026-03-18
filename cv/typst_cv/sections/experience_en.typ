@@ -7,7 +7,7 @@
   title: "Software Engineer",
   location: logo-location("../images/AIRTIFICIAL.jpg", "Airtificial Aerospace & Defense | Seville, Spain"),
   date: "April 2025 - Present",
-  description: "Fullstack Development and Project Management"
+  description: "Fullstack Development, Automation and Project Management",
 )
 
 #resume-item[
