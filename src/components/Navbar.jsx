@@ -7,6 +7,7 @@ const Navbar = () => {
   const navRef = useRef(null);
   const mobileMenuRef = useRef(null);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
   const { language, setLanguage } = useLanguage();
   const t = translations[language].nav;
 
@@ -18,6 +19,13 @@ const Navbar = () => {
       ease: "power3.out",
       delay: 0.2
     });
+
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 20);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   useEffect(() => {
@@ -44,9 +52,10 @@ const Navbar = () => {
   }, [isMenuOpen]);
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
+  const isScrolledClass = isScrolled ? 'scrolled' : '';
 
   return (
-    <nav className="lab-nav" ref={navRef}>
+    <nav className={`lab-nav ${isScrolledClass}`} ref={navRef}>
       <div className="container nav-container">
         <a href="#home" className="nav-logo">
           FERNANDO<span>.</span>PORTFOLIO
@@ -134,9 +143,33 @@ const Navbar = () => {
           top: 0;
           left: 0;
           width: 100%;
-          z-index: 100;
+          z-index: 1000;
           padding: 2rem 0;
-          mix-blend-mode: difference;
+          transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .lab-nav.scrolled {
+          padding: 1rem 0;
+          background: rgba(0, 0, 0, 0.4);
+          backdrop-filter: blur(12px);
+          -webkit-backdrop-filter: blur(12px);
+          border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        /* Top Gradient Fade Overlay */
+        .lab-nav::after {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 140%;
+          background: linear-gradient(to bottom, var(--bg-dark) 0%, rgba(0, 0, 0, 0.7) 60%, transparent 100%);
+          z-index: -1;
+          pointer-events: none;
+          opacity: 0;
+          transition: opacity 0.5s ease;
+        }
+        .lab-nav.scrolled::after {
+          opacity: 1;
         }
         .nav-container {
           display: flex;
