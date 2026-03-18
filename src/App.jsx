@@ -50,12 +50,12 @@ const AppContent = () => {
     });
 
     // Fetch GitHub Repos
-    fetch('https://api.github.com/users/FerXxk/repos?sort=updated&per_page=12')
+    fetch('https://api.github.com/users/FerXxk/repos?sort=updated&per_page=100')
       .then(res => res.json())
       .then(data => {
         if (Array.isArray(data)) {
-          // Filter excluded repos
-          const filteredData = data.filter(repo => !config.excludedRepos.includes(repo.name));
+          // Filter curated repos
+          const filteredData = data.filter(repo => config.curatedRepos.includes(repo.name));
 
           // Sort by config settings
           const sortedData = filteredData.sort((a, b) => {
@@ -63,7 +63,11 @@ const AppContent = () => {
             const direction = config.repoSorting.direction === 'asc' ? 1 : -1;
 
             let valA, valB;
-            if (field === 'stars') {
+            if (field === 'curated') {
+              valA = config.curatedRepos.indexOf(a.name);
+              valB = config.curatedRepos.indexOf(b.name);
+              return (valA - valB); // Smallest index first (matching config order)
+            } else if (field === 'stars') {
               valA = a.stargazers_count;
               valB = b.stargazers_count;
             } else if (field === 'updated') {
