@@ -14,18 +14,20 @@
     ),
   ),
   profile-picture: image("../images/foto_cv.jpg"),
-  date: datetime.today().display(),
+  language: "en",
+  date: none,
   font: ("Source Sans 3", "Segoe UI", "Calibri"),
-  header-font: ("Roboto", "Segoe UI"),
 )
 
 #include "sections/summary_en.typ"
 #include "sections/experience_en.typ"
 #include "sections/projects_en.typ"
 #include "sections/honors_en.typ"
-#include "sections/education_en.typ"
 
 #pagebreak()
+
+#include "sections/education_en.typ"
+
 
 #include "sections/certifications_en.typ"
 #include "sections/skills_en.typ"

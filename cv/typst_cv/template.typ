@@ -1,4 +1,5 @@
 #import "@preview/modern-cv:0.9.0": *
+#import "@preview/modern-cv:0.9.0": resume as modern-resume
 
 #fa-version("6")
 
@@ -37,4 +38,34 @@
   box(height: 1.1em, baseline: 25%)[#image(logo-path)]
   h(0.5em)
   name
+}
+
+// Wrapper for modern-cv resume to disable default footer and apply custom styling
+#let resume(..args) = {
+  let named = args.named()
+  let language = named.at("language", default: "en")
+  
+  // Use "sp" for Spanish if "es" is provided
+  if language == "es" {
+    named.insert("language", "sp")
+  }
+
+  // Disable modern-cv's default footer to remove the "Résumé" suffix
+  named.insert("show-footer", false)
+  
+  // Call the original modern-cv resume
+  modern-resume(..named, ..args.pos())
+
+  // Apply our custom footer
+  set page(
+    footer: context [
+      #set text(8pt, gray)
+      #grid(
+        columns: (1fr, 1fr),
+        if language == "sp" or language == "es" [Curriculum Vitae] else [Curriculum Vitae],
+        align(right, counter(page).display())
+      )
+    ],
+    footer-descent: 20%,
+  )
 }

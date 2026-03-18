@@ -3,6 +3,9 @@
 
 #cvSection("Education")
 
+#show heading.where(level: 2): set text(size: 10.5pt)
+#set text(size: 10pt)
+
 #resume-entry(
   title: "Master's Degree in Electronic Engineering, Robotics and Automation",
   location: logo-location("../images/US-marca-principal.png", [University of Seville \ Seville, Spain]),

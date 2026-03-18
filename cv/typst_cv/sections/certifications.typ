@@ -16,4 +16,16 @@
   description: "",
   date: "Sep 2024",
 )
+#resume-entry(
+  title: "Soporte Vital Básico y Desfibrilación Semiautomática",
+  location: logo-location("../images/Logo-Ympetu.webp", "Ympetu"),
+  description: "",
+  date: "2020",
+)
 
+#resume-entry(
+  title: "Socorrista Acuático",
+  location: logo-location("../images/Logo-Ympetu.webp", "Ympetu"),
+  description: "",
+  date: "2020",
+)

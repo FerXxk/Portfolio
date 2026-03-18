@@ -14,9 +14,9 @@
     ),
   ),
   profile-picture: image("../images/foto_cv.jpg"),
-  date: datetime.today().display(),
+  language: "es",
+  date: none,
   font: ("Source Sans 3", "Segoe UI", "Calibri"),
-  header-font: ("Roboto", "Segoe UI"),
 )
 
 #include "sections/summary.typ"
@@ -25,10 +25,10 @@
 #include "sections/honors.typ"
 
 
+#pagebreak()
 #include "sections/education.typ"
 
 
-#pagebreak()
 
 #include "sections/certifications.typ"
 #include "sections/skills.typ"

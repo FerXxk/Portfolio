@@ -16,4 +16,16 @@
   description: "",
   date: "Sep 2024",
 )
+#resume-entry(
+  title: "Basic Life Support and Automated External Defibrillation",
+  location: logo-location("../images/Logo-Ympetu.webp", "Ympetu"),
+  description: "",
+  date: "2020",
+)
 
+#resume-entry(
+  title: "Aquatic Lifeguard",
+  location: logo-location("../images/Logo-Ympetu.webp", "Ympetu"),
+  description: "",
+  date: "2020",
+)

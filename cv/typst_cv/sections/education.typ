@@ -3,6 +3,9 @@
 
 #cvSection("Educación")
 
+#show heading.where(level: 2): set text(size: 10.5pt)
+#set text(size: 10pt)
+
 #resume-entry(
   title: "Máster en Ingeniería Electrónica, Robótica y Automatización",
   location: logo-location("../images/US-marca-principal.png", [Universidad de Sevilla \ Sevilla, España]),
