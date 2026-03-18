@@ -20,6 +20,7 @@
     - Design and implementation of a digital twin for a composite material production plant, oriented towards simulation and optimization of industrial processes.
     - Software integration and deployment using Docker containers.
     - Automation and orchestration of workflows with Apache Airflow.
-    - Development of AI models for early failure detection and scheduling algorithms based on CP-SAT.
+    - Development of AI models for early failure detection
+    - Complex production scheduling algorithms using Google OR-Tools' CP-SAT solver, implementing variable capacity-load constraints and custom priority weighting systems.
     - Acquisition and interpretation of data from industrial sensors.
 ]

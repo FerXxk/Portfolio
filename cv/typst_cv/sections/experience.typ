@@ -20,6 +20,7 @@
     - Diseño e implementación de un gemelo digital para una planta de producción de materiales compuestos, orientado a la simulación y optimización de procesos industriales.
     - Integración y despliegue de software mediante contenedores Docker.
     - Automatización y orquestación de flujos de trabajo con Apache Airflow.
-    - Desarrollo de modelos de IA para detección temprana de fallos y algoritmos de planificación basados en CP-SAT.
+    - Desarrollo de modelos de IA para detección temprana de fallos.
+    - Algoritmos de optimización de la producción (scheduling) complejos mediante el solver CP-SAT de Google OR-Tools, implementando restricciones de capacidad-carga variables y sistemas de prioridades personalizadas.
     - Adquisición e interpretación de datos provenientes de sensores industriales.
 ]
