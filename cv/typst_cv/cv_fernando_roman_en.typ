@@ -11,7 +11,7 @@
     address: "41909, Salteras, Sevilla, Spain",
     positions: (
       "Robotics and Automation Engineer",
-    )
+    ),
   ),
   profile-picture: image("../images/foto_cv.jpg"),
   date: datetime.today().display(),
@@ -24,6 +24,9 @@
 #include "sections/projects_en.typ"
 #include "sections/honors_en.typ"
 #include "sections/education_en.typ"
+
+#pagebreak()
+
 #include "sections/certifications_en.typ"
 #include "sections/skills_en.typ"
 #include "sections/soft_skills_en.typ"

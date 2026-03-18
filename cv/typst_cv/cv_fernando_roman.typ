@@ -11,7 +11,7 @@
     address: "41909, Salteras, Sevilla, España",
     positions: (
       "Ingeniero de Robótica y Automatización",
-    )
+    ),
   ),
   profile-picture: image("../images/foto_cv.jpg"),
   date: datetime.today().display(),
@@ -24,6 +24,9 @@
 #include "sections/projects.typ"
 #include "sections/honors.typ"
 #include "sections/education.typ"
+
+#pagebreak()
+
 #include "sections/certifications.typ"
 #include "sections/skills.typ"
 #include "sections/soft_skills.typ"

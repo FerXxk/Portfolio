@@ -4,14 +4,14 @@
 
 // Increase spacing between sections
 #show heading.where(level: 1): it => {
-  set block(above: 3.5em, below: 1.5em)
+  set block(above: 4.5em, below: 2.0em)
   it
 }
 
 // Increase spacing between entries and items
-#show grid: set block(above: 1.5em, below: 1.5em)
-#show block: set block(above: 1.5em, below: 1.5em)
-#set par(spacing: 1.25em)
+#show grid: set block(above: 2.0em, below: 2.0em)
+#show block: set block(above: 2.0em, below: 2.0em)
+#set par(spacing: 1.5em)
 
 
 // Helper to maintain compatibility with existing section files if possible
