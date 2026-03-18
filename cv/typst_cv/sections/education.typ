@@ -3,26 +3,25 @@
 
 #cvSection("Educación")
 
-#show heading.where(level: 2): set text(size: 10.5pt)
-#set text(size: 10pt)
+#show heading.where(level: 2): it => text(size: 11pt, weight: "bold")[#it.body]
 
 #resume-entry(
   title: "Máster en Ingeniería Electrónica, Robótica y Automatización",
   location: logo-location("../images/US-marca-principal.png", [Universidad de Sevilla \ Sevilla, España]),
   date: "2025 - 2026",
-  description: ""
+  description: "",
 )
 
 #resume-entry(
   title: "Grado en Ingeniería Electrónica, Robótica y Mecatrónica",
   location: logo-location("../images/US-marca-principal.png", [Universidad de Sevilla \ Sevilla, España]),
   date: "2021 - 2025",
-  description: "Nota media: 7.5"
+  description: "Nota media: 7.5",
 )
 
 #resume-entry(
   title: "Bachillerato Tecnológico (Matrícula de Honor)",
   location: logo-location("../images/logo_junta.png", [IES Heliche \ Sevilla, España]),
   date: "2019 - 2021",
-  description: ""
+  description: "",
 )

@@ -16,7 +16,7 @@
   profile-picture: image("../images/foto_cv.jpg"),
   language: "en",
   date: none,
-  font: ("Source Sans 3", "Segoe UI", "Calibri"),
+  font: "Source Sans Pro",
 )
 
 #include "sections/summary_en.typ"

@@ -35,9 +35,13 @@
 
 // Logo helper for institutions and companies
 #let logo-location(logo-path, name) = {
-  box(height: 1.1em, baseline: 25%)[#image(logo-path)]
-  h(0.5em)
-  name
+  grid(
+    columns: (auto, auto),
+    gutter: 0.5em,
+    align: horizon,
+    image(logo-path, height: 1.1em),
+    name
+  )
 }
 
 // Wrapper for modern-cv resume to disable default footer and apply custom styling
