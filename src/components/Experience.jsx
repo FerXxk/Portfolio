@@ -4,7 +4,7 @@ const Experience = () => {
     const experience = {
         company: 'Airtificial Aerospace & Defense',
         position: 'Ingeniero de Software',
-        period: 'Abril 2025 - Actualidad',
+        period: 'Abril 2025 - Mayo 2026',
         responsibilities: [
             'Gestión de proyecto para el desarrollo de una aplicación de automatización de procesos para una importante empresa del sector aeroespacial',
             'Desarrollo Fullstack, aplicando buenas prácticas de programación, eficiencia y organización',

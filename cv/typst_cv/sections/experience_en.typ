@@ -6,7 +6,7 @@
 #resume-entry(
   title: "Software Engineer",
   location: logo-location("../images/AIRTIFICIAL.jpg", "Airtificial Aerospace & Defense | Seville, Spain"),
-  date: "April 2025 - Present",
+  date: "April 2025 - May 2026",
   description: "Fullstack Development, Automation and Project Management",
 )
 

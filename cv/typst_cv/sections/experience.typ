@@ -6,7 +6,7 @@
 #resume-entry(
   title: "Ingeniero de Software",
   location: logo-location("../images/AIRTIFICIAL.jpg", "Airtificial Aerospace & Defense | Sevilla, España"),
-  date: "Abril 2025 - Actualidad",
+  date: "Abril 2025 - Mayo 2026",
   description: "Desarrollo Fullstack, Automatización y Gestión de Proyectos",
 )
 
