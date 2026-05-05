@@ -4,6 +4,13 @@
 #cvSection("Certifications")
 
 #resume-entry(
+  title: "Google Developer Program — Machine Learning",
+  location: logo-location("../images/google_developers.png", link("https://g.dev/ferromhid")[Google Developers]),
+  description: "Completed Machine Learning courses within the Google Developer Program.",
+  date: "2026",
+)
+
+#resume-entry(
   title: "Advanced Python Course",
   location: logo-location("../images/idexa.jpg", "Idexa"),
   description: "Online",
