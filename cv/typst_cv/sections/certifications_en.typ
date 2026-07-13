@@ -11,6 +11,20 @@
 )
 
 #resume-entry(
+  title: "AI with Google Gemini",
+  location: "Banco Santander & Google",
+  description: "Training program on developing and modeling solutions using Google Gemini generative AI.",
+  date: "2026",
+)
+
+#resume-entry(
+  title: "GitHub Copilot — Software Development",
+  location: "GitHub",
+  description: "Practical course on AI-assisted software development and workflow optimization.",
+  date: "2026",
+)
+
+#resume-entry(
   title: "Advanced Python Course",
   location: logo-location("../images/idexa.jpg", "Idexa"),
   description: "Online",

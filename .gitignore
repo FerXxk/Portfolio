@@ -10,6 +10,10 @@ lerna-debug.log*
 node_modules
 dist
 dist-ssr
+.cache
+*.tmp
+*.temp
+
 *.local
 
 # Editor directories and files
@@ -36,6 +40,7 @@ dist-ssr
 # Allow PDFs in public/cv (but ignore them elsewhere to keep repo clean)
 *.pdf
 !public/cv/*.pdf
+!certificados/*.pdf
 
 # Ignore CV history
 cv/historical_cvs/
