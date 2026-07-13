@@ -25,14 +25,19 @@
 #include "sections/summary_en.typ"
 #include "sections/experience_en.typ"
 #include "sections/projects_en.typ"
-#include "sections/honors_en.typ"
+
 
 #pagebreak()
+#include "sections/honors_en.typ"
+
 
 #include "sections/education_en.typ"
 
 
 #include "sections/certifications_en.typ"
 #include "sections/skills_en.typ"
+
+
+#pagebreak()
 #include "sections/soft_skills_en.typ"
 #include "sections/languages_en.typ"
