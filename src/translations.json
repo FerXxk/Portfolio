@@ -26,6 +26,7 @@
             "no_projects": "No se encontraron proyectos.",
             "view_more": "Leer más",
             "repo_names": {
+                "Auto-Parking-RL": "Aparcamiento Autónomo Reinforcement Learning",
                 "Portfolio": "Portfolio Interactivo",
                 "CV-interactivo": "CV Interactivo",
                 "EKF-Implementation": "Filtro de Kalman Extendido",
@@ -42,6 +43,7 @@
                 "FPGA-Race-Game": "Juego de Carreras en FPGA"
             },
             "repo_descriptions": {
+                "Auto-Parking-RL": "Un marco híbrido de estacionamiento autónomo que integra control óptimo y Deep Reinforcement Learning en un entorno de cosimulación MATLAB/Simulink y Unreal Engine. El vehículo busca de forma autónoma una plaza de aparcamiento libre, sigue una trayectoria planificada y ejecuta maniobras de estacionamiento sin colisiones mediante percepción basada en LiDAR.",
                 "Portfolio": "Mi portfolio interactivo personal construido con React, GSAP y la API de GitHub.",
                 "CV-interactivo": "Versión web y LaTeX de mi curriculum vitae.",
                 "EKF-Implementation": "Estimación de estado avanzada para drones usando ROS 2 Humble y MATLAB. Cuenta con una arquitectura modular con un Filtro de Kalman Extendido (EKF) para fusionar datos de Odometría e IMU. Incluye implementaciones para vectores de estado 3D, 7D y 8D, gestionando modelos de movimiento no lineales y ruido de sensores para navegación autónoma.",
@@ -135,6 +137,7 @@
             "no_projects": "No projects found.",
             "view_more": "View More",
             "repo_names": {
+                "Auto-Parking-RL": "Autonomous Parking Reinforcement Learning",
                 "Portfolio": "Interactive Portfolio",
                 "CV-interactivo": "Interactive CV",
                 "EKF-Implementation": "Extended Kalman Filter Implementation",
@@ -151,6 +154,7 @@
                 "FPGA-Race-Game": "FPGA Race Game"
             },
             "repo_descriptions": {
+                "Auto-Parking-RL": "A hybrid autonomous parking framework integrating optimal control and Deep Reinforcement Learning within a MATLAB/Simulink and Unreal Engine co-simulation environment. The vehicle autonomously searches for a free parking spot, follows a planned trajectory, and executes collision-free parking maneuvers using LiDAR-based perception.",
                 "Portfolio": "My personal interactive portfolio built with React, GSAP and GitHub API.",
                 "CV-interactivo": "Web and LaTeX version of my curriculum vitae.",
                 "EKF-Implementation": "Advanced state estimation for drones using ROS 2 Humble and MATLAB. It features a modular architecture with an Extended Kalman Filter (EKF) to fuse Odometry and IMU data. Includes implementations for 3D, 7D, and 8D state vectors, handling non-linear motion models and sensor noise for autonomous navigation.",

@@ -1,4 +1,8 @@
 export const projectDescriptions = {
+    "Auto-Parking-RL": {
+        "en": "A hybrid autonomous parking framework integrating optimal control and Deep Reinforcement Learning within a MATLAB/Simulink and Unreal Engine co-simulation environment. The vehicle autonomously searches for a free parking spot, follows a planned trajectory, and executes collision-free parking maneuvers using LiDAR-based perception.",
+        "es": "Un marco híbrido de estacionamiento autónomo que integra control óptimo y Deep Reinforcement Learning en un entorno de cosimulación MATLAB/Simulink y Unreal Engine. El vehículo busca de forma autónoma una plaza de aparcamiento libre, sigue una trayectoria planificada y ejecuta maniobras de estacionamiento sin colisiones mediante percepción basada en LiDAR."
+    },
     "Portfolio": {
         "en": "My personal interactive portfolio built with React, GSAP and GitHub API.",
         "es": "Mi portfolio interactivo personal construido con React, GSAP y la API de GitHub."
