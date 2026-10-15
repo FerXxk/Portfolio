@@ -18,24 +18,16 @@ import repos from './data/repos.json';
 
 gsap.registerPlugin(ScrollTrigger);
 
-const sortValue = (repo, field) => {
-  if (field === 'stars') return repo.stargazers_count;
-  if (field === 'updated') return new Date(repo.pushed_at);
-  if (field === 'created') return new Date(repo.created_at);
-  return repo.name.toLowerCase();
+// Position in config.repoOrder; unlisted repos go last
+const orderOf = (repo) => {
+  const index = config.repoOrder.indexOf(repo.name);
+  return index === -1 ? Infinity : index;
 };
 
 // Repos are snapshotted at build time (scripts/build_repos.js), so no request is made from the browser
 const projects = repos
   .filter(repo => !config.excludedRepos.includes(repo.name) && !FEATURED_REPOS.includes(repo.name))
-  .sort((a, b) => {
-    const direction = config.repoSorting.direction === 'asc' ? 1 : -1;
-    const valA = sortValue(a, config.repoSorting.field);
-    const valB = sortValue(b, config.repoSorting.field);
-    if (valA < valB) return -1 * direction;
-    if (valA > valB) return 1 * direction;
-    return 0;
-  });
+  .sort((a, b) => (orderOf(a) - orderOf(b)) || (new Date(b.pushed_at) - new Date(a.pushed_at)));
 
 function App() {
   return (

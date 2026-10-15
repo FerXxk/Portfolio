@@ -24,15 +24,12 @@ A high-performance, interactive portfolio built with **React**, **GSAP**, and **
 
 ## 🤖 Automation & Scripts
 
-### 1. GitHub Project Descriptions
-To keep the portfolio synchronized with the latest GitHub work, a custom script is provided:
-```bash
-node scripts/fetch_repos.js
-```
-This script:
-- Fetches all repository descriptions from GitHub.
-- Prepares a structured data file at `src/data/projectDescriptions.js`.
-- Allows for easy translation of new project details into both supported languages.
+### 1. GitHub Projects
+`npm run build` runs `scripts/build_repos.js` first, which snapshots the public repos into `src/data/repos.json` (run it on its own with `npm run repos`).
+- **Names and descriptions** are curated by hand in both languages in `src/translations.json` (`projects.repo_names` / `projects.repo_descriptions`).
+- **Order** of the grid is set in `src/config.js` (`repoOrder`); hidden repos go in `excludedRepos`.
+- **Cover images** go in `src/assets/projects/` named after the repo.
+- **Featured projects** (Bachelor's Thesis, Minisumo) are configured in `src/components/FeaturedProject.jsx` and `featured.items` in the translations.
 
 ### 2. PDF CV Generation
 The project includes a modular Typst system for generating professional PDFs.
