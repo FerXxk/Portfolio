@@ -4,24 +4,28 @@
 #fa-version("6")
 
 // Increase spacing between sections
+// wrap heading in a non-breakable block so it never orphans at the bottom of a page
 #show heading.where(level: 1): it => {
-  set block(above: 6.0em, below: 3.0em)
-  it
+  block(breakable: false)[
+    #v(10.0em, weak: true)
+    #set block(above: 0pt, below: 3.0em)
+    #it
+  ]
 }
 
-// Increase spacing between entries and items
-#show grid: set block(above: 3.5em, below: 3.5em)
-#show block: set block(above: 3.5em, below: 3.5em)
-#set par(spacing: 2.0em)
+// Spacing between entries and items
+#show grid: set block(above: 3.8em, below: 5em)
+#show block: set block(above: 3.8em, below: 5em)
+#set par(spacing: 2.2em)
 
 
 // Helper to maintain compatibility with existing section files if possible
 // or at least provide a central place for styling.
 
+// cvSection: the heading is already wrapped in the show rule above (breakable: false)
+// so we just emit the heading and let the show rule handle spacing
 #let cvSection(title) = [
-  #v(2.5em, weak: true)
   = #title
-  #v(1.5em, weak: true)
 ]
 
 
@@ -39,8 +43,7 @@
     columns: (auto, auto),
     gutter: 0.5em,
     align: horizon,
-    image(logo-path, height: 1.1em),
-    name
+    image(logo-path, height: 1.1em), name,
   )
 }
 
@@ -48,7 +51,7 @@
 #let resume(..args) = {
   let named = args.named()
   let language = named.at("language", default: "en")
-  
+
   // Use "sp" for Spanish if "es" is provided
   if language == "es" {
     named.insert("language", "sp")
@@ -56,7 +59,7 @@
 
   // Disable modern-cv's default footer to remove the "Résumé" suffix
   named.insert("show-footer", false)
-  
+
   // Call the original modern-cv resume
   modern-resume(..named, ..args.pos())
 
@@ -67,7 +70,7 @@
       #grid(
         columns: (1fr, 1fr),
         if language == "sp" or language == "es" [Curriculum Vitae] else [Curriculum Vitae],
-        align(right, counter(page).display())
+        align(right, counter(page).display()),
       )
     ],
     footer-descent: 20%,
