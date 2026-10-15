@@ -38,10 +38,14 @@
   "Git",
   "CI/CD",
   "Apache Airflow",
+  "Azure (Container Apps, DevOps, Bicep)",
 ))
 #resume-skill-item("IA / LLMs", (
   "APIs de modelos de lenguaje (Gemini, Claude, Copilot...)",
   "Prompting",
+  "Agentes (Claude Code, Claude Managed Agents, skills y subagentes)",
+  "MCP",
+  "n8n",
   "Machine Learning aplicado (LSTM, modelos predictivos)",
   "Aprendizaje por refuerzo (DRL)",
 ))

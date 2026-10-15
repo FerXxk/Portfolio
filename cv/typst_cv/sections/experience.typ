@@ -4,6 +4,28 @@
 #cvSection("Experiencia Profesional")
 
 #resume-entry(
+  title: "Ingeniero de IA",
+  location: logo-location("../images/atlantica.jpg", "Atlantica Sustainable Infrastructure | Sevilla, España"),
+  date: "Agosto 2026 - Actualidad",
+  description: "IA Generativa, Agentes, MCPs y Automatización de Workflows",
+)
+
+#resume-item[
+  - *Automatización de Workflows con IA:*
+    - Diseño e implementación de workflows automatizados con n8n y modelos de lenguaje que sustituyen procesos manuales basados en Excel, correo y documentos dispersos.
+    - Ingesta y procesamiento automático de correos y documentos (PDF, SharePoint) con extracción de información estructurada mediante IA.
+    - Integración de los flujos con el ecosistema corporativo: Microsoft 365, SharePoint, Azure DevOps y monday.com.
+  - *Agentes y MCPs:*
+    - Desarrollo e integración de servidores MCP (Model Context Protocol) para conectar los modelos de IA con herramientas y fuentes de datos corporativas.
+    - Diseño y despliegue de agentes de IA con Claude (Claude Managed Agents) para consultas en lenguaje natural sobre bases de datos y orquestación de varios agentes especializados.
+    - Optimización de prompts, control del coste por llamada y evaluación de modelos para equilibrar coste y calidad.
+  - *Desarrollo Asistido por IA (ADLC):*
+    - Desarrollo de software con Claude Code siguiendo un ciclo de vida para agentes (ADLC): especificación, implementación, revisión e integración de cada requisito.
+    - Creación de skills y subagentes de Claude Code para automatizar tareas del equipo, como la planificación y el seguimiento de sprints en Azure DevOps.
+    - Desarrollo fullstack de aplicaciones internas con IA (FastAPI, PostgreSQL, React) y despliegue en Azure Container Apps con CI/CD.
+]
+
+#resume-entry(
   title: "Ingeniero de Software",
   location: logo-location("../images/AIRTIFICIAL.jpg", "Airtificial Aerospace & Defense | Sevilla, España"),
   date: "Abril 2025 - Mayo 2026",
