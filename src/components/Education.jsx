@@ -18,7 +18,9 @@ const Education = () => {
                         {item.details && <p className="education-details">{item.details}</p>}
                     </div>
                 ))}
+            </div>
 
+            <div className="education-column">
                 <h3 className="education-heading">{t.honors_title}</h3>
                 {t.honors.map((item, i) => (
                     <div key={i} className="education-card glass honor">
@@ -27,21 +29,6 @@ const Education = () => {
                         <p className="education-institution">{item.details}</p>
                     </div>
                 ))}
-            </div>
-
-            <div className="education-column">
-                <h3 className="education-heading">{t.certs_title}</h3>
-                <ul className="cert-list glass">
-                    {t.certs.map((item, i) => (
-                        <li key={i} className="cert-item">
-                            <div>
-                                <p className="cert-title">{item.title}</p>
-                                <p className="cert-issuer">{item.issuer}</p>
-                            </div>
-                            <span className="education-period">{item.period}</span>
-                        </li>
-                    ))}
-                </ul>
             </div>
         </div>
     )

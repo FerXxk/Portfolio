@@ -224,7 +224,6 @@
             "title": "Formación y Logros",
             "degrees_title": "Formación",
             "honors_title": "Logros",
-            "certs_title": "Certificaciones",
             "degrees": [
                 {
                     "degree": "Máster en Ingeniería Electrónica, Robótica y Automatización",
@@ -253,33 +252,6 @@
                     "title": "Matrícula de Honor en Bachillerato Tecnológico",
                     "details": "IES Heliche",
                     "period": "2021"
-                }
-            ],
-            "certs": [
-                {
-                    "title": "Google Developer Program — Machine Learning",
-                    "issuer": "Google Developers",
-                    "period": "2026"
-                },
-                {
-                    "title": "Inteligencia Artificial con Gemini",
-                    "issuer": "Banco Santander & Google",
-                    "period": "2026"
-                },
-                {
-                    "title": "GitHub Copilot — Software Development",
-                    "issuer": "GitHub",
-                    "period": "2026"
-                },
-                {
-                    "title": "Curso Avanzado de Python",
-                    "issuer": "Idexa",
-                    "period": "2026"
-                },
-                {
-                    "title": "C1 Advanced",
-                    "issuer": "Cambridge Assessment English",
-                    "period": "2024"
                 }
             ]
         }
@@ -509,7 +481,6 @@
             "title": "Education & Awards",
             "degrees_title": "Education",
             "honors_title": "Awards",
-            "certs_title": "Certifications",
             "degrees": [
                 {
                     "degree": "Master's Degree in Electronic Engineering, Robotics and Automation",
@@ -538,33 +509,6 @@
                     "title": "Honors distinction in the Technological Baccalaureate",
                     "details": "IES Heliche",
                     "period": "2021"
-                }
-            ],
-            "certs": [
-                {
-                    "title": "Google Developer Program — Machine Learning",
-                    "issuer": "Google Developers",
-                    "period": "2026"
-                },
-                {
-                    "title": "Artificial Intelligence with Gemini",
-                    "issuer": "Banco Santander & Google",
-                    "period": "2026"
-                },
-                {
-                    "title": "GitHub Copilot — Software Development",
-                    "issuer": "GitHub",
-                    "period": "2026"
-                },
-                {
-                    "title": "Advanced Python Course",
-                    "issuer": "Idexa",
-                    "period": "2026"
-                },
-                {
-                    "title": "C1 Advanced",
-                    "issuer": "Cambridge Assessment English",
-                    "period": "2024"
                 }
             ]
         }

@@ -1,6 +1,6 @@
 .education-layout {
     display: grid;
-    grid-template-columns: 1.3fr 1fr;
+    grid-template-columns: 1fr 1fr;
     gap: 3rem;
     align-items: start;
 }
@@ -70,37 +70,6 @@
     color: var(--text-main);
 }
 
-.cert-list {
-    list-style: none;
-    border-radius: 12px;
-    padding: 0.5rem 2rem;
-}
-
-.cert-item {
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-    gap: 1rem;
-    padding: 1.2rem 0;
-    border-bottom: 1px solid var(--glass-border);
-}
-
-.cert-item:last-child {
-    border-bottom: none;
-}
-
-.cert-title {
-    font-weight: 600;
-    color: var(--text-main);
-    line-height: 1.4;
-}
-
-.cert-issuer {
-    font-size: 0.85rem;
-    color: var(--text-muted);
-    margin-top: 0.2rem;
-}
-
 @media (max-width: 1024px) {
     .education-layout {
         grid-template-columns: 1fr;
@@ -110,9 +79,5 @@
 @media (max-width: 768px) {
     .education-card {
         padding: 1.5rem;
-    }
-
-    .cert-list {
-        padding: 0.5rem 1.5rem;
     }
 }

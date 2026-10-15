@@ -18,7 +18,7 @@ A high-performance, interactive portfolio built with **React**, **GSAP**, and **
 - **Hero**: Clean, impact-driven title with animated badges.
 - **About**: Custom description and a modern, categorized tech-stack grid.
 - **Experience**: Bilingual professional timeline.
-- **Education & Awards**: Degrees, competition awards and certifications.
+- **Education & Awards**: Degrees and competition awards.
 - **Projects**: Dynamic project cards with glassmorphism effects and automatic translation support.
 - **Contact**: Interactive cards for email, LinkedIn and GitHub.
 
