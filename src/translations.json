@@ -10,7 +10,6 @@
             "education": "Formación"
         },
         "hero": {
-            "greeting": "Hola, soy",
             "title": "Ingeniero de IA y Robótica",
             "subtitle": "Agentes, MCPs y automatización de workflows sobre una base de robótica y sistemas embebidos.",
             "badge": "Disponible para proyectos",
@@ -56,9 +55,7 @@
                 "NodeRed-Project": "Automatización del hogar con Node-RED y Home Assistant desplegados en Docker: un bot de Telegram controla una bombilla inteligente con Node-RED como orquestador.",
                 "Imminent-Crash": "Juego arcade de supervivencia para el microcontrolador MSP430 con el BoosterPack MKII: detección de colisiones en tiempo real, controles por interrupciones hardware y renderizado en LCD.",
                 "FPGA-Race-Game": "Juego de carreras en tiempo real implementado en VHDL sobre FPGA, con controlador VGA propio y modo multijugador por UART."
-            },
-            "readme_loading": "Cargando documentación...",
-            "readme_error": "No se pudo cargar la documentación. Por favor, inténtalo de nuevo más tarde."
+            }
         },
         "footer": {
             "rights": "Todos los derechos reservados"
@@ -111,7 +108,6 @@
             "title": "Contacto",
             "intro": "¿Interesado en colaborar o tienes alguna pregunta? No dudes en contactarme a través de cualquiera de estos medios.",
             "email_label": "Email",
-            "location_label": "Ubicación",
             "linkedin_label": "LinkedIn",
             "rights": "Todos los derechos reservados.",
             "github_label": "GitHub"
@@ -261,7 +257,6 @@
             "education": "Education"
         },
         "hero": {
-            "greeting": "Hi, I'm",
             "title": "AI & Robotics Engineer",
             "subtitle": "Agents, MCPs and workflow automation built on a robotics and embedded systems foundation.",
             "badge": "Available for projects",
@@ -307,9 +302,7 @@
                 "NodeRed-Project": "Home automation with Node-RED and Home Assistant deployed on Docker: a Telegram bot controls a smart bulb with Node-RED as the orchestrator.",
                 "Imminent-Crash": "Arcade survival game for the MSP430 microcontroller with the BoosterPack MKII: real-time collision detection, hardware interrupt-driven controls and LCD rendering.",
                 "FPGA-Race-Game": "Real-time racing game implemented in VHDL on an FPGA, with a custom VGA driver and UART multiplayer."
-            },
-            "readme_loading": "Loading documentation...",
-            "readme_error": "Could not load documentation. Please try again later."
+            }
         },
         "footer": {
             "rights": "All rights reserved"
@@ -362,7 +355,6 @@
             "title": "Contact",
             "intro": "Interested in collaborating or have any questions? Feel free to contact me through any of these channels.",
             "email_label": "Email",
-            "location_label": "Location",
             "linkedin_label": "LinkedIn",
             "rights": "All rights reserved.",
             "github_label": "GitHub"

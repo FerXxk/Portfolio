@@ -1,8 +1,8 @@
 import './FeaturedProject.css'
 import { useLanguage } from '../context/LanguageContext';
 import translations from '../translations.json';
-import tfgImage from '../assets/projects/multi-energy-station-ems.png';
-import minisumoImage from '../assets/projects/Minisumo-Project.jpeg';
+import tfgImage from '../assets/projects/multi-energy-station-ems.webp';
+import minisumoImage from '../assets/projects/Minisumo-Project.webp';
 
 // Non-translatable details of each featured project; texts live in translations.json (featured.items)
 const PROJECTS = {

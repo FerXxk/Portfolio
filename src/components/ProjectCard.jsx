@@ -4,34 +4,29 @@ import gsap from 'gsap';
 import { useLanguage } from '../context/LanguageContext';
 import translations from '../translations.json';
 
+// Cover images live in src/assets/projects, named after the repo (case-insensitive)
+const projectImages = import.meta.glob('../assets/projects/*.{png,jpg,jpeg,webp,svg}', { eager: true, import: 'default' });
+
+const getProjectImage = (projectName) => {
+  const normalizedName = projectName.toLowerCase();
+  const imagePath = Object.keys(projectImages).find(path => {
+    const fileName = path.split('/').pop().split('.')[0].toLowerCase();
+    return fileName === normalizedName;
+  });
+  return imagePath ? projectImages[imagePath] : null;
+};
+
 const ProjectCard = ({ project, index }) => {
   const cardRef = useRef(null);
+  const closeRef = useRef(null);
   const [isOpen, setIsOpen] = useState(false);
   const { language } = useLanguage();
   const t = translations[language].projects;
 
-  // Dynamic image loading using import.meta.glob
-  const projectImages = import.meta.glob('../assets/projects/*.{png,jpg,jpeg,svg}', { eager: true, import: 'default' });
-
-  // Helper to find image for project
-  const getProjectImage = (projectName) => {
-    const normalizedName = projectName.toLowerCase();
-    const imagePath = Object.keys(projectImages).find(path => {
-      const fileName = path.split('/').pop().split('.')[0].toLowerCase();
-      return fileName === normalizedName;
-    });
-    return imagePath ? projectImages[imagePath] : null;
-  };
-
-  const localImage = getProjectImage(project.name);
-
-  const backgrounds = [
-    'https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&q=80&w=1000',
-    'https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=1000',
-    'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=1000'
-  ];
-
-  const bgImage = localImage || backgrounds[index % backgrounds.length];
+  // Without a cover image, the card falls back to the gradient defined in .card-bg / .modal-image
+  const bgImage = getProjectImage(project.name);
+  const bgStyle = bgImage ? { backgroundImage: `url(${bgImage})` } : undefined;
+  const title = t.repo_names?.[project.name] || project.name;
 
   useEffect(() => {
     gsap.from(cardRef.current, {
@@ -47,25 +42,37 @@ const ProjectCard = ({ project, index }) => {
     });
   }, []);
 
-  // Lock body scroll when modal is open
+  // While the modal is open: lock body scroll, close on Escape, and return focus to the card afterwards
   useEffect(() => {
-    if (isOpen) {
-      document.body.style.overflow = 'hidden';
-    } else {
+    if (!isOpen) return;
+    document.body.style.overflow = 'hidden';
+    closeRef.current?.focus();
+    const onKeyDown = (e) => { if (e.key === 'Escape') setIsOpen(false); };
+    window.addEventListener('keydown', onKeyDown);
+    const card = cardRef.current;
+    return () => {
       document.body.style.overflow = 'unset';
-    }
-    return () => { document.body.style.overflow = 'unset'; };
+      window.removeEventListener('keydown', onKeyDown);
+      card?.focus();
+    };
   }, [isOpen]);
+
+  const onCardKeyDown = (e) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      setIsOpen(true);
+    }
+  };
 
   const Modal = () => createPortal(
     <div className="modal-overlay" onClick={() => setIsOpen(false)}>
-      <div className="modal-content" onClick={e => e.stopPropagation()} data-lenis-prevent>
-        <button className="close-btn" onClick={() => setIsOpen(false)}>×</button>
+      <div className="modal-content" role="dialog" aria-modal="true" aria-label={title} onClick={e => e.stopPropagation()} data-lenis-prevent>
+        <button className="close-btn" ref={closeRef} onClick={() => setIsOpen(false)} aria-label={language === 'es' ? 'Cerrar' : 'Close'}>×</button>
 
-        <div className="modal-image" style={{ backgroundImage: `url(${bgImage})` }}></div>
+        <div className="modal-image" style={bgStyle}></div>
 
         <div className="modal-info">
-          <h2>{t.repo_names?.[project.name] || project.name}</h2>
+          <h2>{title}</h2>
 
           <div className="modal-meta">
             {project.topics && project.topics.length > 0 && project.topics.map((topic, i) => (
@@ -147,6 +154,7 @@ const ProjectCard = ({ project, index }) => {
         .close-btn:hover { background: var(--accent); transform: rotate(90deg); }
 
         .modal-image {
+          background-image: linear-gradient(135deg, #0b1220 0%, #1e3a8a 100%);
           width: 100%;
           aspect-ratio: 16 / 9;
           background-size: contain;
@@ -240,18 +248,19 @@ const ProjectCard = ({ project, index }) => {
       <div
         className="project-card"
         ref={cardRef}
+        role="button"
+        tabIndex={0}
+        aria-haspopup="dialog"
         onClick={() => setIsOpen(true)}
+        onKeyDown={onCardKeyDown}
       >
-        <div
-          className="card-bg"
-          style={{ backgroundImage: `url(${bgImage})` }}
-        ></div>
+        <div className="card-bg" style={bgStyle}></div>
         <div className="card-overlay"></div>
 
         <div className="card-content">
           <div className="card-top">
             <span className="project-index">{(index + 1).toString().padStart(2, '0')}</span>
-            <h3 className="project-name">{t.repo_names?.[project.name] || project.name}</h3>
+            <h3 className="project-name">{title}</h3>
           </div>
 
           <div className="card-hint">
@@ -273,12 +282,17 @@ const ProjectCard = ({ project, index }) => {
             transition: all 0.3s ease;
             cursor: pointer;
           }
+          .project-card:focus-visible {
+            outline: 2px solid var(--accent);
+            outline-offset: 4px;
+          }
           .project-card:hover { 
             border-color: var(--accent);
             transform: translateY(-5px);
           }
 
           .card-bg {
+            background-image: linear-gradient(135deg, #0b1220 0%, #1e3a8a 100%);
             position: absolute;
             top: 0;
             left: 0;

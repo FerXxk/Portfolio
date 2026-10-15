@@ -27,16 +27,6 @@ dist-ssr
 *.sln
 *.sw?
 
-# LaTeX intermediate files
-*.aux
-*.fdb_latexmk
-*.fls
-*.gz
-*.out
-*.toc
-*.synctex.gz
-*.xdv
-
 # Allow PDFs in public/cv (but ignore them elsewhere to keep repo clean)
 *.pdf
 !public/cv/*.pdf

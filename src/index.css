@@ -32,11 +32,15 @@
   box-sizing: border-box;
 }
 
-/* On desktop we use a custom cursor, on mobile it's default */
-@media (min-width: 1024px) {
-  * {
-    cursor: none !important;
-  }
+/* The system cursor is hidden only while CustomCursor is active (desktop mouse, no reduced motion) */
+.has-custom-cursor * {
+  cursor: none !important;
+}
+
+/* Keyboard focus is always visible */
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
 }
 
 html,

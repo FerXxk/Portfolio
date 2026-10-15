@@ -52,6 +52,9 @@ const AppContent = () => {
   const t = translations[language];
 
   useEffect(() => {
+    // No smooth scrolling for users who asked for reduced motion
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
     // Lenis smooth scrolling, driven only by GSAP's ticker so it runs once per frame
     const lenis = new Lenis({
       duration: 1.2,

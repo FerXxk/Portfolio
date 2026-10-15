@@ -46,17 +46,15 @@ const Hero = () => {
     return () => ctx.revert();
   }, []);
 
+  // Letters are animated one by one, but grouped per word so a line can only break between words
   const splitText = (text) => {
-    return text.split("").map((char, i) => (
-      <span
-        key={i}
-        className="char"
-        style={{
-          display: 'inline-block',
-          marginRight: char === " " ? "0.3em" : "0"
-        }}
-      >
-        {char === " " ? "\u00A0" : char}
+    return text.split(" ").map((word, w) => (
+      <span key={w} style={{ display: 'inline-block', whiteSpace: 'nowrap', marginRight: '0.3em' }}>
+        {word.split("").map((char, i) => (
+          <span key={i} className="char" style={{ display: 'inline-block' }}>
+            {char}
+          </span>
+        ))}
       </span>
     ));
   };
