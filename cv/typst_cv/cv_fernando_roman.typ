@@ -30,7 +30,6 @@
 #include "sections/projects.typ"
 
 
-#pagebreak()
 
 #include "sections/honors.typ"
 
@@ -43,6 +42,5 @@
 #include "sections/skills.typ"
 
 
-#pagebreak()
 #include "sections/soft_skills.typ"
 #include "sections/languages.typ"
