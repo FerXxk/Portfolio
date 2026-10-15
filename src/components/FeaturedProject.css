@@ -20,6 +20,20 @@
     border-right: 1px solid var(--glass-border);
 }
 
+.featured-image.cover {
+    background-size: cover;
+}
+
+.featured.reverse {
+    grid-template-columns: 1fr 1.1fr;
+}
+
+.featured.reverse .featured-image {
+    order: 2;
+    border-right: none;
+    border-left: 1px solid var(--glass-border);
+}
+
 .featured-body {
     padding: 2.5rem;
     display: flex;
@@ -140,6 +154,15 @@
         min-height: 260px;
         border-right: none;
         border-bottom: 1px solid var(--glass-border);
+    }
+
+    .featured.reverse {
+        grid-template-columns: 1fr;
+    }
+
+    .featured.reverse .featured-image {
+        order: 0;
+        border-left: none;
     }
 }
 

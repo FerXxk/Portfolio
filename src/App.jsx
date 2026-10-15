@@ -10,7 +10,7 @@ import { LanguageProvider, useLanguage } from './context/LanguageContext';
 import translations from './translations.json';
 import About from './components/About';
 import Experience from './components/Experience';
-import FeaturedProject, { FEATURED_REPO } from './components/FeaturedProject';
+import FeaturedProject, { FEATURED_REPOS } from './components/FeaturedProject';
 import Education from './components/Education';
 import Contact from './components/Contact';
 import config from './config';
@@ -27,7 +27,7 @@ const sortValue = (repo, field) => {
 
 // Repos are snapshotted at build time (scripts/build_repos.js), so no request is made from the browser
 const projects = repos
-  .filter(repo => !config.excludedRepos.includes(repo.name) && repo.name !== FEATURED_REPO)
+  .filter(repo => !config.excludedRepos.includes(repo.name) && !FEATURED_REPOS.includes(repo.name))
   .sort((a, b) => {
     const direction = config.repoSorting.direction === 'asc' ? 1 : -1;
     const valA = sortValue(a, config.repoSorting.field);

@@ -117,7 +117,6 @@
             "title": "Contacto",
             "intro": "¿Interesado en colaborar o tienes alguna pregunta? No dudes en contactarme a través de cualquiera de estos medios.",
             "email_label": "Email",
-            "phone_label": "Teléfono",
             "location_label": "Ubicación",
             "linkedin_label": "LinkedIn",
             "rights": "Todos los derechos reservados.",
@@ -173,26 +172,53 @@
             ]
         },
         "featured": {
-            "label": "Proyecto destacado · Trabajo Fin de Grado",
-            "title": "OASIS — Gestión energética de una estación multi-energía",
-            "grade": "Matrícula de Honor (10)",
-            "description": "Estación de repostaje para coches eléctricos y de hidrógeno alimentada por su propia fotovoltaica, con batería, electrolizador PEM, tanques de hidrógeno y pila de combustible, todo modelado en Simulink. Diseñé tres gestores de energía, de una heurística a uno predictivo con redes LSTM de irradiancia y precio, y los comparé sobre 20 escenarios.",
-            "stats": [
+            "repo_link": "Ver repositorio",
+            "items": [
                 {
-                    "value": "−13,9 %",
-                    "label": "coste total semanal"
+                    "repo": "multi-energy-station-ems",
+                    "label": "Proyecto destacado · Trabajo Fin de Grado",
+                    "title": "OASIS — Gestión energética de una estación multi-energía",
+                    "badge": "Matrícula de Honor (10)",
+                    "description": "Estación de repostaje para coches eléctricos y de hidrógeno alimentada por su propia fotovoltaica, con batería, electrolizador PEM, tanques de hidrógeno y pila de combustible, todo modelado en Simulink. Diseñé tres gestores de energía, de una heurística a uno predictivo con redes LSTM de irradiancia y precio, y los comparé sobre 20 escenarios.",
+                    "stats": [
+                        {
+                            "value": "−13,9 %",
+                            "label": "coste total semanal"
+                        },
+                        {
+                            "value": "−54 %",
+                            "label": "energía importada de la red"
+                        },
+                        {
+                            "value": "94,3 %",
+                            "label": "autosuficiencia (+6,7 pts)"
+                        }
+                    ],
+                    "doc": "Leer la memoria"
                 },
                 {
-                    "value": "−54 %",
-                    "label": "energía importada de la red"
-                },
-                {
-                    "value": "94,3 %",
-                    "label": "autosuficiencia (+6,7 pts)"
+                    "repo": "Minisumo-Project",
+                    "label": "Proyecto destacado · Competición",
+                    "title": "El Diablo JD — Robot Minisumo",
+                    "badge": "Campeón LNRC 2023-2024",
+                    "description": "Robot minisumo autónomo diseñado y construido por el equipo DemBots (8 estudiantes de la Universidad de Sevilla) y ganador de la Liga Nacional de Robótica de Competición. Chasis en cuña impreso en 3D con cuchillas cerámicas, Arduino Nano, puentes H TB6612FNG y estrategias de combate seleccionables por hardware.",
+                    "stats": [
+                        {
+                            "value": "1.º",
+                            "label": "Liga Nacional de Robótica (LNRC)"
+                        },
+                        {
+                            "value": "~400 g",
+                            "label": "peso, en 15 × 15 cm de reglamento"
+                        },
+                        {
+                            "value": "6",
+                            "label": "sensores IR de rival y de borde de pista"
+                        }
+                    ],
+                    "doc": "Ficha técnica"
                 }
-            ],
-            "repo": "Ver repositorio",
-            "report": "Leer la memoria"
+            ]
         },
         "education": {
             "title": "Formación y Logros",
@@ -376,7 +402,6 @@
             "title": "Contact",
             "intro": "Interested in collaborating or have any questions? Feel free to contact me through any of these channels.",
             "email_label": "Email",
-            "phone_label": "Phone",
             "location_label": "Location",
             "linkedin_label": "LinkedIn",
             "rights": "All rights reserved.",
@@ -432,26 +457,53 @@
             ]
         },
         "featured": {
-            "label": "Featured project · Bachelor's Thesis",
-            "title": "OASIS — Energy management for a multi-energy station",
-            "grade": "Highest Honors (10/10)",
-            "description": "A refuelling station for electric and hydrogen vehicles powered by its own solar plant, with a battery, PEM electrolyzer, hydrogen tanks and fuel cell, all modelled in Simulink. I designed three energy managers, from a rule-based heuristic to a predictive one using LSTM networks for irradiance and price, and compared them across 20 scenarios.",
-            "stats": [
+            "repo_link": "View repository",
+            "items": [
                 {
-                    "value": "−13.9%",
-                    "label": "total weekly cost"
+                    "repo": "multi-energy-station-ems",
+                    "label": "Featured project · Bachelor's Thesis",
+                    "title": "OASIS — Energy management for a multi-energy station",
+                    "badge": "Highest Honors (10/10)",
+                    "description": "A refuelling station for electric and hydrogen vehicles powered by its own solar plant, with a battery, PEM electrolyzer, hydrogen tanks and fuel cell, all modelled in Simulink. I designed three energy managers, from a rule-based heuristic to a predictive one using LSTM networks for irradiance and price, and compared them across 20 scenarios.",
+                    "stats": [
+                        {
+                            "value": "−13.9%",
+                            "label": "total weekly cost"
+                        },
+                        {
+                            "value": "−54%",
+                            "label": "grid energy imported"
+                        },
+                        {
+                            "value": "94.3%",
+                            "label": "self-sufficiency (+6.7 pts)"
+                        }
+                    ],
+                    "doc": "Read the thesis"
                 },
                 {
-                    "value": "−54%",
-                    "label": "grid energy imported"
-                },
-                {
-                    "value": "94.3%",
-                    "label": "self-sufficiency (+6.7 pts)"
+                    "repo": "Minisumo-Project",
+                    "label": "Featured project · Competition",
+                    "title": "El Diablo JD — Minisumo Robot",
+                    "badge": "LNRC 2023-2024 Champion",
+                    "description": "Autonomous minisumo robot designed and built by the DemBots team (8 students from the University of Seville), winner of the Spanish National Competition Robotics League. 3D-printed wedge chassis with ceramic blades, Arduino Nano, TB6612FNG H-bridges and combat strategies selectable in hardware.",
+                    "stats": [
+                        {
+                            "value": "1st",
+                            "label": "National Robotics League (LNRC)"
+                        },
+                        {
+                            "value": "~400 g",
+                            "label": "weight, within the 15 × 15 cm rules"
+                        },
+                        {
+                            "value": "6",
+                            "label": "IR sensors for opponent and ring edge"
+                        }
+                    ],
+                    "doc": "Technical data sheet"
                 }
-            ],
-            "repo": "View repository",
-            "report": "Read the thesis"
+            ]
         },
         "education": {
             "title": "Education & Awards",

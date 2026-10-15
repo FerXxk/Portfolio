@@ -9,7 +9,7 @@ A high-performance, interactive portfolio built with **React**, **GSAP**, and **
 - **Interactive UI**: Smooth animations and staggered reveals using GSAP and Lenis Scroll.
 - **Bilingual Support**: Full English (EN) and Spanish (ES) localization across all sections.
 - **Mobile First**: Fully optimized responsive design with a dedicated animated mobile navigation menu.
-- **Projects from GitHub**: Repositories are snapshotted at build time (`scripts/build_repos.js`, run automatically by `npm run build`), with the Bachelor's Thesis shown as a featured project.
+- **Projects from GitHub**: Repositories are snapshotted at build time (`scripts/build_repos.js`, run automatically by `npm run build`), with the Bachelor's Thesis and the LNRC-winning minisumo robot shown as featured projects.
 - **Modern Tech Stack Display**: Curated technology categories highlighting expertise in Embedded Systems, AI, and Robotics.
 
 ## 🛠️ Components & Architecture
@@ -20,7 +20,7 @@ A high-performance, interactive portfolio built with **React**, **GSAP**, and **
 - **Experience**: Bilingual professional timeline.
 - **Education & Awards**: Degrees, competition awards and certifications.
 - **Projects**: Dynamic project cards with glassmorphism effects and automatic translation support.
-- **Contact**: Interactive cards for email, phone, LinkedIn and GitHub.
+- **Contact**: Interactive cards for email, LinkedIn and GitHub.
 
 ## 🤖 Automation & Scripts
 
