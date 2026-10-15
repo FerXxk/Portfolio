@@ -1,0 +1,262 @@
+[
+    {
+        "id": 1198492006,
+        "name": "Auto-Parking-RL",
+        "description": "A hybrid autonomous parking framework integrating optimal control and Deep Reinforcement Learning within a MATLAB/Simulink and Unreal Engine co-simulation environment. The vehicle autonomously searches for a free parking spot, follows a planned trajectory, and executes collision-free parking maneuvers using LiDAR-based perception.",
+        "html_url": "https://github.com/FerXxk/Auto-Parking-RL",
+        "stargazers_count": 2,
+        "topics": [
+            "autonomous-driving",
+            "mpc-control",
+            "reinforcement-learning"
+        ],
+        "default_branch": "main",
+        "language": "MATLAB",
+        "created_at": "2026-04-01T13:27:20Z",
+        "pushed_at": "2026-06-08T18:26:25Z"
+    },
+    {
+        "id": 1165941936,
+        "name": "automotive-control-systems",
+        "description": "Vehicle dynamics and control labs in MATLAB/Simulink: ABS, adaptive cruise control, yaw stability, engine control and hybrid energy management.",
+        "html_url": "https://github.com/FerXxk/automotive-control-systems",
+        "stargazers_count": 1,
+        "topics": [
+            "automotive-control",
+            "control-systems",
+            "simulink"
+        ],
+        "default_branch": "main",
+        "language": "MATLAB",
+        "created_at": "2026-02-24T17:56:07Z",
+        "pushed_at": "2026-08-26T09:25:59Z"
+    },
+    {
+        "id": 1144095495,
+        "name": "Computer-Vision-Course",
+        "description": "A specialized repository for Perception Systems coursework. It features practical implementations of computer vision algorithms, including image processing, feature extraction, and object detection. Designed to showcase academic projects using tools like MATLAB for real-world sensing and visual data analysis.",
+        "html_url": "https://github.com/FerXxk/Computer-Vision-Course",
+        "stargazers_count": 1,
+        "topics": [
+            "computer-vision",
+            "matlab"
+        ],
+        "default_branch": "main",
+        "language": "MATLAB",
+        "created_at": "2026-01-28T09:34:06Z",
+        "pushed_at": "2026-01-28T14:08:12Z"
+    },
+    {
+        "id": 1149130024,
+        "name": "crazyflie_slam",
+        "description": "Autonomous mapping and navigation in ROS 2 for Crazyflie drones using the Multiranger deck. Includes Particle Filter SLAM, occupancy grid mapping, and wall-following for real and simulated environments.",
+        "html_url": "https://github.com/FerXxk/crazyflie_slam",
+        "stargazers_count": 1,
+        "topics": [
+            "crazyflie",
+            "ros2",
+            "slam"
+        ],
+        "default_branch": "main",
+        "language": "C++",
+        "created_at": "2026-02-03T18:53:43Z",
+        "pushed_at": "2026-02-03T20:36:10Z"
+    },
+    {
+        "id": 1144699427,
+        "name": "EKF-Implementation",
+        "description": "Advanced state estimation for drones using ROS 2 Humble and MATLAB. It features a modular architecture with an Extended Kalman Filter (EKF) to fuse Odometry and IMU data. Includes implementations for 3D, 7D, and 8D state vectors, handling non-linear motion models and sensor noise for autonomous navigation.",
+        "html_url": "https://github.com/FerXxk/EKF-Implementation",
+        "stargazers_count": 1,
+        "topics": [
+            "extended-kalman-filter",
+            "kalman-filter",
+            "ros2"
+        ],
+        "default_branch": "main",
+        "language": "Python",
+        "created_at": "2026-01-29T00:26:29Z",
+        "pushed_at": "2026-01-29T14:18:08Z"
+    },
+    {
+        "id": 1144379500,
+        "name": "FPGA-Race-Game",
+        "description": "A real-time racing game implemented in VHDL for FPGA. The system features a custom VGA driver, UART communication for multiplayer support, and a dedicated visualization pipeline.",
+        "html_url": "https://github.com/FerXxk/FPGA-Race-Game",
+        "stargazers_count": 1,
+        "topics": [
+            "fpga",
+            "videogame"
+        ],
+        "default_branch": "main",
+        "language": "VHDL",
+        "created_at": "2026-01-28T16:23:03Z",
+        "pushed_at": "2026-01-28T22:49:32Z"
+    },
+    {
+        "id": 1144303387,
+        "name": "Imminent-Crash",
+        "description": "An arcade-style survival game developed for the MSP430 microcontroller using the Educational BoosterPack MKII. It features real-time collision logic, hardware-interrupt driven controls, and LCD rendering. This project showcases embedded systems programming, resource management, and hardware-software interfacing.",
+        "html_url": "https://github.com/FerXxk/Imminent-Crash",
+        "stargazers_count": 1,
+        "topics": [
+            "c",
+            "embedded-systems",
+            "msp430",
+            "videogame"
+        ],
+        "default_branch": "main",
+        "language": "C",
+        "created_at": "2026-01-28T14:43:58Z",
+        "pushed_at": "2026-01-28T16:08:52Z"
+    },
+    {
+        "id": 812577827,
+        "name": "Minisumo-Project",
+        "description": "This project includes the process of devising and creating a Minisumo robot. It has been made by students of the University of Seville and it has won the Spanish National League of Robotics. ",
+        "html_url": "https://github.com/FerXxk/Minisumo-Project",
+        "stargazers_count": 3,
+        "topics": [
+            "competition",
+            "minisumo",
+            "robotics"
+        ],
+        "default_branch": "main",
+        "language": "C++",
+        "created_at": "2024-06-09T09:48:37Z",
+        "pushed_at": "2026-01-26T20:23:12Z"
+    },
+    {
+        "id": 1359480513,
+        "name": "multi-energy-station-ems",
+        "description": null,
+        "html_url": "https://github.com/FerXxk/multi-energy-station-ems",
+        "stargazers_count": 2,
+        "topics": [],
+        "default_branch": "main",
+        "language": "MATLAB",
+        "created_at": "2026-09-06T20:11:38Z",
+        "pushed_at": "2026-09-21T18:16:49Z"
+    },
+    {
+        "id": 1126692973,
+        "name": "NodeRed-Project",
+        "description": "This project consists in controlling an intelligent lightbulb using Node-RED as the central orchestration engine. It bridges a Telegram Bot (UI) with Home Assistant (Hardware) to provide a seamless, remote-controlled lighting experience.",
+        "html_url": "https://github.com/FerXxk/NodeRed-Project",
+        "stargazers_count": 1,
+        "topics": [
+            "domotic",
+            "home-assistant",
+            "nodered"
+        ],
+        "default_branch": "main",
+        "language": "Python",
+        "created_at": "2026-01-02T12:06:44Z",
+        "pushed_at": "2026-01-26T18:44:29Z"
+    },
+    {
+        "id": 1147522460,
+        "name": "Particle-Filter",
+        "description": "Advanced ROS 2 implementation for 3D beacon localization using a mobile UAV. It features three estimation strategies: Basic PF, Smart Adaptive PF with dynamic particle budgeting, and a Hybrid PF+EKF system that switches filters upon convergence. Includes Gazebo integration, real-time RViz rendering, and automated logging.",
+        "html_url": "https://github.com/FerXxk/Particle-Filter",
+        "stargazers_count": 2,
+        "topics": [
+            "drone",
+            "particle-filter",
+            "ros2"
+        ],
+        "default_branch": "main",
+        "language": "Python",
+        "created_at": "2026-02-01T21:48:07Z",
+        "pushed_at": "2026-02-01T22:43:23Z"
+    },
+    {
+        "id": 1158024861,
+        "name": "PCB_Design",
+        "description": null,
+        "html_url": "https://github.com/FerXxk/PCB_Design",
+        "stargazers_count": 0,
+        "topics": [],
+        "default_branch": "main",
+        "language": "Makefile",
+        "created_at": "2026-02-14T17:17:39Z",
+        "pushed_at": "2026-02-17T18:20:21Z"
+    },
+    {
+        "id": 1145965505,
+        "name": "Portfolio",
+        "description": null,
+        "html_url": "https://github.com/FerXxk/Portfolio",
+        "stargazers_count": 2,
+        "topics": [],
+        "default_branch": "main",
+        "language": "JavaScript",
+        "created_at": "2026-01-30T12:54:44Z",
+        "pushed_at": "2026-10-15T10:36:32Z"
+    },
+    {
+        "id": 1142659377,
+        "name": "Project-HomeIO",
+        "description": "This project uses Home I/O, Connect I/O, and Simulink to develop advanced temperature controllers. We implement and compare PID, PID with Feed-Forward, and MPC strategies to optimize thermal comfort and energy efficiency in a simulated smart home.",
+        "html_url": "https://github.com/FerXxk/Project-HomeIO",
+        "stargazers_count": 1,
+        "topics": [
+            "control-systems",
+            "domotic",
+            "simulation"
+        ],
+        "default_branch": "main",
+        "language": "MATLAB",
+        "created_at": "2026-01-26T17:38:37Z",
+        "pushed_at": "2026-01-26T18:41:52Z"
+    },
+    {
+        "id": 1133385559,
+        "name": "Raspberry-Intercom-Project",
+        "description": "Autonomous security system using a Raspberry Pi 4 and a Camera Module. When movement is detected, it triggers a video recording, which is stored locally on a USB drive. This drive is simultaneously configured as a Network Attached Storage (NAS), allowing authorized devices on the local network to access and review footage in real-time.",
+        "html_url": "https://github.com/FerXxk/Raspberry-Intercom-Project",
+        "stargazers_count": 1,
+        "topics": [
+            "iot-device",
+            "python",
+            "raspberry-pi"
+        ],
+        "default_branch": "main",
+        "language": "Python",
+        "created_at": "2026-01-13T09:21:40Z",
+        "pushed_at": "2026-01-31T19:22:38Z"
+    },
+    {
+        "id": 858080146,
+        "name": "Turtlebot-ROS-Project",
+        "description": "ROS-based project for TurtleBot autonomous navigation and control. Features include SLAM for mapping, sensor integration for obstacle avoidance, and path planning algorithms. Developed for simulation in Gazebo and real-world robotics applications.",
+        "html_url": "https://github.com/FerXxk/Turtlebot-ROS-Project",
+        "stargazers_count": 1,
+        "topics": [
+            "abb",
+            "python",
+            "ros2",
+            "turtlebot3"
+        ],
+        "default_branch": "main",
+        "language": "Jupyter Notebook",
+        "created_at": "2024-09-16T09:16:24Z",
+        "pushed_at": "2026-02-01T19:31:46Z"
+    },
+    {
+        "id": 1144689775,
+        "name": "Virtual-Gym-TIVA-C",
+        "description": "An intelligent rehabilitation and training assistant using Tiva C Launchpad and an ESP32-powered Smart Ball. Features a gamified GUI on an FT800 touchscreen, real-time motion tracking via BLE, and physics-based force estimation. Designed to monitor physiotherapy progress through interactive exercises and data analysis.",
+        "html_url": "https://github.com/FerXxk/Virtual-Gym-TIVA-C",
+        "stargazers_count": 1,
+        "topics": [
+            "esp32",
+            "ft800",
+            "tiva-c"
+        ],
+        "default_branch": "main",
+        "language": "C",
+        "created_at": "2026-01-29T00:01:43Z",
+        "pushed_at": "2026-01-29T00:03:31Z"
+    }
+]

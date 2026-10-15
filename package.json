@@ -5,6 +5,8 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "repos": "node scripts/build_repos.js",
+    "prebuild": "node scripts/build_repos.js",
     "build": "vite build",
     "preview": "vite preview"
   },

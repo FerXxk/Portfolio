@@ -1,9 +1,12 @@
-$SourceDir = "C:\Users\ferna\Desktop\Portfolio\cv"
+# Paths are relative to this script, so it works from any clone of the repo
+$SourceDir = $PSScriptRoot
 $TypstDir = Join-Path $SourceDir "typst_cv"
-$PublicDir = "C:\Users\ferna\Desktop\Portfolio\public\cv"
+$ProjectRoot = Split-Path $SourceDir -Parent
+$PublicDir = Join-Path $ProjectRoot "public\cv"
 $HistoryDir = Join-Path $SourceDir "historical_cvs"
-$ProjectRoot = "C:\Users\ferna\Desktop\Portfolio"
-$TypstExe = "C:\Users\ferna\AppData\Local\Microsoft\WinGet\Packages\Typst.Typst_Microsoft.Winget.Source_8wekyb3d8bbwe\typst-x86_64-pc-windows-msvc\typst.exe"
+
+# Typst from PATH (winget install Typst.Typst); override with $env:TYPST_EXE
+$TypstExe = if ($env:TYPST_EXE) { $env:TYPST_EXE } else { (Get-Command typst -ErrorAction Stop).Source }
 
 # Ensure directories exist
 if (!(Test-Path $PublicDir)) { New-Item -ItemType Directory -Force -Path $PublicDir }

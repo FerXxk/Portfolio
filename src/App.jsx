@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from 'react';
+import React, { useEffect } from 'react';
 import Lenis from 'lenis';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -9,10 +9,33 @@ import CustomCursor from './components/CustomCursor';
 import { LanguageProvider, useLanguage } from './context/LanguageContext';
 import translations from './translations.json';
 import About from './components/About';
+import Experience from './components/Experience';
+import FeaturedProject, { FEATURED_REPO } from './components/FeaturedProject';
+import Education from './components/Education';
 import Contact from './components/Contact';
 import config from './config';
+import repos from './data/repos.json';
 
 gsap.registerPlugin(ScrollTrigger);
+
+const sortValue = (repo, field) => {
+  if (field === 'stars') return repo.stargazers_count;
+  if (field === 'updated') return new Date(repo.pushed_at);
+  if (field === 'created') return new Date(repo.created_at);
+  return repo.name.toLowerCase();
+};
+
+// Repos are snapshotted at build time (scripts/build_repos.js), so no request is made from the browser
+const projects = repos
+  .filter(repo => !config.excludedRepos.includes(repo.name) && repo.name !== FEATURED_REPO)
+  .sort((a, b) => {
+    const direction = config.repoSorting.direction === 'asc' ? 1 : -1;
+    const valA = sortValue(a, config.repoSorting.field);
+    const valB = sortValue(b, config.repoSorting.field);
+    if (valA < valB) return -1 * direction;
+    if (valA > valB) return 1 * direction;
+    return 0;
+  });
 
 function App() {
   return (
@@ -22,125 +45,73 @@ function App() {
   );
 }
 
+const Section = ({ id, number, title, children, className }) => (
+  <section id={id} className={className}>
+    <div className="section-header">
+      <span className="section-number">{number}</span>
+      <h2 className="section-title">{title}</h2>
+    </div>
+    {children}
+  </section>
+);
+
 const AppContent = () => {
-  const [projects, setProjects] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const mainRef = useRef(null);
   const { language } = useLanguage();
   const t = translations[language];
 
   useEffect(() => {
-    // Initialize Lenis for smooth scrolling
+    // Lenis smooth scrolling, driven only by GSAP's ticker so it runs once per frame
     const lenis = new Lenis({
       duration: 1.2,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
       smoothWheel: true,
     });
 
-    function raf(time) {
-      lenis.raf(time);
-      requestAnimationFrame(raf);
-    }
-    requestAnimationFrame(raf);
-
-    // Sync ScrollTrigger with Lenis
     lenis.on('scroll', ScrollTrigger.update);
-    gsap.ticker.add((time) => {
-      lenis.raf(time * 1000);
-    });
-
-    // Fetch GitHub Repos
-    fetch('https://api.github.com/users/FerXxk/repos?sort=updated&per_page=100')
-      .then(res => res.json())
-      .then(data => {
-        if (Array.isArray(data)) {
-          // Filter excluded repos
-          const filteredData = data.filter(repo => !config.excludedRepos.includes(repo.name));
-
-          // Sort by config settings
-          const sortedData = filteredData.sort((a, b) => {
-            const field = config.repoSorting.field;
-            const direction = config.repoSorting.direction === 'asc' ? 1 : -1;
-
-            let valA, valB;
-            if (field === 'stars') {
-              valA = a.stargazers_count;
-              valB = b.stargazers_count;
-            } else if (field === 'updated') {
-              valA = new Date(a.pushed_at);
-              valB = new Date(b.pushed_at);
-            } else if (field === 'created') {
-              valA = new Date(a.created_at);
-              valB = new Date(b.created_at);
-            } else if (field === 'name') {
-              valA = a.name.toLowerCase();
-              valB = b.name.toLowerCase();
-            }
-
-            if (valA < valB) return -1 * direction;
-            if (valA > valB) return 1 * direction;
-            return 0;
-          });
-          setProjects(sortedData);
-        }
-        setLoading(false);
-      })
-      .catch(err => {
-        console.error("Error fetching repos:", err);
-        setLoading(false);
-      });
+    const tick = (time) => lenis.raf(time * 1000);
+    gsap.ticker.add(tick);
+    gsap.ticker.lagSmoothing(0);
 
     return () => {
+      gsap.ticker.remove(tick);
       lenis.destroy();
-      gsap.ticker.remove(raf);
     };
   }, []);
 
   return (
-    <div className="visual-lab" ref={mainRef}>
+    <div className="visual-lab">
       <CustomCursor />
       <Navbar />
 
       <main className="container">
         <Hero />
 
-        <section id="about-section">
-          <div className="section-header">
-            <span className="section-number">01.</span>
-            <h2 className="section-title">{t.about.title}</h2>
-          </div>
+        <Section id="about-section" number="01." title={t.about.title}>
           <About />
-        </section>
+        </Section>
 
-        <section id="projects" className="projects-section">
-          <div className="section-header">
-            <span className="section-number">02.</span>
-            <h2 className="section-title">{t.projects.title}</h2>
-          </div>
+        <Section id="experience-section" number="02." title={t.experience.title}>
+          <Experience />
+        </Section>
 
-          {loading ? (
-            <div className="loading-state">
-              <div className="spinner"></div>
-              <p>{t.projects.loading}</p>
-            </div>
-          ) : projects.length > 0 ? (
-            <ProjectGrid
-              projects={projects}
-            />
+        <Section id="projects" number="03." title={t.projects.title} className="projects-section">
+          <FeaturedProject />
+          {projects.length > 0 ? (
+            <ProjectGrid projects={projects} />
           ) : (
             <div className="loading-state">
               <p>{t.projects.no_projects}</p>
             </div>
           )}
-        </section>
+        </Section>
 
-        <section id="contact-section">
-          <div className="section-header">
-            <span className="section-number">03.</span>
-            <h2 className="section-title">{t.contact.title}</h2>
-          </div>
+        <Section id="education-section" number="04." title={t.education.title}>
+          <Education />
+        </Section>
+
+        <Section id="contact-section" number="05." title={t.contact.title}>
           <Contact />
-        </section>
+        </Section>
       </main>
 
       <footer className="lab-footer">
@@ -149,7 +120,7 @@ const AppContent = () => {
         </div>
       </footer>
 
-      <style jsx>{`
+      <style>{`
         .visual-lab {
           background-color: var(--bg-dark);
           min-height: 100vh;
@@ -179,17 +150,6 @@ const AppContent = () => {
           justify-content: center;
           gap: 1.5rem;
           color: var(--text-muted);
-        }
-        .spinner {
-          width: 40px;
-          height: 40px;
-          border: 2px solid var(--glass-border);
-          border-top-color: var(--accent);
-          border-radius: 50%;
-          animation: spin 1s linear infinite;
-        }
-        @keyframes spin {
-          to { transform: rotate(360deg); }
         }
         .lab-footer {
           padding: 4rem 0;

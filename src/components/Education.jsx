@@ -1,53 +1,49 @@
 import './Education.css'
+import { useLanguage } from '../context/LanguageContext';
+import translations from '../translations.json';
 
 const Education = () => {
-    const education = [
-        {
-            degree: 'Máster en Ingeniería Electrónica, Robótica y Automatización',
-            institution: 'Universidad de Sevilla',
-            period: '2025 - 2026',
-            details: ''
-        },
-        {
-            degree: 'Grado en Ingeniería Electrónica, Robótica y Mecatrónica',
-            institution: 'Universidad de Sevilla',
-            period: '2021 - 2025',
-            details: 'Nota media: 7.5'
-        },
-        {
-            degree: 'Bachillerato Tecnológico',
-            institution: 'IES Heliche',
-            period: '2019 - 2021',
-            details: 'Matrícula de honor'
-        },
-        {
-            degree: 'Curso de Python Avanzado',
-            institution: 'Idexa',
-            period: '2025',
-            details: ''
-        }
-    ]
+    const { language } = useLanguage();
+    const t = translations[language].education;
 
     return (
-        <section id="education" className="education section">
-            <div className="container">
-                <h2 className="section-title">
-                    <span className="gradient-text">Educación</span>
-                </h2>
+        <div className="education-layout">
+            <div className="education-column">
+                <h3 className="education-heading">{t.degrees_title}</h3>
+                {t.degrees.map((item, i) => (
+                    <div key={i} className="education-card glass">
+                        <span className="education-period">{item.period}</span>
+                        <h4 className="education-degree">{item.degree}</h4>
+                        <p className="education-institution">{item.institution}</p>
+                        {item.details && <p className="education-details">{item.details}</p>}
+                    </div>
+                ))}
 
-                <div className="education-grid">
-                    {education.map((item, index) => (
-                        <div key={index} className="education-card glass">
-                            <div className="education-icon">🎓</div>
-                            <h3 className="education-degree">{item.degree}</h3>
-                            <h4 className="education-institution">{item.institution}</h4>
-                            <p className="education-period">{item.period}</p>
-                            {item.details && <p className="education-details">{item.details}</p>}
-                        </div>
-                    ))}
-                </div>
+                <h3 className="education-heading">{t.honors_title}</h3>
+                {t.honors.map((item, i) => (
+                    <div key={i} className="education-card glass honor">
+                        <span className="education-period">★ {item.period}</span>
+                        <h4 className="education-degree">{item.title}</h4>
+                        <p className="education-institution">{item.details}</p>
+                    </div>
+                ))}
             </div>
-        </section>
+
+            <div className="education-column">
+                <h3 className="education-heading">{t.certs_title}</h3>
+                <ul className="cert-list glass">
+                    {t.certs.map((item, i) => (
+                        <li key={i} className="cert-item">
+                            <div>
+                                <p className="cert-title">{item.title}</p>
+                                <p className="cert-issuer">{item.issuer}</p>
+                            </div>
+                            <span className="education-period">{item.period}</span>
+                        </li>
+                    ))}
+                </ul>
+            </div>
+        </div>
     )
 }
 

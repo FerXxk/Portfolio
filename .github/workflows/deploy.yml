@@ -35,6 +35,9 @@ jobs:
         run: chmod +x node_modules/.bin/vite
       - name: Build
         run: npm run build
+        env:
+          # Authenticated GitHub API call for the repos snapshot (scripts/build_repos.js)
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:

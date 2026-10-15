@@ -99,7 +99,7 @@ const ProjectCard = ({ project, index }) => {
           </div>
         </div>
       </div>
-      <style jsx>{`
+      <style>{`
         .modal-overlay {
           position: fixed;
           top: 0;
@@ -261,7 +261,7 @@ const ProjectCard = ({ project, index }) => {
           </div>
         </div>
 
-        <style jsx>{`
+        <style>{`
           .project-card {
             position: relative;
             display: block;

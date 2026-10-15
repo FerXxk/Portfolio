@@ -2,11 +2,28 @@ import React, { createContext, useState, useContext, useEffect } from 'react';
 
 const LanguageContext = createContext();
 
+const readStoredLanguage = () => {
+    try {
+        return localStorage.getItem('language');
+    } catch {
+        return null;
+    }
+};
+
+// First visit: follow the browser language (Spanish speakers get ES, everyone else EN)
+const initialLanguage = () =>
+    readStoredLanguage() || (navigator.language?.toLowerCase().startsWith('es') ? 'es' : 'en');
+
 export const LanguageProvider = ({ children }) => {
-    const [language, setLanguage] = useState(localStorage.getItem('language') || 'en');
+    const [language, setLanguage] = useState(initialLanguage);
 
     useEffect(() => {
-        localStorage.setItem('language', language);
+        document.documentElement.lang = language;
+        try {
+            localStorage.setItem('language', language);
+        } catch {
+            // storage unavailable (private mode): the choice just isn't remembered
+        }
     }, [language]);
 
     const toggleLanguage = () => {

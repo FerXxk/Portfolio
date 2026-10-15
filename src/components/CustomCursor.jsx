@@ -72,7 +72,7 @@ const CustomCursor = () => {
             <div className="cursor-dot" ref={cursorRef}></div>
             <div className="cursor-follower" ref={followerRef}></div>
 
-            <style jsx>{`
+            <style>{`
         .cursor-dot {
           width: 6px;
           height: 6px;

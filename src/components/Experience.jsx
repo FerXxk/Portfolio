@@ -1,47 +1,37 @@
 import './Experience.css'
+import { useLanguage } from '../context/LanguageContext';
+import translations from '../translations.json';
 
 const Experience = () => {
-    const experience = {
-        company: 'Airtificial Aerospace & Defense',
-        position: 'Ingeniero de Software',
-        period: 'Abril 2025 - Mayo 2026',
-        responsibilities: [
-            'Gestión de proyecto para el desarrollo de una aplicación de automatización de procesos para una importante empresa del sector aeroespacial',
-            'Desarrollo Fullstack, aplicando buenas prácticas de programación, eficiencia y organización',
-            'Desarrollo de un gemelo digital para una planta de producción de materiales compuestos',
-            'Integración y despliegue de software mediante contenedores Docker',
-            'Automatización y orquestación de tareas con Apache Airflow',
-            'Desarrollo de modelos de IA para detección temprana de fallos',
-            'Implementación de algoritmo de planificación basado en CP-SAT'
-        ]
-    }
+    const { language } = useLanguage();
+    const t = translations[language].experience;
 
     return (
-        <section id="experience" className="experience section">
-            <div className="container">
-                <h2 className="section-title">
-                    <span className="gradient-text">Experiencia</span>
-                </h2>
-
-                <div className="timeline">
-                    <div className="timeline-item glass">
-                        <div className="timeline-marker"></div>
-                        <div className="timeline-content">
-                            <div className="timeline-header">
-                                <h3 className="timeline-title">{experience.position}</h3>
-                                <span className="timeline-period">{experience.period}</span>
-                            </div>
-                            <h4 className="timeline-company">{experience.company}</h4>
-                            <ul className="timeline-list">
-                                {experience.responsibilities.map((item, index) => (
-                                    <li key={index}>{item}</li>
-                                ))}
-                            </ul>
+        <div className="timeline">
+            {t.jobs.map((job, index) => (
+                <article key={index} className="timeline-item glass">
+                    <div className="timeline-marker"></div>
+                    <div className="timeline-header">
+                        <div>
+                            <h3 className="timeline-title">{job.position}</h3>
+                            <h4 className="timeline-company">{job.company}</h4>
                         </div>
+                        <span className="timeline-period">{job.period}</span>
                     </div>
-                </div>
-            </div>
-        </section>
+                    <p className="timeline-summary">{job.summary}</p>
+                    <ul className="timeline-list">
+                        {job.items.map((item, i) => (
+                            <li key={i}>{item}</li>
+                        ))}
+                    </ul>
+                    <div className="timeline-tags">
+                        {job.tags.map((tag, i) => (
+                            <span key={i} className="timeline-tag">{tag}</span>
+                        ))}
+                    </div>
+                </article>
+            ))}
+        </div>
     )
 }
 

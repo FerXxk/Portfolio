@@ -63,7 +63,9 @@ const Navbar = () => {
 
         <div className={`nav-links ${isMenuOpen ? 'open' : ''}`}>
           <a href="#about-section" className="nav-item" onClick={() => setIsMenuOpen(false)}>{t.about}</a>
+          <a href="#experience-section" className="nav-item" onClick={() => setIsMenuOpen(false)}>{t.experience}</a>
           <a href="#projects" className="nav-item" onClick={() => setIsMenuOpen(false)}>{t.projects}</a>
+          <a href="#education-section" className="nav-item" onClick={() => setIsMenuOpen(false)}>{t.education}</a>
           <a href="#contact-section" className="nav-item" onClick={() => setIsMenuOpen(false)}>{t.contact}</a>
 
           <div className="language-selector">
@@ -83,13 +85,13 @@ const Navbar = () => {
           </div>
 
           <div className="cv-buttons">
-            <a href="cv/cv_fernando_roman.pdf?v=1.0.1" target="_blank" className="nav-button">
+            <a href={`cv/cv_fernando_roman.pdf?v=${__CV_VERSION__}`} target="_blank" className="nav-button">
               {t.cv_es}
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                 <path d="M12 5v14M5 12l7 7 7-7" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
             </a>
-            <a href="cv/cv_fernando_roman_en.pdf?v=1.0.1" target="_blank" className="nav-button accent-btn">
+            <a href={`cv/cv_fernando_roman_en.pdf?v=${__CV_VERSION__}`} target="_blank" className="nav-button accent-btn">
               {t.cv_en}
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                 <path d="M12 5v14M5 12l7 7 7-7" strokeLinecap="round" strokeLinejoin="round" />
@@ -108,7 +110,9 @@ const Navbar = () => {
       <div className="mobile-menu-overlay" ref={mobileMenuRef} style={{ transform: 'translateX(100%)', opacity: 0 }}>
         <div className="mobile-menu-content">
           <a href="#about-section" className="mobile-nav-item" onClick={toggleMenu}>{t.about}</a>
+          <a href="#experience-section" className="mobile-nav-item" onClick={toggleMenu}>{t.experience}</a>
           <a href="#projects" className="mobile-nav-item" onClick={toggleMenu}>{t.projects}</a>
+          <a href="#education-section" className="mobile-nav-item" onClick={toggleMenu}>{t.education}</a>
           <a href="#contact-section" className="mobile-nav-item" onClick={toggleMenu}>{t.contact}</a>
 
           <div className="mobile-language-selector">
@@ -127,17 +131,17 @@ const Navbar = () => {
           </div>
 
           <div className="mobile-cv-buttons">
-            <a href="cv/cv_fernando_roman.pdf?v=1.0.1" target="_blank" className="nav-button">
+            <a href={`cv/cv_fernando_roman.pdf?v=${__CV_VERSION__}`} target="_blank" className="nav-button">
               {t.cv_es}
             </a>
-            <a href="cv/cv_fernando_roman_en.pdf?v=1.0.1" target="_blank" className="nav-button accent-btn">
+            <a href={`cv/cv_fernando_roman_en.pdf?v=${__CV_VERSION__}`} target="_blank" className="nav-button accent-btn">
               {t.cv_en}
             </a>
           </div>
         </div>
       </div>
 
-      <style jsx>{`
+      <style>{`
         .lab-nav {
           position: fixed;
           top: 0;

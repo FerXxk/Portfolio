@@ -12,7 +12,7 @@ const ProjectGrid = ({ projects }) => {
         />
       ))}
 
-      <style jsx>{`
+      <style>{`
         .project-grid {
           display: grid;
           grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));

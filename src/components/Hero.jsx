@@ -94,7 +94,7 @@ const Hero = () => {
         </div>
       </div>
 
-      <style jsx>{`
+      <style>{`
         .hero-section {
           min-height: 90vh;
           display: flex;
@@ -117,7 +117,6 @@ const Hero = () => {
           color: var(--text-muted);
           max-width: 1000px;
           font-weight: 400;
-          white-space: nowrap;
         }
         .hero-subtitle span {
           color: var(--accent);
