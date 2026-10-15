@@ -329,7 +329,7 @@ const Navbar = () => {
           padding: 1rem;
         }
 
-        @media (max-width: 1024px) {
+        @media (max-width: 1280px) {
           .nav-links { display: none; }
           .hamburger { display: flex; }
         }
