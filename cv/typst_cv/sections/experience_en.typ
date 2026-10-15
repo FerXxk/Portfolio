@@ -5,7 +5,7 @@
 
 #resume-entry(
   title: "AI Engineer",
-  location: logo-location("../images/atlantica.jpg", "Atlantica Sustainable Infrastructure | Seville, Spain"),
+  location: logo-location("../images/atlantica.png", "Atlantica Sustainable Infrastructure | Seville, Spain"),
   date: "August 2026 - Present",
   description: "Generative AI, Agents, MCPs and Workflow Automation",
 )

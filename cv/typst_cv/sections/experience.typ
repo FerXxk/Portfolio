@@ -5,7 +5,7 @@
 
 #resume-entry(
   title: "Ingeniero de IA",
-  location: logo-location("../images/atlantica.jpg", "Atlantica Sustainable Infrastructure | Sevilla, España"),
+  location: logo-location("../images/atlantica.png", "Atlantica Sustainable Infrastructure | Sevilla, España"),
   date: "Agosto 2026 - Actualidad",
   description: "IA Generativa, Agentes, MCPs y Automatización de Workflows",
 )
